@@ -14,7 +14,22 @@ body{
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	line-height: 20px;
-	
+  }
+.header{
+  position:absolute;overflow:hidden;
+}
+.footer {
+  position:absolute;overflow:hidden;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(27, 147, 173, 1) 50%,
+    rgba(86, 187, 209, 1) 87%
+  );
+}
+.content {
+  position:absolute; overflow:auto;
+
 }
 h1, h2, h3 {
 	font-family: Arial, Helvetica, sans-serif;
