@@ -18,15 +18,7 @@ body{
 .header{
   position:absolute;overflow:hidden;
 }
-.footer {
-  position:absolute;overflow:hidden;
-  text-align: center;
-  background: linear-gradient(
-    90deg,
-    rgba(27, 147, 173, 1) 50%,
-    rgba(86, 187, 209, 1) 87%
-  );
-}
+
 .content {
   position:absolute; overflow:auto;
 
@@ -105,3 +97,62 @@ h1, h2, h3 {
   
 }
 /*----close Nav Bar designe------*/
+/*-----footer-------*/
+.footer {
+  position:absolute;overflow:hidden;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(27, 147, 173, 1) 50%,
+    rgba(86, 187, 209, 1) 87%
+  );
+}
+footer {
+  background: linear-gradient(
+   90deg,
+   rgba(27, 147, 173, 1) 50%,
+   rgba(86, 187, 209, 1) 87%
+ );
+
+}
+
+footer h4 {
+ height: 100%;
+ color: white;
+ font-size: 18px;
+ font-weight: 300;
+ text-align: center;
+}
+/*--------footer close-------- */
+/*--------login---------*/
+.back {
+  background: #e2e2e2;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.div-center {
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  padding: 1em 2em;
+  border-bottom: 2px solid #ccc;
+  display: table;
+}
+
+div.content {
+  display: table-cell;
+  vertical-align: middle;
+}
+/*-----login form close----------*/

@@ -1,16 +1,1 @@
-footer {
-   background: linear-gradient(
-    90deg,
-    rgba(27, 147, 173, 1) 50%,
-    rgba(86, 187, 209, 1) 87%
-  );
- 
-}
 
-footer h4 {
-  height: 100%;
-  color: white;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: center;
-}
