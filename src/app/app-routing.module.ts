@@ -11,11 +11,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+<<<<<<< HEAD
     children: [
       { path: '', component: AdminDashboardComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
+=======
+    children: [{ path: '', component: AdminDashboardComponent }, {path: '**', component: AdminDashboardComponent}],
+>>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
   },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

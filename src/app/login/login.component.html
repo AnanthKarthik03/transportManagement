@@ -1,30 +1,58 @@
-<div class="back">
-<div class="div-center">
-<div class="content">
-<h3>Login</h3>
-        <hr />
-        <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name"  placeholder="UserName">
+<div class="container-fluid login-right-bg h-100">
+ 
+  <div class="row">
+    <div class="col-sm-6 gradient-custom-2 h-100 "> <div class="col-lg-6 ">
+      <div class="panel">
+        <div class="panel-body p-md-5 mx-md-4">
+
+          <div class="text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+              style="width: 185px;" alt="logo">
+            <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <button type="submit" (click)="onLogin()" class="btn btn-primary">Login</button>
-          <hr />
-          <button type="button" class="btn btn-link">Signup</button>
-          <button type="button" class="btn btn-link">Reset Password</button>
-  
-        </form>
-  
+
+          <form>
+            <p>Please login to your account</p>
+
+            <div class="form-outline mb-4">
+              <input type="email" id="form2Example11" class="form-control"
+                placeholder="Phone number or email address" />
+              <label class="form-label" for="form2Example11">Username</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example22" class="form-control" />
+              <label class="form-label" for="form2Example22">Password</label>
+            </div>
+
+            <div class="text-center pt-1 mb-5 pb-1">
+              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"(click)="onLogin()" type="button">Log
+                in</button>
+              <a class="text-muted" href="#!">Forgot password?</a>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center pb-4">
+              <p class="mb-0 me-2">Don't have an account?</p>
+              <button type="button" class="btn btn-outline-danger">Create new</button>
+            </div>
+
+          </form>
+
+        </div>
       </div>
-  
-  
-     
-    </div>
-
-
-
-
+      
+    </div></div>
+    <div class="col-sm-6 h-100" > <div class="col-lg-6 d-flex align-items-center ">
+      <div class="panel login-transprent-bg">
+        <div class="panel-body "><div class="text-white px-3 py-4 p-md-5 mx-md-4">
+       
+       <img  class="images"   src="login.png"/>
+       <img src="../../assets/images/login.png"  alt="cinque terre">  
+        </div>
+      </div>
+      </div>
+      
+    </div></div>
+    
+  </div>
+</div>
