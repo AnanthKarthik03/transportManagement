@@ -1,3 +1,8 @@
-body{
-    background-color: #ffff !important;
-  }
+body {
+  background-color: #ffff !important;
+}
+
+.images {
+  height: 100px;
+  width: 100px;
+}
