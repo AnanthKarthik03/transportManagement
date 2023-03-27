@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
     LoginComponent,
     DashboardComponent,
     AdminDashboardComponent,
+    ProfileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   

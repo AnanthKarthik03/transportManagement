@@ -12,5 +12,8 @@ export class HeaderComponent {
   onoLogout() {
     this.router.navigate(['login']);
   }
+  onProfile() {
+    this.router.navigate(['dashboard/profile']);
+  }
 
 }
