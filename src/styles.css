@@ -7,69 +7,6 @@
   text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
-<<<<<<< HEAD
-html,
-body,
-address,
-blockquote,
-div,
-dl,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-p,
-pre,
-table,
-ul,
-dd,
-dt,
-li,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-button,
-del,
-ins,
-map,
-object,
-a,
-abbr,
-acronym,
-b,
-bdo,
-big,
-br,
-cite,
-code,
-dfn,
-em,
-i,
-img,
-kbd,
-q,
-samp,
-small,
-span,
-strong,
-sub,
-sup,
-tt,
-var,
-legend,
-fieldset {
-  margin: 0px;
-  padding: 0px;
-}
-
-=======
 
 html,
 body,
@@ -132,15 +69,11 @@ fieldset {
   padding: 0px;
 }
 
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 20px;
-<<<<<<< HEAD
-}
-=======
-  background-color: #eee ;
+  background-color: #eee;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -150,12 +83,10 @@ body {
 }
 
 .wrapper {
- 
   padding-left: 30px;
   padding-right: 30px;
 }
 
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
 .header {
   position: absolute;
   overflow: hidden;
@@ -164,21 +95,14 @@ body {
 .content {
   position: absolute;
   overflow: auto;
-<<<<<<< HEAD
-}
-=======
-
 }
 
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
 h1,
 h2,
 h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
-<<<<<<< HEAD
-=======
 .page-content {
   background: #fff;
   border-radius: 3px;
@@ -187,36 +111,25 @@ h3 {
   margin-bottom: 20px;
 }
 .page-content2 {
-  background:transparent;
+  background: transparent;
   border-radius: 3px;
   border: 1px solid #d0d0d0;
   padding: 20px 20px 0px 20px;
   margin-bottom: 20px;
 }
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
 #login-dp {
   min-width: 250px;
   padding: 14px 14px 0;
   overflow: hidden;
-<<<<<<< HEAD
   background-color: rgba(255, 255, 255, 0.8);
 }
+
 #login-dp .help-block {
   font-size: 12px;
 }
+
 #login-dp .bottom {
   background-color: rgba(255, 255, 255, 0.8);
-=======
-  background-color: rgba(255, 255, 255, .8);
-}
-
-#login-dp .help-block {
-  font-size: 12px
-}
-
-#login-dp .bottom {
-  background-color: rgba(255, 255, 255, .8);
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
   border-top: 1px solid #ddd;
   clear: both;
   padding: 14px;
@@ -225,100 +138,65 @@ h3 {
 #login-dp .form-group {
   margin-bottom: 10px;
 }
-<<<<<<< HEAD
+
 .btn-fb {
   color: #fff;
   background-color: #3b5998;
 }
+
 .btn-fb:hover {
   color: #fff;
   background-color: #496ebc;
 }
+
 .btn-tw {
   color: #fff;
   background-color: #55acee;
 }
+
 .btn-tw:hover {
   color: #fff;
   background-color: #59b5fa;
 }
+
 @media (max-width: 768px) {
   #login-dp {
     background-color: inherit;
     color: #fff;
   }
-  #login-dp .bottom {
-    background-color: inherit;
-    border-top: 0 none;
-  }
-}
-/*----Nav Bar designe------*/
-
-.navbar-inverse {
-  left: 0px;
-  top: 0px;
-  background: #ffffff !important;
-=======
-
-.btn-fb {
-  color: #fff;
-  background-color: #3b5998;
-}
-
-.btn-fb:hover {
-  color: #fff;
-  background-color: #496ebc
-}
-
-.btn-tw {
-  color: #fff;
-  background-color: #55acee;
-}
-
-.btn-tw:hover {
-  color: #fff;
-  background-color: #59b5fa;
-}
-
-@media(max-width:768px) {
-  #login-dp {
-    background-color: inherit;
-    color: #fff;
-  }
 
   #login-dp .bottom {
     background-color: inherit;
     border-top: 0 none;
   }
 }
-.panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }
+.panel-body .btn:not(.btn-block) {
+  width: 120px;
+  margin-bottom: 10px;
+}
 /*----Nav Bar designe------*/
-.nav>li>a {
+.nav > li > a {
   position: relative;
   display: block;
   padding: 15px 10px 15px 10px !important;
 }
-.navbar-default{
-  background: #FFFFFF !important;
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
+.navbar-default {
+  background: #ffffff !important;
   /* Drop Shadow */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-bottom: 1px solid #000 !important;
 }
-<<<<<<< HEAD
-
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: #0a5f72 !important;
-  background-color: #ffffff !important;
-=======
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
   color: #fff !important;
   background-color: #131313 !important;
 }
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
   color: #fff !important;
   background-color: #131313 !important;
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
 }
 .navbar-toggle .icon-bar {
   background-color: #000;
@@ -326,11 +204,6 @@ h3 {
 
 .navbar-toggle {
   background-color: #000 !important;
-<<<<<<< HEAD
-=======
-  ;
-
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
 }
 
 /*----close Nav Bar designe------*/
@@ -339,24 +212,19 @@ h3 {
   position: absolute;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(90deg,
-      rgba(27, 147, 173, 1) 50%,
-      rgba(86, 187, 209, 1) 87%) !important;
-}
-
-footer {
-<<<<<<< HEAD
   background: linear-gradient(
     90deg,
     rgba(27, 147, 173, 1) 50%,
     rgba(86, 187, 209, 1) 87%
-  );
-=======
-  background: linear-gradient(90deg,
-      rgba(27, 147, 173, 1) 50%,
-      rgba(86, 187, 209, 1) 87%) !important;
+  ) !important;
+}
 
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
+footer {
+  background: linear-gradient(
+    90deg,
+    rgba(27, 147, 173, 1) 50%,
+    rgba(86, 187, 209, 1) 87%
+  ) !important;
 }
 
 footer h4 {
@@ -369,7 +237,7 @@ footer h4 {
 
 /*--------footer close-------- */
 /*--------login---------*/
-.branch-text{
+.branch-text {
   font-size: 4px;
   line-height: 5px;
 }
@@ -381,41 +249,36 @@ footer h4 {
   width: 100%;
 }
 
-.panel.panel-horizontal>.panel-heading,
-.panel.panel-horizontal>.panel-body,
-.panel.panel-horizontal>.panel-footer {
+.panel.panel-horizontal > .panel-heading,
+.panel.panel-horizontal > .panel-body,
+.panel.panel-horizontal > .panel-footer {
   display: table-cell;
 }
 
-.panel.panel-horizontal>.panel-heading,
-.panel.panel-horizontal>.panel-footer {
+.panel.panel-horizontal > .panel-heading,
+.panel.panel-horizontal > .panel-footer {
   width: 25%;
   border: 0;
   vertical-align: middle;
 }
-<<<<<<< HEAD
-/*-----login form close----------*/
-=======
 
-.panel.panel-horizontal>.panel-heading {
+.panel.panel-horizontal > .panel-heading {
   border-right: 1px solid #ddd;
   border-top-right-radius: 0;
   border-bottom-left-radius: 4px;
 }
 
-.panel.panel-horizontal>.panel-footer {
+.panel.panel-horizontal > .panel-footer {
   border-left: 1px solid #ddd;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
 }
 
-
-
 /* end deshnoard-count-card */
 /* html-scrollbar */
 html::-webkit-scrollbar {
   width: 6px;
-  background-color: #ECECEC;
+  background-color: #ececec;
 }
 
 html::-webkit-scrollbar-track {
@@ -444,7 +307,7 @@ html::-webkit-scrollbar-thumb {
   padding-right: 10px;
 }
 
-.mini-stat>li:first-child {
+.mini-stat > li:first-child {
   border-left: none;
 }
 
@@ -461,35 +324,31 @@ html::-webkit-scrollbar-thumb {
   /* fallback for old browsers */
   background: #ffff;
   background-size: auto 100%;
-  
-    }
-  .login-transprent-bg{
-    background-color: transparent !important;
-  }
-  .h-100{
+}
+.login-transprent-bg {
+  background-color: transparent !important;
+}
+.h-100 {
+  height: 100vh !important;
+}
+@media (min-width: 768px) {
+  .gradient-form {
     height: 100vh !important;
   }
-  @media (min-width: 768px) {
-  .gradient-form {
-  height: 100vh !important;
-  }
-  }
-  @media (min-width: 769px) {
-  .gradient-custom-2 {
-  border-top-right-radius: .3rem;
-  border-bottom-right-radius: .3rem;
-  }
-  }
-.login-right-bg{
-  background: linear-gradient(180deg, #60D0E9 0%, #1B93AD 100%);
-  
-  background-size: auto 100%;
- 
 }
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}
+.login-right-bg {
+  background: linear-gradient(180deg, #60d0e9 0%, #1b93ad 100%);
 
+  background-size: auto 100%;
+}
 
 /* login-page */
 .mb-1 {
   margin-bottom: 40px;
 }
->>>>>>> 1e9c23f6011d9ec9a8e2569972fe95b527ec7f62
