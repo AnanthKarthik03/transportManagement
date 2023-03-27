@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
-
+  constructor(
+    public router: Router,
+    
+  ) {}
+ 
   onLogin() {
     this.router.navigate(['dashboard']);
   }
