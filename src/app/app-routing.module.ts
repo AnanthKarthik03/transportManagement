@@ -14,6 +14,7 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', component: AdminDashboardComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
