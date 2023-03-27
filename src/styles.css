@@ -6,70 +6,130 @@
   text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
-html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul, dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
-a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span, strong, sub, sup, tt, var, legend, fieldset 
-{margin:0px;padding:0px;}
+html,
+body,
+address,
+blockquote,
+div,
+dl,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+table,
+ul,
+dd,
+dt,
+li,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+button,
+del,
+ins,
+map,
+object,
+a,
+abbr,
+acronym,
+b,
+bdo,
+big,
+br,
+cite,
+code,
+dfn,
+em,
+i,
+img,
+kbd,
+q,
+samp,
+small,
+span,
+strong,
+sub,
+sup,
+tt,
+var,
+legend,
+fieldset {
+  margin: 0px;
+  padding: 0px;
+}
 
-body{
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	line-height: 20px;
-  }
-.header{
-  position:absolute;overflow:hidden;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 20px;
+}
+.header {
+  position: absolute;
+  overflow: hidden;
 }
 
 .content {
-  position:absolute; overflow:auto;
-
+  position: absolute;
+  overflow: auto;
 }
-h1, h2, h3 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
+h1,
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
-#login-dp{
+#login-dp {
   min-width: 250px;
   padding: 14px 14px 0;
-  overflow:hidden;
-  background-color:rgba(255,255,255,.8);
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
 }
-#login-dp .help-block{
-  font-size:12px    
+#login-dp .help-block {
+  font-size: 12px;
 }
-#login-dp .bottom{
-  background-color:rgba(255,255,255,.8);
-  border-top:1px solid #ddd;
-  clear:both;
-  padding:14px;
+#login-dp .bottom {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid #ddd;
+  clear: both;
+  padding: 14px;
 }
 
 #login-dp .form-group {
   margin-bottom: 10px;
 }
-.btn-fb{
+.btn-fb {
   color: #fff;
-  background-color:#3b5998;
+  background-color: #3b5998;
 }
-.btn-fb:hover{
+.btn-fb:hover {
   color: #fff;
-  background-color:#496ebc 
+  background-color: #496ebc;
 }
-.btn-tw{
+.btn-tw {
   color: #fff;
-  background-color:#55acee;
+  background-color: #55acee;
 }
-.btn-tw:hover{
+.btn-tw:hover {
   color: #fff;
-  background-color:#59b5fa;
+  background-color: #59b5fa;
 }
-@media(max-width:768px){
-  #login-dp{
-      background-color: inherit;
-      color: #fff;
+@media (max-width: 768px) {
+  #login-dp {
+    background-color: inherit;
+    color: #fff;
   }
-  #login-dp .bottom{
-      background-color: inherit;
-      border-top:0 none;
+  #login-dp .bottom {
+    background-color: inherit;
+    border-top: 0 none;
   }
 }
 /*----Nav Bar designe------*/
@@ -77,29 +137,28 @@ h1, h2, h3 {
 .navbar-inverse {
   left: 0px;
   top: 0px;
-  background: #FFFFFF !important;
+  background: #ffffff !important;
   /* Drop Shadow */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
 }
 
-
-.navbar-inverse .navbar-nav>li>a:hover{
-  color: #0A5F72 !important;
-  background-color: #FFFFFF !important;
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #0a5f72 !important;
+  background-color: #ffffff !important;
 }
 .navbar-toggle .icon-bar {
- background-color: #000;
+  background-color: #000;
 }
- 
-  .navbar-toggle {
-  background-color: #000 !important;;
-  
+
+.navbar-toggle {
+  background-color: #000 !important;
 }
 /*----close Nav Bar designe------*/
 /*-----footer-------*/
 .footer {
-  position:absolute;overflow:hidden;
+  position: absolute;
+  overflow: hidden;
   text-align: center;
   background: linear-gradient(
     90deg,
@@ -109,19 +168,18 @@ h1, h2, h3 {
 }
 footer {
   background: linear-gradient(
-   90deg,
-   rgba(27, 147, 173, 1) 50%,
-   rgba(86, 187, 209, 1) 87%
- );
-
+    90deg,
+    rgba(27, 147, 173, 1) 50%,
+    rgba(86, 187, 209, 1) 87%
+  );
 }
 
 footer h4 {
- height: 100%;
- color: white;
- font-size: 18px;
- font-weight: 300;
- text-align: center;
+  height: 100%;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
 }
 /*--------footer close-------- */
 /*--------login---------*/
