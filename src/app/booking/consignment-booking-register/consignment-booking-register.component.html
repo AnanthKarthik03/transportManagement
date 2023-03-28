@@ -1,0 +1,147 @@
+<p-table
+  #dt1
+  [scrollable]="true"
+  [value]="bcrs"
+  [paginator]="true"
+  [rows]="5"
+  dataKey="id"
+  [rowsPerPageOptions]="[1, 3, 5, 7, 10]"
+  [totalRecords]="5"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [pageLinks]="3"
+  [globalFilterFields]="[
+    'cn_no',
+    'details',
+    'consigner',
+    'consignee',
+    'from',
+    'via',
+    'to',
+    'pay',
+    'amount',
+    'rec',
+    'dis',
+    'due',
+    'branch'
+  ]"
+>
+  <ng-template pTemplate="caption">
+    <span class="p-input-icon-left ml-auto">
+      <i class="pi pi-search"></i>
+      <input
+        pInputText
+        type="text"
+        (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+        placeholder="Search keyword"
+      />
+    </span>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>#</th>
+      <th pSortableColumn="cn_no">
+        CN No.<p-sortIcon field="cn_no"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="cn_no"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th pSortableColumn="details">
+        Details<p-sortIcon field="details"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="details"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th pSortableColumn="consigner">
+        Consigner<p-sortIcon field="consigner"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="consigner"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th pSortableColumn="consignee">
+        Consignee<p-sortIcon field="consignee"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="consignee"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th pSortableColumn="from">
+        From<p-sortIcon field="from"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="from"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th pSortableColumn="via">
+        Via<p-sortIcon field="via"></p-sortIcon>
+        <p-columnFilter type="text" field="via" display="menu"></p-columnFilter>
+      </th>
+      <th pSortableColumn="to">
+        To<p-sortIcon field="to"></p-sortIcon>
+        <p-columnFilter type="text" field="to" display="menu"></p-columnFilter>
+      </th>
+      <th pSortableColumn="pay">
+        Pay<p-sortIcon field="pay"></p-sortIcon>
+        <p-columnFilter type="text" field="pay" display="menu"></p-columnFilter>
+      </th>
+      <th pSortableColumn="amount">
+        Amount<p-sortIcon field="amount"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="amount"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th pSortableColumn="rec">
+        Rec.<p-sortIcon field="rec"></p-sortIcon>
+        <p-columnFilter type="text" field="rec" display="menu"></p-columnFilter>
+      </th>
+      <th pSortableColumn="dis">
+        Dis.<p-sortIcon field="dis"></p-sortIcon>
+        <p-columnFilter type="text" field="dis" display="menu"></p-columnFilter>
+      </th>
+      <th pSortableColumn="due">
+        Due<p-sortIcon field="due"></p-sortIcon>
+        <p-columnFilter type="text" field="due" display="menu"></p-columnFilter>
+      </th>
+      <th pSortableColumn="branch">
+        Branch<p-sortIcon field="branch"></p-sortIcon>
+        <p-columnFilter
+          type="text"
+          field="branch"
+          display="menu"
+        ></p-columnFilter>
+      </th>
+      <th>Edit</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-bcr let-i="rowIndex">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ bcr.cn_no }}</td>
+      <td>{{ bcr.details }}</td>
+      <td>{{ bcr.consigner }}</td>
+      <td>{{ bcr.consignee }}</td>
+      <td>{{ bcr.from }}</td>
+      <td>{{ bcr.via }}</td>
+      <td>{{ bcr.to }}</td>
+      <td>{{ bcr.pay }}</td>
+      <td>{{ bcr.amount }}</td>
+      <td>{{ bcr.rec }}</td>
+      <td>{{ bcr.dis }}</td>
+      <td>{{ bcr.due }}</td>
+      <td>{{ bcr.branch }}</td>
+      <td>
+        <i class="pi pi-pencil"></i>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

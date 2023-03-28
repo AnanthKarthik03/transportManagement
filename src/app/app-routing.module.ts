@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConsignmentBookingRegisterComponent } from './booking/consignment-booking-register/consignment-booking-register.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
@@ -15,6 +16,10 @@ const routes: Routes = [
     children: [
       { path: '', component: AdminDashboardComponent },
       { path: 'profile', component: ProfileComponent },
+      {
+        path: 'consignment-booking-register',
+        component: ConsignmentBookingRegisterComponent,
+      },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
