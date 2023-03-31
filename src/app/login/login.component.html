@@ -10,19 +10,37 @@
                 style="width: 185px"
                 alt="logo"
               />
-              <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+              <h4 class="mt-1 mb-5 pb-1">We are The Rostan Team</h4>
             </div>
 
-            <form>
+            <form [formGroup]="loginData" (ngSubmit)="onLogin()">
               <p>Please login to your account</p>
 
               <div class="form-outline mb-4">
                 <input
-                  type="email"
+                  type="text"
                   id="form2Example11"
                   class="form-control"
                   placeholder="Phone number or email address"
+                  formControlName="username"
+                  pattern="^(?:\d{10}|\w+@\w+\.\w{3})$"
                 />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    loginData.get('username')?.hasError('required') &&
+                    loginData.get('username')?.touched
+                  "
+                  >required field</span
+                >
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    loginData.get('username')?.hasError('notValid') &&
+                    loginData.get('username')?.touched
+                  "
+                  >invalid field</span
+                >
                 <label class="form-label" for="form2Example11">Username</label>
               </div>
 
@@ -31,15 +49,31 @@
                   type="password"
                   id="form2Example22"
                   class="form-control"
+                  formControlName="password"
                 />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    loginData.get('password')?.hasError('required') &&
+                    loginData.get('password')?.touched
+                  "
+                  >required field</span
+                >
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    loginData.get('password')?.hasError('notValid') &&
+                    loginData.get('password')?.touched
+                  "
+                  >invalid field</span
+                >
                 <label class="form-label" for="form2Example22">Password</label>
               </div>
 
               <div class="text-center pt-1 mb-5 pb-1">
                 <button
                   class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                  (click)="onLogin()"
-                  type="button"
+                  type="submit"
                 >
                   Log in
                 </button>

@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConsignmentBookingRegisterComponent } from './booking/consignment-booking-register/consignment-booking-register.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SuperAdminDashboardComponent } from './dashboard/super-admin-dashboard/super-admin-dashboard.component';
+import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-dashboard.component';
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
+import { RoutePermissionGuard } from './guard/route-permission.guard';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -14,7 +17,9 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      { path: '', component: AdminDashboardComponent },
+      { path: 'super-admin', component: SuperAdminDashboardComponent },
+      { path: 'admin', component: AdminDashboardComponent },
+      { path: 'vendor', component: VendorDashboardComponent },
       { path: 'profile', component: ProfileComponent },
       {
         path: 'consignment-booking-register',
@@ -23,6 +28,7 @@ const routes: Routes = [
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
+    canActivate: [RoutePermissionGuard]
   },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

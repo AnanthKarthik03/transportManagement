@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Prime-ng modules
 import { TableModule } from 'primeng/table';
@@ -17,6 +17,9 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ConsignmentBookingRegisterComponent } from './booking/consignment-booking-register/consignment-booking-register.component';
+import { Validation } from './validation/validation';
+import { SuperAdminDashboardComponent } from './dashboard/super-admin-dashboard/super-admin-dashboard.component';
+import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +32,19 @@ import { ConsignmentBookingRegisterComponent } from './booking/consignment-booki
     AdminDashboardComponent,
     ConsignmentBookingRegisterComponent,
     NotFoundComponent,
+    SuperAdminDashboardComponent,
+    VendorDashboardComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     TableModule,
   ],
+
+  providers: [Validation],
 
   bootstrap: [AppComponent],
 })
