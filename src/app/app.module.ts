@@ -20,6 +20,7 @@ import { ConsignmentBookingRegisterComponent } from './booking/consignment-booki
 import { Validation } from './validation/validation';
 import { SuperAdminDashboardComponent } from './dashboard/super-admin-dashboard/super-admin-dashboard.component';
 import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-dashboard.component';
+import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-da
     NotFoundComponent,
     SuperAdminDashboardComponent,
     VendorDashboardComponent,
+    LorryArrivalDetailsComponent,
   ],
   imports: [
     BrowserModule,

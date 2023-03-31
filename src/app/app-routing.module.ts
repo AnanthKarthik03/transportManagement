@@ -9,6 +9,7 @@ import { NotFoundComponent } from './error-page/not-found/not-found.component';
 import { RoutePermissionGuard } from './guard/route-permission.guard';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,10 +26,11 @@ const routes: Routes = [
         path: 'consignment-booking-register',
         component: ConsignmentBookingRegisterComponent,
       },
+      { path: 'table', component: LorryArrivalDetailsComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
-    canActivate: [RoutePermissionGuard]
+    canActivate: [RoutePermissionGuard],
   },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
