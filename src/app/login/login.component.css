@@ -1,3 +1,23 @@
+:host ::ng-deep .spinnerColor .p-progress-spinner-circle {
+  animation: spin 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    stroke: #ffffff;
+  }
+  50% {
+    stroke: #ffffff;
+  }
+  80% {
+    stroke: #ffffff;
+  }
+
+  100% {
+    stroke: #ffffff;
+  }
+}
+
 body {
   background-color: #ffff !important;
 }

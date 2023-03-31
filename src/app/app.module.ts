@@ -7,6 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Prime-ng modules
 import { TableModule } from 'primeng/table';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
+//ngx toastr
+
+import { ToastrModule } from 'ngx-toastr';
 
 //custom components
 import { HeaderComponent } from './fixed-frame/header/header.component';
@@ -44,6 +49,10 @@ import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lo
     AppRoutingModule,
     FormsModule,
     TableModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+    }),
+    ProgressSpinnerModule,
   ],
 
   providers: [Validation],
