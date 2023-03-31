@@ -96,7 +96,9 @@ body {
   position: absolute;
   overflow: auto;
 }
-
+.well {
+    background-color: #ffffff !important;
+ }
 h1,
 h2,
 h3 {
@@ -174,6 +176,11 @@ h3 {
   width: 120px;
   margin-bottom: 10px;
 }
+/* title */
+.title-page{
+  width: 50px; height: 50px; font-size: 4em;
+}
+/* end Title */
 /*----Nav Bar designe------*/
 .nav > li > a {
   position: relative;
@@ -352,3 +359,57 @@ html::-webkit-scrollbar-thumb {
 .mb-1 {
   margin-bottom: 40px;
 }
+/* bg-color */
+.tag-red {
+  background: #e74c3c;
+  color: #fff !important;
+}
+.tag-green {
+  background-color: #21ba45 !important;
+  color: #fff !important;
+}
+.tag-C-green {
+  background: #00a9bd !important;
+  color: #fff !important ;
+}
+.tag-blue {
+  background-color: #2185d0 !important;
+  color: #fff !important;
+}
+.tag-pink {
+  background-color: #e03997 !important;
+  color: #fff !important;
+}
+.tag-orange {
+  background-color: #f2711c !important;
+  color: #fff !important;
+}
+.tag-gray {
+  background-color: #4d5052 !important;
+  color: #fff !important;
+}
+.tag-Yellow {
+  background-color: #a1a10b !important;
+  color: #fff !important;
+}
+.tag-bark-blue {
+  background-color: #066980 !important;
+  color: #fff !important;
+}
+
+/* end bg-color */
+/* button */
+.Admin-btn-primary {
+  color: #fff;
+  background-color: #e88c1d;
+  border-color: #e88c1d;
+}
+/* end button */
+/* icon color */
+.glyphicon-a{
+  color: #379e19 !important;
+}
+.icon-size{
+font-size: 25px;
+}
+/* end icon color */
