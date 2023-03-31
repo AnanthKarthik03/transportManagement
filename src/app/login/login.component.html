@@ -99,7 +99,13 @@
                   class="btn btn-block butlogin  mb-3"
                   type="submit"
                 >
-                  Log in
+                  <p-progressSpinner
+                    strokeWidth="8"
+                    [style]="{ height: '20px', width: '20px' }"
+                    styleClass="spinnerColor"
+                    *ngIf="spinShow"
+                  ></p-progressSpinner>
+                  <span *ngIf="!spinShow">Log in</span>
                 </button>
                 <a class="text-muted" href="#!">Forgot password?</a>
               </div>
