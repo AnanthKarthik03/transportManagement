@@ -1,0 +1,118 @@
+.table th,
+td {
+  border: 1px solid rgb(195 187 187);
+  border-collapse: collapse;
+}
+
+.table > tbody > tr > th {
+  border: 1px solid rgb(195 187 187);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(10, 55, 153);
+  width: 100%;
+  text-align: center;
+  height: 40px;
+}
+
+input {
+  width: 258px;
+}
+
+.button {
+  float: right;
+  width: 100px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.btn1 {
+  float: right;
+  width: 80px;
+  margin-right: 20px;
+  height: 30px;
+  padding: 3px;
+  margin-top: -6px;
+}
+.col-xs-3 {
+  width: 28%;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+.lorry {
+  background-color: #e2e2e2;
+  height: 45px;
+  padding: 8px;
+  padding-left: 38px;
+  color: #747373;
+  font-weight: 600;
+  width: 100%;
+  margin-left: 2px;
+  padding-top: 15px;
+}
+
+.con1 {
+  margin-top: 30px;
+}
+
+.challan {
+  padding-top: 15px;
+  display: flex;
+  column-gap: 72px;
+}
+
+.col1 {
+  margin-left: 91px;
+}
+
+.col2 {
+  margin-right: 18px;
+}
+
+.col3 {
+  margin-right: 92px;
+}
+
+.add {
+  background-color: #eb6998;
+  border-bottom: 1px solid;
+  height: 35px;
+  padding: 7px;
+  padding-left: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.tr1 {
+  background-color: #f1b928;
+}
+
+.tr {
+  background-color: #d6f3fa;
+}
+
+.th1 {
+  color: white;
+}
+
+.border {
+  border: 1px solid rgb(195 187 187);
+}
+
+@media (max-width: 1051px) {
+  .navbar-nav > li > a {
+    padding: 15px 5px;
+  }
+}
+@media (max-width: 845px) {
+  .navbar-nav > li > a {
+    padding: 15px 4px;
+  }
+  .con1 {
+    overflow: scroll;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}

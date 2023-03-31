@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
+import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NotFoundComponent } from './error-page/not-found/not-found.component';
     DashboardComponent,
     AdminDashboardComponent,
     NotFoundComponent,
+    LorryArrivalDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   
