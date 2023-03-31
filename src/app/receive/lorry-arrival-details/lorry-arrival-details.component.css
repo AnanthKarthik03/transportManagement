@@ -116,3 +116,9 @@ input {
     display: block;
   }
 }
+
+@media (max-width: 50px) {
+  .con1 {
+    overflow: scroll;
+  }
+}
