@@ -118,7 +118,11 @@ input {
 }
 
 @media (max-width: 50px) {
-  .con1 {
+  .convent {
     overflow: scroll;
+  }
+
+  .chagesnotrequired {
+    margin: 0;
   }
 }
