@@ -7,6 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Prime-ng modules
 import { TableModule } from 'primeng/table';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
+//ngx toastr
+
+import { ToastrModule } from 'ngx-toastr';
 
 //custom components
 import { HeaderComponent } from './fixed-frame/header/header.component';
@@ -21,6 +26,11 @@ import { Validation } from './validation/validation';
 import { SuperAdminDashboardComponent } from './dashboard/super-admin-dashboard/super-admin-dashboard.component';
 import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-dashboard.component';
 import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
+import { NewBiltyCnComponent } from './booking/new-bilty-cn/new-bilty-cn.component';
+import { ConsignorComponent } from './booking/consignor/consignor.component';
+import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
+import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
+import { ConsigneeComponent } from './booking/consignee/consignee.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +46,11 @@ import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lo
     SuperAdminDashboardComponent,
     VendorDashboardComponent,
     LorryArrivalDetailsComponent,
+    NewBiltyCnComponent,
+    ConsignorComponent,
+    ConsignmentBookingComponent,
+    AdditionalServiceCBSComponent,
+    ConsigneeComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +59,10 @@ import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lo
     AppRoutingModule,
     FormsModule,
     TableModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+    }),
+    ProgressSpinnerModule,
   ],
 
   providers: [Validation],

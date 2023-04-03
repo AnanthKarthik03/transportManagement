@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import * as crypto from 'crypto-js';
@@ -17,18 +12,24 @@ import { Validation } from '../validation/validation';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  spinShow: boolean = true;
   loginData: FormGroup<any>;
-  constructor(public router: Router, private fb: FormBuilder, private val: Validation, private service: PermissionService) {
+  constructor(
+    public router: Router,
+    private fb: FormBuilder,
+    private val: Validation,
+    private service: PermissionService
+  ) {
     this.loginData = this.fb.group({
-      username: [
-        '',
-        [
-          Validators.required,
-          val.isUserValid,
-        ],
-      ],
+      username: ['', [Validators.required, val.isUserValid]],
       password: ['', [Validators.required, val.isPasswordValid]],
     });
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.spinShow = false;
+    }, 5000);
   }
 
   onLogin() {
@@ -44,28 +45,27 @@ export class LoginComponent {
     // ).toString();
     // console.log(encrypted);
 
-    if(this.loginData.valid) {
-
+    if (this.loginData.valid) {
       const roleId = this.service.isAuthenticated(username, password);
       this.service.roleId = roleId;
 
       //for supr admin
-      if(roleId == 1) {
+      if (roleId == 1) {
         this.router.navigate(['/dashboard/super-admin']);
       }
 
       //for admin
-      if(roleId == 2) {
+      if (roleId == 2) {
         this.router.navigate(['/dashboard/admin']);
       }
 
       //for vendor
-      if(roleId == 3) {
+      if (roleId == 3) {
         this.router.navigate(['/dashboard/vendor']);
       }
     }
 
-    if(this.loginData.invalid) {
+    if (this.loginData.invalid) {
       return;
     }
 

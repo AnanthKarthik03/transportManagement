@@ -1,0 +1,297 @@
+<div class="container-fluid mb-40">
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default" id="table">
+  
+              <div class="panel-heading"><span class="pull-right">
+  
+                  <a  role="button"  class="btn  btn-success"  [routerLink]="['/dashboard/consignment-booking-register']">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+                </span>
+                <ul class="list-inline list-unstyled">
+                    <li>
+                        <h4>New Bilty CN</h4>
+                     
+                    </li>
+                                              
+                    <li><div class="btn-group">
+                        <a class="btn btn-danger btn-xs" href="javascript:void(0)">EXCLUSIVE TAX SALE</a>
+                      </div></li>
+                    
+                  </ul>
+              
+                
+              </div>
+              <div class="panel-body">
+                <div class="row mb-20">
+                    <div class="col-md-12 ">
+                      <div class="panel panel-primary panel-table">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col col-xs-12">
+                                <div class="">
+                                    <div class="btn-group" data-toggle="buttons">
+                                      <label class="btn btn-success btn-filter " data-target="completed">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                                        <b class="mr-10">Total Item in Cart  </b><i class="glyphicon glyphicon-shopping-cart">:</i> 
+                                      </label>
+                                      
+                                      <label class="btn btn-default btn-filter" data-target="all">
+                                        <input type="radio" name="options" id="option3" autocomplete="off"><strong>2</strong>
+                                      </label>
+                                    </div>
+                                  </div>
+                              
+                            </div>
+                           
+                          </div>
+                        </div>
+                        <div class="panel-body" style="overflow-x: auto">
+                          <table id="mytable" class="table table-responsive table-striped table-bordered table-list">
+                            <thead>
+                              <tr>
+                               
+                                <th class="col-text">Quantity</th>
+                                <th class="col-text">Package Type</th>
+                                <th class="col-text">Product Details</th>
+                                <th class="col-text">HSN</th>
+                                <th class="col-text">Actual Weight</th>
+                                <th class="col-text">Gross Weight</th>
+                                <th class="col-text">Weight Type</th>
+                                <th class="col-text">GST%</th>
+                                <th class="col-text">Amount</th>
+                               
+                                <th class="col-tools"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                                    Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr data-status="completed">
+                                <td >23</td>
+                                <td >Laptop</td>
+                                <td >Hp 15 inch</td>
+                                <td >HSD1234</td>
+                                <td >22 </td>
+                                <td >20 </td>
+                                <td >100</td>    
+                                <td>10%</td>
+                                <td>233333</td>
+                                <td>
+                                    
+                                    <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"
+                                        aria-hidden="true"></span>Remove</a>
+                                  </td>
+                              </tr>
+                              <tr data-status="completed " class="alert alert-warning">
+                                <td colspan="8" class="text-right "><strong>Total Amount</strong> </td>
+                                
+                                
+                                
+                                <td><strong>233333</strong></td>
+                                <td>
+                                    
+                                   
+                                  </td>
+                              </tr>
+                            </tbody>
+                          </table>
+        
+                        </div>
+                        <div class="panel-footer ">
+                          <div class="row ">
+                            <div class="col col-xs-offset-3 col-xs-6">
+                              <!-- <nav aria-label="Page navigation" class="text-center">
+                                <ul class="pagination">
+                                  <li>
+                                    <a href="#" aria-label="Previous">
+                                      <span aria-hidden="true">«</span>
+                                    </a>
+                                  </li>
+                                  <li class="active"><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li>
+                                    <a href="#" aria-label="Next">
+                                      <span aria-hidden="true">»</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav> -->
+                            </div>
+                            <div class="col col-xs-3">
+                              <div class="pull-right">
+                                <button type="button" class="btn btn-info" [routerLink]="['/dashboard/consignor']">
+                                  <span class="glyphicon glyphicon-hand-right " aria-hidden="true"></span>
+                                  Checkout
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 ">
+                        <form>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                  <div class="panel-title">
+                                    Item 1 Details
+                                  </div>
+                                </div>
+                                <div class="panel-body">
+                
+                                  <div class="row clearfix">
+                                    <div class="col-md-12 column" style="overflow-x: auto">
+                                      <table class="table table-bordered table-hover" id="tab_logic">
+                                       
+                                        <tbody>
+                                          <tr id='addr0'>
+                                            <td>
+                                                <label>Quantity:</label><br>
+                                                <input type="text" class="form-control" name="quantity" >
+                                            </td>
+                                            <td>
+                                                <label>Package Type:</label><br>
+                                                <select class="form-control" id="country" required="true" name="packagetype">
+                                                    <option value="AF">Afghanistan</option>
+                                                    <option value="AX">Åland Islands</option>
+                                                    <option value="AL">Albania</option>
+                                                    <option value="DZ">Algeria</option>
+                                                                                             
+                                                    
+                                                  </select>
+                                            </td>
+                                            <td>
+                                                <label>Product Details:</label><br>
+                                                <input type="text" class="form-control" name="productdetails" >
+                                            </td>
+                                            <td>
+                                                <label>HSN:</label><br>
+                                                <input type="text"class="form-control" name="hsn" >
+                                            </td>
+                                            <td>
+                                                <label>Actual Weight:</label><br>
+                                                <input type="text"class="form-control" name="actualweight">
+                                            </td>
+                                            </tr>
+                                            <tr id='addr0'>
+                                                <td>
+                                                    <label>Gross Weight:</label><br>
+                                                    <input type="text"class="form-control" name="grossweight">
+                                                </td>
+                                                <td>
+                                                    <label>Weight Type:</label><br>
+                                                    <select class="form-control" id="country" required="true" name="weighttype">
+                                                        <option value="AF">Afghanistan</option>
+                                                        <option value="AX">Åland Islands</option>
+                                                        <option value="AL">Albania</option>
+                                                        <option value="DZ">Algeria</option>
+                                                                                                 
+                                                        
+                                                      </select>
+                                                </td>
+                                                <td>
+                                                    <label>GST%:</label><br>
+                                                    <select class="form-control" id="country" required="true" name="gst">
+                                                        <option value="AF">Afghanistan</option>
+                                                        <option value="AX">Åland Islands</option>
+                                                        <option value="AL">Albania</option>
+                                                        <option value="DZ">Algeria</option>
+                                                                                                 
+                                                        
+                                                      </select>
+                                                </td>
+                                                <td>
+                                                    <label>Rate as Per:</label><br>
+                                                    <select class="form-control " id="country" required="true" name="rateasper">
+                                                        <option value="AF">Afghanistan</option>
+                                                        <option value="AX">Åland Islands</option>
+                                                        <option value="AL">Albania</option>
+                                                        <option value="DZ">Algeria</option>
+                                                                                                 
+                                                        
+                                                      </select>
+                                                </td>
+                                                <td>
+                                                    <label>Rate:</label><br>
+                                                    <input type="text" class="form-control " name="rate"  >
+                                                </td>
+                                                </tr>
+                                            
+                                        </tbody>
+                                      </table>
+                                      
+                                      
+                                    </div>
+                
+                
+                                  </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row ">
+                                        <div class="col col-xs-offset-3 col-xs-6">
+                                          <!-- <nav aria-label="Page navigation" class="text-center">
+                                            <ul class="pagination">
+                                              <li>
+                                                <a href="#" aria-label="Previous">
+                                                  <span aria-hidden="true">«</span>
+                                                </a>
+                                              </li>
+                                              <li class="active"><a href="#">1</a></li>
+                                              <li><a href="#">2</a></li>
+                                              <li><a href="#">3</a></li>
+                                              <li><a href="#">4</a></li>
+                                              <li><a href="#">5</a></li>
+                                              <li>
+                                                <a href="#" aria-label="Next">
+                                                  <span aria-hidden="true">»</span>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </nav> -->
+                                        </div>
+                                        <div class="col col-xs-3">
+                                          <div class="pull-right">
+                                            <button type="button" class="btn btn-success">
+                                              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                              Add to Bilty
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                              </div>
+                        </form>
+                     
+                    </div>
+        
+                  </div>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+  
+  
+  
+  
+        </div>
+      </div>
+      <div class="clearfix"></div>
+  
+  
+  
+    </div>
+  </div>
+    
+  </div>
+  
+ 
