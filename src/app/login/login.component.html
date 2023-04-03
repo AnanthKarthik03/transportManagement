@@ -4,65 +4,59 @@
       <div class="col-lg-12">
         <div class="panel">
           <div class="panel-body p-md-5 mx-md-4">
-            <div >
+            <div>
               <div class="inner-addon right-addon">
                 <ul class="list-inline list-unstyled mb-40">
                   <li>
                     <img
-                src="../../assets/images/logo.png"
-                  style="width:35px"
-                  alt="logo"
-                />
+                      src="../../assets/images/logo.png"
+                      style="width: 35px"
+                      alt="logo"
+                    />
                   </li>
-                  
+
                   <li>
                     <h4><strong>Transport Management System</strong></h4>
                   </li>
-                 
-                  
-                  
                 </ul>
-                
-                
               </div>
-             
-              <h4 class="topheading ">Login</h4>
-              <h6 class="heading mb-20">Please login to your account</h6>
 
+              <h4 class="topheading">Login</h4>
+              <h6 class="heading mb-20">Please login to your account</h6>
             </div>
 
             <form [formGroup]="loginData" (ngSubmit)="onLogin()">
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
-                 
-                  <select id="country" name="country" class="form-control" required="">
-                    <option value="" disabled="" selected="">Select your Branch</option>
-                                                                <option value="1">Afganistán</option>
-                                                                <option value="2">Islas Gland</option>
-                                                                <option value="3">Albania</option>
-                                                                <option value="4">Alemania</option>
-                                                                <option value="5">Andorra</option>
-                                                                <option value="6">Angola</option>
-                                                                
-                                                               
-                    
-                </select>
+                  <select
+                    id="country"
+                    name="country"
+                    class="form-control"
+                    required=""
+                  >
+                    <option value="" disabled="" selected="">
+                      Select your Branch
+                    </option>
+                    <option value="1">Afganistán</option>
+                    <option value="2">Islas Gland</option>
+                    <option value="3">Albania</option>
+                    <option value="4">Alemania</option>
+                    <option value="5">Andorra</option>
+                    <option value="6">Angola</option>
+                  </select>
                 </div>
-                
-                
-                
               </div>
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
                   <i class="glyphicon glyphicon-user"></i>
-                <input
-                  type="text"
-                  id="form2Example11"
-                  class="form-control"
-                  placeholder="Phone number or email address"
-                  formControlName="username"
-                  pattern="^(?:\d{10}|\w+@\w+\.\w{3})$"
-                /></div>
+                  <input
+                    type="text"
+                    id="form2Example11"
+                    class="form-control"
+                    placeholder="Phone number or email address"
+                    formControlName="username"
+                  />
+                </div>
                 <span
                   class="text-danger"
                   *ngIf="
@@ -74,23 +68,23 @@
                 <span
                   class="text-danger"
                   *ngIf="
-                    loginData.get('username')?.hasError('notValid') &&
+                    loginData.get('username')?.hasError('userNotValid') &&
                     loginData.get('username')?.touched
                   "
                   >invalid field</span
                 >
-                
               </div>
 
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
                   <i class="glyphicon glyphicon-lock"></i>
-                <input
-                  type="password"
-                  id="form2Example22"
-                  class="form-control"
-                  formControlName="password"
-                /></div>
+                  <input
+                    type="password"
+                    id="form2Example22"
+                    class="form-control"
+                    formControlName="password"
+                  />
+                </div>
                 <span
                   class="text-danger"
                   *ngIf="
@@ -102,19 +96,15 @@
                 <span
                   class="text-danger"
                   *ngIf="
-                    loginData.get('password')?.hasError('notValid') &&
+                    loginData.get('password')?.hasError('passwordNotValid') &&
                     loginData.get('password')?.touched
                   "
-                  >invalid field</span
+                  >password should be between 3 to 8 character</span
                 >
-                
               </div>
 
               <div class="text-center pt-1 mb-5 pb-1 mb-40">
-                <button
-                  class="btn btn-block butlogin  mb-3 "
-                  type="submit"
-                >
+                <button class="btn btn-block butlogin mb-3" type="submit">
                   <p-progressSpinner
                     strokeWidth="8"
                     [style]="{ height: '20px', width: '20px' }"
@@ -123,14 +113,13 @@
                   ></p-progressSpinner>
                   <span *ngIf="!spinShow">Log in</span>
                 </button>
-                
               </div>
 
-              <div
-                class="d-flex align-items-center text-center pb-4"
-              ><p class=""><a class="text-muted " href="#!">Forgot password?</a></p>
-                <p class="mb-0 me-2  "><strong>Don't have an account?</strong></p>
-                
+              <div class="d-flex align-items-center text-center pb-4">
+                <p class="">
+                  <a class="text-muted" href="#!">Forgot password?</a>
+                </p>
+                <p class="mb-0 me-2"><strong>Don't have an account?</strong></p>
               </div>
             </form>
           </div>
@@ -146,7 +135,6 @@
                 class="ima center"
                 alt="cinque terre"
                 src="../../assets/images/log.png "
-
               />
             </div>
           </div>
