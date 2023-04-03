@@ -30,6 +30,7 @@ import { NewBiltyCnComponent } from './booking/new-bilty-cn/new-bilty-cn.compone
 import { ConsignorComponent } from './booking/consignor/consignor.component';
 import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
+import { ConsigneeComponent } from './booking/consignee/consignee.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-
     ConsignorComponent,
     ConsignmentBookingComponent,
     AdditionalServiceCBSComponent,
+    ConsigneeComponent,
   ],
   imports: [
     BrowserModule,

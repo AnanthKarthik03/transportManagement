@@ -14,6 +14,7 @@ import { NewBiltyCnComponent } from './booking/new-bilty-cn/new-bilty-cn.compone
 import { ConsignorComponent } from './booking/consignor/consignor.component';
 import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
+import { ConsigneeComponent } from './booking/consignee/consignee.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -37,6 +38,8 @@ const routes: Routes = [
     },
     { path: 'additional-service-c-b-s',component: AdditionalServiceCBSComponent ,
     },
+    { path: 'consignee',component: ConsigneeComponent,
+      },
       { path: 'table', component: LorryArrivalDetailsComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
