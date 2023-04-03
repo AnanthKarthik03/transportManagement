@@ -35,8 +35,6 @@
                             id="candidatedata"
                             class="form-horizontal"
                             role="form"
-                            [formGroup]="newConsignerData"
-                            (ngSubmit)="onCreateNewConsignerData()"
                           >
                             <div class="row">
                               <div class="col-md-12">
@@ -62,34 +60,10 @@
                                           class="form-control"
                                           name="name"
                                           id="name"
-                                          formControlName="consigner_name"
-                                          pat
+                                          value=""
+                                          required=""
+                                          maxlength="70"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('consigner_name')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get(
-                                              'consigner_name'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('consigner_name')
-                                              ?.hasError('invalidName') &&
-                                            newConsignerData.get(
-                                              'consigner_name'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >name should not be start from
-                                          number</small
-                                        >
                                       </div>
                                     </div>
 
@@ -107,19 +81,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="address1"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('address1')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('address1')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -136,19 +102,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="address2"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('address2')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('address2')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -165,19 +123,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="state"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('state')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('state')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -194,19 +144,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="city"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('city')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('city')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -223,30 +165,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="pincode"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('pincode')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('pincode')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('pincode')
-                                              ?.hasError('invalidPin') &&
-                                            newConsignerData.get('pincode')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >pin should be 6 numbers</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -263,30 +186,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="mobile"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('mobile')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('mobile')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('mobile')
-                                              ?.hasError('invalidMobile') &&
-                                            newConsignerData.get('mobile')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >invalid mobile no.</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -303,30 +207,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="email"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('email')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get('email')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('email')
-                                              ?.hasError('email') &&
-                                            newConsignerData.get('email')
-                                              ?.touched
-                                          "
-                                          class="text-danger"
-                                          >invalid field</small
-                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -345,20 +230,11 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="consigner_gst"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder=""
+                                          required="required"
                                         />
-                                        <small
-                                          *ngIf="
-                                            newConsignerData
-                                              .get('consigner_gst')
-                                              ?.hasError('required') &&
-                                            newConsignerData.get(
-                                              'consigner_gst'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
                                       </div>
                                     </div>
 
@@ -374,7 +250,6 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
-                                          [disabled]="newConsignerData.invalid"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
