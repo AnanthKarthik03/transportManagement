@@ -6,31 +6,47 @@
           <div class="panel-body p-md-5 mx-md-4">
             <div >
               <div class="inner-addon right-addon">
-                <img
+                <ul class="list-inline list-unstyled mb-40">
+                  <li>
+                    <img
                 src="../../assets/images/logo.png"
                   style="width:35px"
                   alt="logo"
                 />
-                <h4>ROSTAN</h4>
+                  </li>
+                  
+                  <li>
+                    <h4><strong>Transport Management System</strong></h4>
+                  </li>
+                 
+                  
+                  
+                </ul>
+                
+                
               </div>
              
-              <h4 class="topheading ">We are The Rostan Team</h4>
-              <h6 class="heading">Please login to your account</h6>
+              <h4 class="topheading ">Login</h4>
+              <h6 class="heading mb-20">Please login to your account</h6>
 
             </div>
 
             <form [formGroup]="loginData" (ngSubmit)="onLogin()">
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
-                  <i class="glyphicon glyphicon-search"></i>
-                  <input
-                  type="text"
-                  id="form2Example11"
-                  class="form-control"
-                  placeholder="Branch Name"
-                  formControlName="username"
-                  pattern="^(?:\d{10}|\w+@\w+\.\w{3})$"
-                />
+                 
+                  <select id="country" name="country" class="form-control" required="">
+                    <option value="" disabled="" selected="">Select your Branch</option>
+                                                                <option value="1">Afganistán</option>
+                                                                <option value="2">Islas Gland</option>
+                                                                <option value="3">Albania</option>
+                                                                <option value="4">Alemania</option>
+                                                                <option value="5">Andorra</option>
+                                                                <option value="6">Angola</option>
+                                                                
+                                                               
+                    
+                </select>
                 </div>
                 
                 
@@ -38,7 +54,7 @@
               </div>
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
-                  <i class="glyphicon glyphicon-search"></i>
+                  <i class="glyphicon glyphicon-user"></i>
                 <input
                   type="text"
                   id="form2Example11"
@@ -68,7 +84,7 @@
 
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
-                  <i class="glyphicon glyphicon-search"></i>
+                  <i class="glyphicon glyphicon-lock"></i>
                 <input
                   type="password"
                   id="form2Example22"
@@ -94,9 +110,9 @@
                 
               </div>
 
-              <div class="text-center pt-1 mb-5 pb-1">
+              <div class="text-center pt-1 mb-5 pb-1 mb-40">
                 <button
-                  class="btn btn-block butlogin  mb-3"
+                  class="btn btn-block butlogin  mb-3 "
                   type="submit"
                 >
                   <p-progressSpinner
@@ -107,16 +123,14 @@
                   ></p-progressSpinner>
                   <span *ngIf="!spinShow">Log in</span>
                 </button>
-                <a class="text-muted" href="#!">Forgot password?</a>
+                
               </div>
 
               <div
-                class="d-flex align-items-center justify-content-center pb-4"
-              >
-                <p class="mb-0 me-2">Don't have an account?</p>
-                <button type="button" class="btn butlogin">
-                  Create new
-                </button>
+                class="d-flex align-items-center text-center pb-4"
+              ><p class=""><a class="text-muted " href="#!">Forgot password?</a></p>
+                <p class="mb-0 me-2  "><strong>Don't have an account?</strong></p>
+                
               </div>
             </form>
           </div>

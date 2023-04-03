@@ -26,6 +26,10 @@ import { Validation } from './validation/validation';
 import { SuperAdminDashboardComponent } from './dashboard/super-admin-dashboard/super-admin-dashboard.component';
 import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-dashboard.component';
 import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
+import { NewBiltyCnComponent } from './booking/new-bilty-cn/new-bilty-cn.component';
+import { ConsignorComponent } from './booking/consignor/consignor.component';
+import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
+import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,10 @@ import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lo
     SuperAdminDashboardComponent,
     VendorDashboardComponent,
     LorryArrivalDetailsComponent,
+    NewBiltyCnComponent,
+    ConsignorComponent,
+    ConsignmentBookingComponent,
+    AdditionalServiceCBSComponent,
   ],
   imports: [
     BrowserModule,

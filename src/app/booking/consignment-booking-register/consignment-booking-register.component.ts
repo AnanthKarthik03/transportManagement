@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consignment-booking-register',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./consignment-booking-register.component.css'],
 })
 export class ConsignmentBookingRegisterComponent {
+  constructor(private router: Router) {}
   bcrs: any[];
   i: number = 0;
 
@@ -117,5 +119,7 @@ export class ConsignmentBookingRegisterComponent {
         branch: 'Kolkata',
       },
     ];
+    
   }
-}
+ 
+ }

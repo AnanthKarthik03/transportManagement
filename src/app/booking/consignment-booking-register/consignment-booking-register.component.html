@@ -1,147 +1,386 @@
-<p-table
-  #dt1
-  [scrollable]="true"
-  [value]="bcrs"
-  [paginator]="true"
-  [rows]="5"
-  dataKey="id"
-  [rowsPerPageOptions]="[1, 3, 5, 7, 10]"
-  [totalRecords]="5"
-  [showCurrentPageReport]="true"
-  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-  [pageLinks]="3"
-  [globalFilterFields]="[
-    'cn_no',
-    'details',
-    'consigner',
-    'consignee',
-    'from',
-    'via',
-    'to',
-    'pay',
-    'amount',
-    'rec',
-    'dis',
-    'due',
-    'branch'
-  ]"
->
-  <ng-template pTemplate="caption">
-    <span class="p-input-icon-left ml-auto">
-      <i class="pi pi-search"></i>
-      <input
-        pInputText
-        type="text"
-        (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
-        placeholder="Search keyword"
-      />
-    </span>
-  </ng-template>
-  <ng-template pTemplate="header">
-    <tr>
-      <th>#</th>
-      <th pSortableColumn="cn_no">
-        CN No.<p-sortIcon field="cn_no"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="cn_no"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th pSortableColumn="details">
-        Details<p-sortIcon field="details"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="details"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th pSortableColumn="consigner">
-        Consigner<p-sortIcon field="consigner"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="consigner"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th pSortableColumn="consignee">
-        Consignee<p-sortIcon field="consignee"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="consignee"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th pSortableColumn="from">
-        From<p-sortIcon field="from"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="from"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th pSortableColumn="via">
-        Via<p-sortIcon field="via"></p-sortIcon>
-        <p-columnFilter type="text" field="via" display="menu"></p-columnFilter>
-      </th>
-      <th pSortableColumn="to">
-        To<p-sortIcon field="to"></p-sortIcon>
-        <p-columnFilter type="text" field="to" display="menu"></p-columnFilter>
-      </th>
-      <th pSortableColumn="pay">
-        Pay<p-sortIcon field="pay"></p-sortIcon>
-        <p-columnFilter type="text" field="pay" display="menu"></p-columnFilter>
-      </th>
-      <th pSortableColumn="amount">
-        Amount<p-sortIcon field="amount"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="amount"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th pSortableColumn="rec">
-        Rec.<p-sortIcon field="rec"></p-sortIcon>
-        <p-columnFilter type="text" field="rec" display="menu"></p-columnFilter>
-      </th>
-      <th pSortableColumn="dis">
-        Dis.<p-sortIcon field="dis"></p-sortIcon>
-        <p-columnFilter type="text" field="dis" display="menu"></p-columnFilter>
-      </th>
-      <th pSortableColumn="due">
-        Due<p-sortIcon field="due"></p-sortIcon>
-        <p-columnFilter type="text" field="due" display="menu"></p-columnFilter>
-      </th>
-      <th pSortableColumn="branch">
-        Branch<p-sortIcon field="branch"></p-sortIcon>
-        <p-columnFilter
-          type="text"
-          field="branch"
-          display="menu"
-        ></p-columnFilter>
-      </th>
-      <th>Edit</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-bcr let-i="rowIndex">
-    <tr>
-      <td>{{ i + 1 }}</td>
-      <td>{{ bcr.cn_no }}</td>
-      <td>{{ bcr.details }}</td>
-      <td>{{ bcr.consigner }}</td>
-      <td>{{ bcr.consignee }}</td>
-      <td>{{ bcr.from }}</td>
-      <td>{{ bcr.via }}</td>
-      <td>{{ bcr.to }}</td>
-      <td>{{ bcr.pay }}</td>
-      <td>{{ bcr.amount }}</td>
-      <td>{{ bcr.rec }}</td>
-      <td>{{ bcr.dis }}</td>
-      <td>{{ bcr.due }}</td>
-      <td>{{ bcr.branch }}</td>
-      <td>
-        <i class="pi pi-pencil"></i>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+<div class="container-fluid mb-40">
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12 mb-1">
+            <div class="panel panel-default" id="table">
+  
+              <div class="panel-heading"><span class="pull-right">
+  
+                  <a  [routerLink]="['/dashboard/new-bilty-cn']" role="button"  class="btn  btn-success">
+                    <span class="glyphicon glyphicon-plus"></span> Create New Bilty/CN(Ctrl+B)</a>
+                </span>
+                <h4>Lis Of Consigment</h4>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive mb-10 div1">
+                  <p-table #dt1 [scrollable]="true" responsiveLayout="scroll" scrollWidth="100%"
+                    [style]="{ width: '100%' }" [value]="bcrs" [paginator]="true" [rows]="5" dataKey="id"
+                    [rowsPerPageOptions]="[1, 3, 5, 7, 10]" [totalRecords]="5" [showCurrentPageReport]="true"
+                    [autoLayout]="true"
+                    styleClass="p-datatable-customers p-datatable-gridlines p-datatable-responsive-demo"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [pageLinks]="3"
+                    [globalFilterFields]="[
+                  'cn_no',
+                  'details',
+                  'consigner',
+                  'consignee',
+                  'from',
+                  'via',
+                  'to',
+                  'pay',
+                  'amount',
+                  'rec',
+                  'dis',
+                  'due',
+                  'branch'
+                ]">
+  
+                    <ng-template pTemplate="caption">
+  
+                      <span class="p-input-icon-right ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+                          placeholder="Search keyword" />
+                      </span>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                      <tr>
+                        <th>#</th>
+                        <th pSortableColumn="cn_no">
+                          CN No.<p-sortIcon field="cn_no"></p-sortIcon>
+                          <p-columnFilter type="text" field="cn_no" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="details">
+                          Details<p-sortIcon field="details"></p-sortIcon>
+                          <p-columnFilter type="text" field="details" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="consigner">
+                          Consigner<p-sortIcon field="consigner"></p-sortIcon>
+                          <p-columnFilter type="text" field="consigner" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="consignee">
+                          Consignee<p-sortIcon field="consignee"></p-sortIcon>
+                          <p-columnFilter type="text" field="consignee" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="from">
+                          From<p-sortIcon field="from"></p-sortIcon>
+                          <p-columnFilter type="text" field="from" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="via">
+                          Via<p-sortIcon field="via"></p-sortIcon>
+                          <p-columnFilter type="text" field="via" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="to">
+                          To<p-sortIcon field="to"></p-sortIcon>
+                          <p-columnFilter type="text" field="to" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="pay">
+                          Pay<p-sortIcon field="pay"></p-sortIcon>
+                          <p-columnFilter type="text" field="pay" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="amount">
+                          Amount<p-sortIcon field="amount"></p-sortIcon>
+                          <p-columnFilter type="text" field="amount" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="rec">
+                          Rec.<p-sortIcon field="rec"></p-sortIcon>
+                          <p-columnFilter type="text" field="rec" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="dis">
+                          Dis.<p-sortIcon field="dis"></p-sortIcon>
+                          <p-columnFilter type="text" field="dis" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="due">
+                          Due<p-sortIcon field="due"></p-sortIcon>
+                          <p-columnFilter type="text" field="due" display="menu"></p-columnFilter>
+                        </th>
+                        <th pSortableColumn="branch">
+                          Branch<p-sortIcon field="branch"></p-sortIcon>
+                          <p-columnFilter type="text" field="branch" display="menu"></p-columnFilter>
+                        </th>
+                        <th>Print</th>
+                      </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-bcr let-i="rowIndex">
+                      <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ bcr.cn_no }}</td>
+                        <td>{{ bcr.details }}</td>
+                        <td>{{ bcr.consigner }}</td>
+                        <td>{{ bcr.consignee }}</td>
+                        <td>{{ bcr.from }}</td>
+                        <td>{{ bcr.via }}</td>
+                        <td>{{ bcr.to }}</td>
+                        <td>{{ bcr.pay }}</td>
+                        <td>{{ bcr.amount }}</td>
+                        <td>{{ bcr.rec }}</td>
+                        <td>{{ bcr.dis }}</td>
+                        <td>{{ bcr.due }}</td>
+                        <td>{{ bcr.branch }}</td>
+                        <td>
+                          <a href="#loginModal" data-toggle="modal"><i class="pi pi-print print"></i></a>
+                        </td>
+                      </tr>
+                    </ng-template>
+                  </p-table>
+                </div>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+  
+  
+  
+  
+        </div>
+      </div>
+      <div class="clearfix"></div>
+  
+  
+  
+    </div>
+  </div>
+  
+</div>
+
+<div id="loginModal" class="modal fade " tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-md-down ">
+    <div class="modal-content">
+      <div class="modal-header custom-header-panel">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 >Edit Profile</h4>
+      </div>
+      <div class="modal-body">
+       
+        <div class="container-fluid">
+          <div class="row">
+            <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                  <tr>
+                      <td align="center">
+                          <table align="center" border="0" cellpadding="0" cellspacing="0" width="1200px">
+                              <tbody>
+                                  <tr>
+                                      <td align="center" style="font-family: 'Montserrat', sans-serif;">
+                                          <table align="center" border="0" cellpadding="0" cellspacing="0" style=" width:100%">
+                                              <tbody>
+                                                  <tr>
+                                                      <td style="padding:10px 0; text-align: left;">
+                                                          <img src="https://foreignerds.com/wp-content/uploads/2019/09/logo-1.png" alt="">
+                                                      </td>
+                                                      <td style="padding:10px 0; text-align: center;">
+                                                          <h3>Tax Invoice</h3>
+                                                      </td>
+      
+                                                  </tr>
+                                                  <tr style="border-bottom: 1px solid #000;">
+                                                      <td style="padding:10px 0; border-bottom: 1px solid #000;">
+                                                          <h5 style="margin-bottom: 5px;">Sold By: Savan Retailers Private Limited ,</h5>
+                                                          <p style="font-size:11px ;margin:0; margin-right:20px; "><strong>Ship-from Address:</strong> Rectangle No. 06, Rectangle No. 07, Rectangle No. 08 and Rectangle No. 13, Village- Khalikpur, Tehsil- Badli, District- Jhajjar,FC- Farrukhnagar, Jhajjar, Haryana,
+                                                              India - 124103, IN-HR
+                                                          </p>
+                                                          <h5 style="margin-top: 5px;"><strong> GSTIN </strong>- 06AAXCS8712M1ZH</h5>
+                                                      </td>
+                                                      <td width="300px" style="border-bottom: 1px solid #000;">
+                                                          <h4 style="border:1px dashed #777; padding:5px 10px; font-size:12px"><strong>Invoice Number</strong> # FADACF2000243430</h4>
+                                                      </td>
+                                                  </tr>
+      
+      
+                                              </tbody>
+                                          </table>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <table align="center" border="0" style="font-family: 'Montserrat', sans-serif;" cellpadding="0" cellspacing="0" width="1200px">
+                              <tbody>
+                                  <tr>
+      
+                                      <td style="padding:10px 0;">
+                                          <h5 style="margin-bottom: 5px;">Order ID: OD116867172765375000</h5>
+                                          <p style="font-size:13px ; "><strong> Order Date:</strong> 23-10-2019
+                                          </p>
+                                          <p style="font-size:13px ; "><strong> nvoice Date:</strong> 23-10-2019
+                                          </p>
+                                          <p style="font-size:13px ; "><strong> PAN:</strong> AAXCS8712M
+      
+                                          </p>
+                                          <p style="font-size:13px ; "><strong> CIN:</strong> U52399DL2016PTC308780
+      
+                                          </p>
+                                      </td>
+                                      <td style="padding:10px 0;">
+                                          <h5 style="margin-bottom: 5px;">Bill To <br> Shivam
+                                          </h5>
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">room 108 <br> arsari residency <br> near ice factory, mulayam nagar. <br> Lucknow 226028 Uttar Pradesh <br>Phone: xxxxxxxxxx
+                                          </p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+                                          <h5 style="margin-bottom: 5px;"> Ship To <br> Shivam
+                                          </h5>
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">room 108 <br> arsari residency <br> near ice factory, mulayam nagar. <br> Lucknow 226028 Uttar Pradesh <br>Phone: xxxxxxxxxx
+                                          </p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:10px ;margin:0; margin-right:20px; ">*Keep this invoice and <br> manufacturer box for <br> warranty purposes.
+                                          </p>
+      
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>Total items: 1</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <table align="center" border="0" style="font-family: 'Montserrat', sans-serif;" cellpadding="0" cellspacing="0" width="1200px">
+                              <thead>
+                                  <tr align="left">
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Product</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Title</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Qty</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Gross <br> Amount ₹
+                                      </th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Discount ₹</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Taxable <br> Value ₹</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">IGST ₹</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:5px">Total ₹</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+      
+                                      <td style="padding:10px 0;">
+                                          <p style="font-size:13px ; ">Handsets <br> FSN:
+                                              <br> MOBFGGJ8CKGVHHZU
+                                              <br> HSN/SAC: 85171290</p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+                                          <h4 style="margin-bottom: 5px;">Redmi Note 7S Sapphire Blue, 64 GB
+                                          </h4>
+                                          <p style="font-size:10px ;margin:0; margin-right:20px; ">Warranty: Brand Warranty of <br> 1 Year Available for Mobile<br> and 6 Months for Accessories 1. <br>[IMEI/Serial No: <strong style="font-size: 14px;">864356049883532 </strong> ] <br> IGST: 12.000 %
+                                          </p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">1</p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">9999.00</p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">-1000.00</p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">8034.82 </p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">964.18</p>
+      
+                                      </td>
+                                      <td style="padding:10px 0;">
+      
+                                          <p style="font-size:13px ;margin:0; margin-right:20px; ">8999.00</p>
+      
+                                      </td>
+      
+                                  </tr>
+      
+                              </tbody>
+                              <thead>
+                                  <tr align="left">
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px"></th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">Total</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">1</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">9999.00
+                                      </th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">-1000.00</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">8034.82 </th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">964.18</th>
+                                      <th scope="col" style="font-size:12px; border-top:1px solid #000; border-bottom:1px solid #000 ; padding:10px">8999.00</th>
+                                  </tr>
+                              </thead>
+                          </table>
+                          <table align="center" border="0" style="font-family: 'Montserrat', sans-serif;" cellpadding="0" cellspacing="0" width="1200px">
+                              <tbody>
+                                  <tr style="text-align: right;">
+      
+                                      <td style="padding:10px 0; ">
+                                          <h4><strong style="margin-right: 20px;"> Sub Total</strong> ₹ 8999.00</h4>
+                                          <h4><strong style="margin-right: 20px;">  Total</strong> ₹ 8999.00</h4>
+                                          <h4><strong style="margin-right: 20px;"> Grand Total</strong> ₹ 8999.00</h4>
+                                          <p style=" font-size: 14px">Savan Retailers Private Limited</p>
+                                      </td>
+                                  </tr>
+                                  <tr style="text-align: right; ">
+      
+                                      <td style="padding:10px 0; border-bottom:1px solid #000;">
+                                          <p style=" margin-top: 150px; font-size: 14px;">Authorized Signatory</p>
+                                      </td>
+                                  </tr>
+      
+      
+                              </tbody>
+                          </table>
+                          <table align="center" border="0" style="font-family: 'Montserrat', sans-serif; margin-top: 200px;" cellpadding="0" cellspacing="0" width="1200px">
+                              <tbody>
+                                  <tr style="text-align: right;">
+      
+                                      <td style="padding:10px 0; ">
+                                          <img src="https://foreignerds.com/wp-content/uploads/2019/09/logo-1.png" alt="">
+                                      </td>
+                                  </tr>
+                                  <tr>
+      
+                                      <td style="padding:10px 0; border-bottom:1px solid #000;">
+                                          <p style="  font-size: 11px; font-style: italic;"><strong> Returns Policy:</strong> At MyKart we try to deliver perfectly each and every time. But in the off-chance that you need to return the item, please do so with the <strong>original Brand box/price tag, </strong>                                        original packing and invoice without which it will be really difficult for us to act on your request. Please help us in helping you. Terms and conditions apply.
+                                          </p>
+                                          <p style="  font-size: 11px; font-style: italic;">The goods sold as are intended for end user consumption and not for re-sale.
+      
+                                          </p>
+                                          <p style="  font-size: 11px; font-style: italic;">Regd. office: Savan Retailers Private Limited , 11/29,, Rajinder Nagar, New Delhi, Delhi - 110060
+      
+                                          </p>
+                                          <h5>Contact Flipkart: 1800 208 9898 || www.mykart.com/helpcentre</h5>
+                                      </td>
+                                  </tr>
+      
+      
+                              </tbody>
+                          </table>
+      
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <div class="col-md-12">
+          <!-- <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Update your data</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
