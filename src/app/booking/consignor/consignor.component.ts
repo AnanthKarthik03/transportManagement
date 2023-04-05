@@ -13,6 +13,12 @@ import {
 })
 export class ConsignorComponent {
   newConsignerData: FormGroup;
+  nameSearch: string = '';
+
+  consigners: any = [
+    { consigner_name: 'gurgaon', mobile: '1234567899' },
+    { consigner_name: 'kanpur', mobile: '5678765678' },
+  ];
 
   constructor(private fb: FormBuilder) {
     this.newConsignerData = this.fb.group({
@@ -69,6 +75,27 @@ export class ConsignorComponent {
       alert("Both address fields can't be same");
     } else {
       console.log(consignerData);
+    }
+  }
+
+  onSearch(event: any) {
+    const searchData = event.target.value;
+    const consigners = [
+      { consigner_name: 'gurgaon', mobile: '1234567899' },
+      { consigner_name: 'kanpur', mobile: '5678765678' },
+      { consigner_name: 'lucknow', mobile: '3456434567' },
+      { consigner_name: 'ahmedabad', mobile: '8765676576' },
+      { consigner_name: 'mumbai', mobile: '4565434565' },
+    ];
+    const tem_consigners = this.consigners;
+    console.log(tem_consigners);
+    this.consigners = consigners;
+    if (searchData.length == 0) {
+      let noNeed = this.consigners;
+      console.log(tem_consigners);
+      this.consigners = tem_consigners;
+      console.log('rajat');
+      noNeed = [];
     }
   }
 }

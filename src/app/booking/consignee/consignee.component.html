@@ -35,6 +35,8 @@
                             id="candidatedata"
                             class="form-horizontal"
                             role="form"
+                            [formGroup]="newConsigneeData"
+                            (ngSubmit)="(onCreateNewConsigneeData)"
                           >
                             <div class="row">
                               <div class="col-md-12">
@@ -60,10 +62,35 @@
                                           class="form-control"
                                           name="name"
                                           id="name"
-                                          value=""
-                                          required=""
-                                          maxlength="70"
+                                          formControlName="consignee_name"
+                                          [(ngModel)]="nameSearch"
+                                          (input)="onSearch($event)"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('consignee_name')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get(
+                                              'consignee_name'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('consignee_name')
+                                              ?.hasError('invalidName') &&
+                                            newConsigneeData.get(
+                                              'consignee_name'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >name should not be start from
+                                          number</small
+                                        >
                                       </div>
                                     </div>
 
@@ -81,11 +108,19 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="address1"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('address1')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('address1')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -102,11 +137,19 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="address2"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('address2')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('address2')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -123,11 +166,19 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="state"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('state')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('state')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -144,11 +195,19 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="city"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('city')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('city')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -165,11 +224,30 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="pincode"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('pincode')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('pincode')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('pincode')
+                                              ?.hasError('invalidPin') &&
+                                            newConsigneeData.get('pincode')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >pin should be 6 numbers</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -186,11 +264,31 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
                                           placeholder="First Number"
-                                          required="required"
+                                          formControlName="mobile1"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile1')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('mobile1')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile1')
+                                              ?.hasError('invalidMobile') &&
+                                            newConsigneeData.get('mobile1')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >invalid mobile no.</small
+                                        >
                                       </div>
                                       <div class="col-sm-4">
                                         <input
@@ -198,11 +296,31 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
                                           placeholder="Altemative Number"
-                                          required="required"
+                                          formControlName="mobile2"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile2')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('mobile2')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile2')
+                                              ?.hasError('invalidMobile') &&
+                                            newConsigneeData.get('mobile2')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >invalid mobile no.</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -219,11 +337,30 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="email"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('email')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('email')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('email')
+                                              ?.hasError('email') &&
+                                            newConsigneeData.get('email')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >invalid field</small
+                                        >
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -242,11 +379,20 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="consignee_gst"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('consignee_gst')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get(
+                                              'consignee_gst'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
 
@@ -263,8 +409,8 @@
                                           id="submit_btn"
                                           class="btn btn-success"
                                           [routerLink]="[
-                                      '/dashboard/consignment-booking'
-                                    ]"
+                                            '/dashboard/consignment-booking'
+                                          ]"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
@@ -312,9 +458,14 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr data-status="completed">
-                                <td>gurgaon</td>
-                                <td>0000-0000-00</td>
+                              <tr
+                                data-status="completed"
+                                *ngFor="
+                                  let single of consignee | filter2 : nameSearch
+                                "
+                              >
+                                <td>{{ single.consignee_name }}</td>
+                                <td>{{ single.mobile }}</td>
 
                                 <td>
                                   <a
