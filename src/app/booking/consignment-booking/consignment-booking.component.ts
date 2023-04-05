@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consignment-booking',
@@ -15,17 +16,20 @@ export class ConsignmentBookingComponent {
   newConsignmentBookingData: FormGroup;
   newConsignmentPackingSummary: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.newConsignmentBookingData = this.fb.group({
-      consigner_name: ['', [Validators.required, this.neverStartWithAlphabet]],
-      address1: ['', [Validators.required]],
-      address2: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      pincode: ['', [Validators.required, this.checkPinCodeValid]],
-      mobile: ['', [Validators.required, this.checkMobileNo]],
-      email: ['', [Validators.required, Validators.email]],
-      consigner_gst: ['', [Validators.required]],
+      consignment_booking_date: ['', [Validators.required]],
+      bilty_type: ['', [Validators.required]],
+      booking_reference: ['', [Validators.required]],
+      broker_details: ['', [Validators.required]],
+      challan_date: ['', [Validators.required]],
+      challan_bill_no: ['', [Validators.required]],
+      value_of_goods: ['', [Validators.required]],
+      tax_paid_by: ['', [Validators.required]],
+      transportation_mode: ['', [Validators.required]],
+      from: ['', [Validators.required]],
+      to: ['', [Validators.required]],
+      payment_term: ['', [Validators.required]],
     });
     this.newConsignmentPackingSummary = this.fb.group({
       packing_size: ['', [Validators.required]],
@@ -82,6 +86,7 @@ export class ConsignmentBookingComponent {
       alert("Both address fields can't be same");
     } else {
       console.log(consignerData);
+      this.router.navigate(['/dashboard/additional-service-c-b-s']);
     }
   }
 }

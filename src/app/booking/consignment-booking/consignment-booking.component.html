@@ -10,7 +10,7 @@
                   <a
                     role="button"
                     class="btn btn-success"
-                    [routerLink]="['/dashboard/consignor']"
+                    [routerLink]="['/dashboard/consignee']"
                   >
                     <span class="glyphicon glyphicon-arrow-left"></span> Back</a
                   >
@@ -19,10 +19,6 @@
                   <li>
                     <h4>Consignment Booking</h4>
                   </li>
-
-                  <!-- <li><div class="btn-group">
-                            <a class="btn btn-danger btn-xs" href="javascript:void(0)">EXCLUSIVE TAX SALE</a>
-                          </div></li> -->
                 </ul>
               </div>
               <div class="panel-body">
@@ -36,7 +32,7 @@
                             class="form-horizontal"
                             role="form"
                             [formGroup]="newConsignmentBookingData"
-                            (ngSubmit)="onCreateNewConsignmentBookingData()"
+                            (ngSubmit)="(onCreateNewConsignmentBookingData)"
                           >
                             <div class="row">
                               <div class="col-md-12">
@@ -45,76 +41,69 @@
                                     class="panel-heading custom-header-panel"
                                   >
                                     <h3 class="panel-title roboto">
-                                      New Consignor
+                                      Consignment Summary
                                     </h3>
                                   </div>
                                   <div class="panel-body">
                                     <div class="form-group">
                                       <label
-                                        class="col-sm-4 control-label"
+                                        class="col-sm-6 control-label"
                                         for="name"
-                                        >Consignor Name
+                                        >Consignment Booking Date
                                         <span class="requerido"> *</span></label
                                       >
-                                      <div class="col-sm-8">
+                                      <div class="col-sm-6">
                                         <input
-                                          type="text"
+                                          type="date"
                                           class="form-control"
                                           name="name"
                                           id="name"
-                                          formControlName="consigner_name"
+                                          formControlName="consignment_booking_date"
                                         />
                                         <small
                                           *ngIf="
                                             newConsignmentBookingData
-                                              .get('consigner_name')
+                                              .get('consignment_booking_date')
                                               ?.hasError('required') &&
                                             newConsignmentBookingData.get(
-                                              'consigner_name'
+                                              'consignment_booking_date'
                                             )?.touched
                                           "
                                           class="text-danger"
                                           >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('consigner_name')
-                                              ?.hasError('invalidName') &&
-                                            newConsignmentBookingData.get(
-                                              'consigner_name'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >name should not be start from
-                                          number</small
                                         >
                                       </div>
                                     </div>
 
                                     <div class="form-group">
                                       <label
-                                        class="col-sm-4 control-label"
+                                        class="col-sm-6 control-label"
                                         for="rut"
-                                        >Address 1<span class="requerido">
+                                        >Bilty Type<span class="requerido">
                                           *</span
                                         ></label
                                       >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="address1"
-                                        />
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="bilty_type"
+                                          formControlName="bilty_type"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
                                         <small
                                           *ngIf="
                                             newConsignmentBookingData
-                                              .get('address1')
+                                              .get('bilty_type')
                                               ?.hasError('required') &&
                                             newConsignmentBookingData.get(
-                                              'address1'
+                                              'bilty_type'
                                             )?.touched
                                           "
                                           class="text-danger"
@@ -124,245 +113,342 @@
                                     </div>
                                     <div class="form-group">
                                       <label
-                                        class="col-sm-4 control-label"
+                                        class="col-sm-6 control-label"
                                         for="rut"
-                                        >Address 2<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="address2"
-                                        />
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('address2')
-                                              ?.hasError('required') &&
-                                            newConsignmentBookingData.get(
-                                              'address2'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >State<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="state"
-                                        />
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('state')
-                                              ?.hasError('required') &&
-                                            newConsignmentBookingData.get(
-                                              'state'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >City<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="city"
-                                        />
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('city')
-                                              ?.hasError('required') &&
-                                            newConsignmentBookingData.get(
-                                              'city'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >PinCode<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="pincode"
-                                        />
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('pincode')
-                                              ?.hasError('required') &&
-                                            newConsignmentBookingData.get(
-                                              'pincode'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('pincode')
-                                              ?.hasError('invalidPin') &&
-                                            newConsignmentBookingData.get(
-                                              'pincode'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >pin should be 6 numbers</small
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >Mobile No<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="mobile"
-                                        />
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('mobile')
-                                              ?.hasError('required') &&
-                                            newConsignmentBookingData.get(
-                                              'mobile'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('mobile')
-                                              ?.hasError('invalidMobile') &&
-                                            newConsignmentBookingData.get(
-                                              'mobile'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >invalid mobile no.</small
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >Email<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="email"
-                                        />
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('email')
-                                              ?.hasError('required') &&
-                                            newConsignmentBookingData.get(
-                                              'email'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >required field</small
-                                        >
-                                        <small
-                                          *ngIf="
-                                            newConsignmentBookingData
-                                              .get('email')
-                                              ?.hasError('email') &&
-                                            newConsignmentBookingData.get(
-                                              'email'
-                                            )?.touched
-                                          "
-                                          class="text-danger"
-                                          >invalid field</small
-                                        >
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >Consignor GST No<span
+                                        >Booking Refferrence<span
                                           class="requerido"
                                         >
                                           *</span
                                         ></label
                                       >
-                                      <div class="col-sm-8">
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="booking_reference"
+                                          formControlName="booking_reference"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('booking_reference')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'booking_reference'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Broker Details<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="broker_details"
+                                          formControlName="broker_details"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('broker_details')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'broker_details'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Chaalan/Invoice/Doc/Bil Date<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="date"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="challan_date"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('challan_date')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'challan_date'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Challan/Invoice/Doc/Bill No.<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
                                         <input
                                           type="text"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="consigner_gst"
+                                          formControlName="challan_bill_no"
                                         />
                                         <small
                                           *ngIf="
                                             newConsignmentBookingData
-                                              .get('consigner_gst')
+                                              .get('challan_bill_no')
                                               ?.hasError('required') &&
                                             newConsignmentBookingData.get(
-                                              'consigner_gst'
+                                              'challan_bill_no'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Value of Good (Rs.)<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="value_of_goods"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('value_of_goods')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'value_of_goods'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Tax Paid By<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="tax_paid_by"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('tax_paid_by')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'tax_paid_by'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Transportation Mode<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="transportation_mode"
+                                          formControlName="transportation_mode"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('transportation_mode')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'transportation_mode'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >From<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="from"
+                                          formControlName="from"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('from')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'from'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >To<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="to"
+                                          formControlName="to"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('to')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get('to')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Payment Terms<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="payment_terms"
+                                          formControlName="payment_term"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentBookingData
+                                              .get('payment_term')
+                                              ?.hasError('required') &&
+                                            newConsignmentBookingData.get(
+                                              'payment_term'
                                             )?.touched
                                           "
                                           class="text-danger"
@@ -374,17 +460,18 @@
                                     <!--Fin datos personales-->
                                     <div class="form-group">
                                       <label
-                                        class="col-sm-4 control-label"
+                                        class="col-sm-6 control-label"
                                         for="rut"
                                       ></label>
 
-                                      <div class="col-sm-8">
+                                      <div class="col-sm-6">
                                         <button
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
                                           [disabled]="
-                                            newConsignmentBookingData.invalid
+                                            newConsignmentBookingData.invalid ||
+                                            newConsignmentPackingSummary.invalid
                                           "
                                         >
                                           <span
@@ -516,6 +603,7 @@
                             id="candidatedata"
                             class="form-horizontal"
                             role="form"
+                            [formGroup]="newConsignmentPackingSummary"
                           >
                             <div class="row">
                               <div class="col-md-12">
@@ -523,109 +611,225 @@
                                   <div class="panel-body">
                                     <div class="form-group">
                                       <label
-                                        class="col-sm-4 control-label"
+                                        class="col-sm-6 control-label"
                                         for="name"
-                                        >Consignor Name
+                                        >Packing Size
                                         <span class="requerido"> *</span></label
                                       >
-                                      <div class="col-sm-8">
+                                      <div class="col-sm-6">
                                         <input
                                           type="text"
                                           class="form-control"
                                           name="name"
                                           id="name"
-                                          value=""
-                                          required=""
-                                          maxlength="70"
+                                          formControlName="packing_size"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('packing_size')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'packing_size'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
 
                                     <div class="form-group">
                                       <label
-                                        class="col-sm-4 control-label"
+                                        class="col-sm-6 control-label"
                                         for="rut"
-                                        >Address 1<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
-                                        />
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >Address 2<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
-                                        />
-                                      </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >Email<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-8">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
-                                        />
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-4 control-label"
-                                        for="rut"
-                                        >Consignor GST No<span
+                                        >Private/Party Mark<span
                                           class="requerido"
                                         >
                                           *</span
                                         ></label
                                       >
-                                      <div class="col-sm-8">
+                                      <div class="col-sm-6">
                                         <input
                                           type="text"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
-                                          placeholder=""
-                                          required="required"
+                                          formControlName="private_party_mark"
                                         />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('private_party_mark')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'private_party_mark'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Remarks/Broker Note<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="remarks_broker_note"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('remarks_broker_note')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'remarks_broker_note'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Shipping Risk<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <select
+                                          class="form-control"
+                                          id="country"
+                                          required="true"
+                                          name="shipping_risk"
+                                          formControlName="shipping_risk"
+                                        >
+                                          <option value="Box">Box</option>
+                                          <option value="Bag">Bag</option>
+                                          <option value="Basta">Basta</option>
+                                          <option value="Bundle">Bundle</option>
+                                          <option value="Carton">Carton</option>
+                                        </select>
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('shipping_risk')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'shipping_risk'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >E-Way Bill NO.<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="eway_bill_no"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('eway_bill_no')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'eway_bill_no'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >E-Way Bill Date<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="date"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="eway_bill_date"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('eway_bill_date')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'eway_bill_date'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-6 control-label"
+                                        for="rut"
+                                        >Distamce Level(km)<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-6">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="distance_level"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsignmentPackingSummary
+                                              .get('distance_level')
+                                              ?.hasError('required') &&
+                                            newConsignmentPackingSummary.get(
+                                              'distance_level'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
                                       </div>
                                     </div>
                                   </div>

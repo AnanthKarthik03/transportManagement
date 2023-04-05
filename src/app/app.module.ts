@@ -33,6 +33,7 @@ import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-
 import { ConsigneeComponent } from './booking/consignee/consignee.component';
 import { Filter1Pipe } from './pipe/filter1.pipe';
 import { Filter2Pipe } from './pipe/filter2.pipe';
+import { ConsignmentBookingRegisterBuiltyReportComponent } from './booking/consignment-booking-register-builty-report/consignment-booking-register-builty-report.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { Filter2Pipe } from './pipe/filter2.pipe';
     ConsigneeComponent,
     Filter1Pipe,
     Filter2Pipe,
+    ConsignmentBookingRegisterBuiltyReportComponent,
   ],
   imports: [
     BrowserModule,
