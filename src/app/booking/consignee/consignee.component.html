@@ -264,7 +264,10 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="mobile1"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder="First Number"
+                                          required="required"
                                         />
                                         <small
                                           *ngIf="
@@ -295,7 +298,10 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          formControlName="mobile2"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder="Altemative Number"
+                                          required="required"
                                         />
                                         <small
                                           *ngIf="
@@ -406,6 +412,9 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
+                                          [routerLink]="[
+                                            '/dashboard/consignment-booking'
+                                          ]"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
