@@ -188,7 +188,7 @@
                                           name="rut"
                                           value=""
                                           maxlength="12"
-                                          placeholder=""
+                                          placeholder="First Number"
                                           required="required"
                                         />
                                       </div>
@@ -200,7 +200,7 @@
                                           name="rut"
                                           value=""
                                           maxlength="12"
-                                          placeholder=""
+                                          placeholder="Altemative Number"
                                           required="required"
                                         />
                                       </div>
@@ -262,6 +262,9 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
+                                          [routerLink]="[
+                                      '/dashboard/consignment-booking'
+                                    ]"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"

@@ -367,6 +367,9 @@ footer h4 {
 /*--------footer close-------- */
 /*--------login---------*/
 
+.control-label{
+  text-align: right;
+}
 .form-group {
   margin-bottom: 8px !important;
 }
@@ -404,19 +407,20 @@ footer h4 {
   outline: 0px !important;
   outline-offset: 0px !important;
   box-shadow: none !important;
-  color: #60D0E9 !important;
+  color: #2f9fb9 !important;
 }
 
 .form-control {
   min-width: 0;
   width: 100% !important;
-  color: #60D0E9 !important;
+  color: #2f9fb9!important;
   border: none !important;
   border-bottom: 1px solid #AAAAAA !important;
   border-radius: 0px !important;
   outline: 0px !important;
   outline-offset: 0px !important;
   box-shadow: none !important;
+  padding:0px !important;
 }
 
 .form-control,
@@ -425,7 +429,7 @@ footer h4 {
   border-radius: 0px !important;
   min-width: 0;
   width: 100% !important;
-  color: #60D0E9 !important;
+  color: #2f9fb9 !important;
   border: none !important;
   border-bottom: 1px solid #AAAAAA !important;
   outline: 0px !important;
@@ -862,6 +866,25 @@ button {
 }
 
 /* primng Table */
+.bs-example {
+ 
+  font-size: 12px;
+    color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+}
+.text-uppercase-bold-sm{
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+  color: #a95206;
+}
+.table td{
+ 
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
 
 #table h4 {
   font-weight: 700;

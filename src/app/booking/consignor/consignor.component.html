@@ -257,13 +257,14 @@
                                           *</span
                                         ></label
                                       >
-                                      <div class="col-sm-8">
+                                      <div class="col-sm-4">
                                         <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
-                                          formControlName="mobile"
+                                        type="text"
+                                        class="form-control rut"
+                                        id="rut"
+                                        name="rut"
+                                        placeholder="First Number"
+                                        formControlName="mobile"
                                         />
                                         <small
                                           *ngIf="
@@ -288,6 +289,19 @@
                                           >invalid mobile no.</small
                                         >
                                       </div>
+                                      <div class="col-sm-4">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          value=""
+                                          maxlength="12"
+                                          placeholder="Altemative Number"
+                                          required="required"
+                                        />
+                                      </div>
+                                     
                                     </div>
                                     <div class="form-group">
                                       <label
@@ -430,7 +444,7 @@
                                   <a
                                     class="btn btn-danger"
                                     [routerLink]="[
-                                      '/dashboard/consignment-booking'
+                                      '/dashboard/consignee'
                                     ]"
                                     ><span
                                       class="glyphicon glyphicon-check mr-10"
