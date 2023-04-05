@@ -31,6 +31,7 @@ import { ConsignorComponent } from './booking/consignor/consignor.component';
 import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
 import { ConsigneeComponent } from './booking/consignee/consignee.component';
+import { DateWiseBookingRegisterComponent } from './booking/date-wise-booking-register/date-wise-booking-register.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ConsigneeComponent } from './booking/consignee/consignee.component';
     ConsignmentBookingComponent,
     AdditionalServiceCBSComponent,
     ConsigneeComponent,
+    DateWiseBookingRegisterComponent,
   ],
   imports: [
     BrowserModule,
