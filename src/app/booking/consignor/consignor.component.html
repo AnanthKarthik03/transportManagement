@@ -63,7 +63,8 @@
                                           name="name"
                                           id="name"
                                           formControlName="consigner_name"
-                                          pat
+                                          [(ngModel)]="nameSearch"
+                                          (input)="onSearch($event)"
                                         />
                                         <small
                                           *ngIf="
@@ -422,16 +423,20 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr data-status="completed">
-                                <td>gurgaon</td>
-                                <td>0000-0000-00</td>
+                              <tr
+                                data-status="completed"
+                                *ngFor="
+                                  let consigner of consigners
+                                    | filter1 : nameSearch
+                                "
+                              >
+                                <td>{{ consigner.consigner_name }}</td>
+                                <td>{{ consigner.mobile }}</td>
 
                                 <td>
                                   <a
                                     class="btn btn-danger"
-                                    [routerLink]="[
-                                      '/dashboard/consignment-booking'
-                                    ]"
+                                    [routerLink]="['/dashboard/consignee']"
                                     ><span
                                       class="glyphicon glyphicon-check mr-10"
                                       aria-hidden="true"
