@@ -117,6 +117,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="r_c"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -139,6 +140,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="hamali"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -161,6 +163,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="service_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -184,6 +187,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="statistical_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -208,6 +212,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="cover_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -234,6 +239,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="insurance_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -258,6 +264,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="dd_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -281,6 +288,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="other_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -305,6 +313,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="fee_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -331,6 +340,7 @@
                                         class="form-control"
                                         name="productdetails"
                                         formControlName="door_delivery_charge"
+                                        (change)="onTotalCharge()"
                                       />
                                       <small
                                         *ngIf="
@@ -354,6 +364,7 @@
                                         type="text"
                                         class="form-control"
                                         name="productdetails"
+                                        [value]="totalCharge"
                                       />
                                     </td>
                                   </tr>

@@ -20,4 +20,34 @@ export class Validation {
     }
     return null;
   }
+
+  neverStartWithAlphabet(control: FormControl) {
+    const pattern = /^[^0-9]+.*/;
+    const singleData = control?.value;
+    if (singleData != '') {
+      const bool = pattern.test(singleData);
+      return bool == false ? { invalidName: true } : null;
+    }
+    return null;
+  }
+
+  checkPinCodeValid(control: FormControl) {
+    const pattern = /^[1-9][0-9]{5}$/;
+    const singleData = control?.value;
+    if (singleData != '') {
+      const bool = pattern.test(singleData);
+      return bool == false ? { invalidPin: true } : null;
+    }
+    return null;
+  }
+
+  checkMobileNo(control: FormControl) {
+    const pattern = /^[0-9]{10}$/;
+    const singleData = control?.value;
+    if (singleData != '') {
+      const bool = pattern.test(singleData);
+      return bool == false ? { invalidMobile: true } : null;
+    }
+    return null;
+  }
 }

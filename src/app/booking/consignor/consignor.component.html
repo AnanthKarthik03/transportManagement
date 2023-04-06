@@ -265,14 +265,14 @@
                                           id="rut"
                                           name="rut"
                                           placeholder="First Number"
-                                          formControlName="mobile"
+                                          formControlName="mobile1"
                                         />
                                         <small
                                           *ngIf="
                                             newConsignerData
-                                              .get('mobile')
+                                              .get('mobile1')
                                               ?.hasError('required') &&
-                                            newConsignerData.get('mobile')
+                                            newConsignerData.get('mobile1')
                                               ?.touched
                                           "
                                           class="text-danger"
@@ -281,9 +281,9 @@
                                         <small
                                           *ngIf="
                                             newConsignerData
-                                              .get('mobile')
+                                              .get('mobile1')
                                               ?.hasError('invalidMobile') &&
-                                            newConsignerData.get('mobile')
+                                            newConsignerData.get('mobile1')
                                               ?.touched
                                           "
                                           class="text-danger"
@@ -296,12 +296,32 @@
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
-                                          value=""
-                                          maxlength="12"
                                           placeholder="Altemative Number"
-                                          required="required"
+                                          formControlName="mobile2"
                                         />
                                       </div>
+                                      <small
+                                        *ngIf="
+                                          newConsignerData
+                                            .get('mobile2')
+                                            ?.hasError('required') &&
+                                          newConsignerData.get('mobile2')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                      <small
+                                        *ngIf="
+                                          newConsignerData
+                                            .get('mobile2')
+                                            ?.hasError('invalidMobile') &&
+                                          newConsignerData.get('mobile2')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >invalid mobile no.</small
+                                      >
                                     </div>
                                     <div class="form-group">
                                       <label
@@ -388,7 +408,6 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
-                                          [disabled]="newConsignerData.invalid"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
@@ -420,7 +439,10 @@
                           class="panel-body panel-table"
                           style="overflow-x: auto"
                         >
-                          <h4>Recent Consignor</h4>
+                          <h4 *ngIf="recentTableShow">Recent Consignor</h4>
+                          <h4 *ngIf="!recentTableShow">
+                            Name Search: {{ nameSearch }}
+                          </h4>
                           <div class="clearfix"></div>
                           <hr />
                           <table
@@ -435,11 +457,32 @@
                                 <th class="col-tools">Select</th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody *ngIf="recentTableShow">
+                              <tr
+                                data-status="completed"
+                                *ngFor="let consigner of recent_consigners"
+                              >
+                                <td>{{ consigner.consigner_name }}</td>
+                                <td>{{ consigner.mobile }}</td>
+
+                                <td>
+                                  <a
+                                    class="btn btn-danger"
+                                    [routerLink]="['/dashboard/consignee']"
+                                    ><span
+                                      class="glyphicon glyphicon-check mr-10"
+                                      aria-hidden="true"
+                                    ></span
+                                    >Submit Now</a
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                            <tbody *ngIf="!recentTableShow">
                               <tr
                                 data-status="completed"
                                 *ngFor="
-                                  let consigner of consigners
+                                  let consigner of all_consigners
                                     | filter1 : nameSearch
                                 "
                               >

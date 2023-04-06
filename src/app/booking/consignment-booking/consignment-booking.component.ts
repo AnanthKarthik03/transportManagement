@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Validation } from 'src/app/validation/validation';
 
 @Component({
   selector: 'app-consignment-booking',
@@ -16,7 +17,11 @@ export class ConsignmentBookingComponent {
   newConsignmentBookingData: FormGroup;
   newConsignmentPackingSummary: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private validation: Validation
+  ) {
     this.newConsignmentBookingData = this.fb.group({
       consignment_booking_date: ['', [Validators.required]],
       bilty_type: ['', [Validators.required]],
@@ -42,48 +47,15 @@ export class ConsignmentBookingComponent {
     });
   }
 
-  neverStartWithAlphabet(control: FormControl) {
-    const pattern = /^[^0-9]+.*/;
-    const singleData = control?.value;
-    if (singleData != '') {
-      const bool = pattern.test(singleData);
-      return bool == false ? { invalidName: true } : null;
-    }
-    return null;
-  }
-
-  checkPinCodeValid(control: FormControl) {
-    const pattern = /^[1-9][0-9]{5}$/;
-    const singleData = control?.value;
-    if (singleData != '') {
-      const bool = pattern.test(singleData);
-      return bool == false ? { invalidPin: true } : null;
-    }
-    return null;
-  }
-
-  checkMobileNo(control: FormControl) {
-    const pattern = /^[0-9]{10}$/;
-    const singleData = control?.value;
-    if (singleData != '') {
-      const bool = pattern.test(singleData);
-      return bool == false ? { invalidMobile: true } : null;
-    }
-    return null;
-  }
-
   onCreateNewConsignmentBookingData() {
     const consignerData = this.newConsignmentBookingData.value;
-
-    const add1 = consignerData.address1;
-    const add2 = consignerData.address2;
     if (
-      this.newConsignmentBookingData.invalid &&
+      this.newConsignmentBookingData.invalid ||
       this.newConsignmentPackingSummary.invalid
     ) {
-      return;
-    } else if (add1 == add2) {
-      alert("Both address fields can't be same");
+      this.newConsignmentBookingData.markAllAsTouched();
+      this.newConsignmentPackingSummary.markAllAsTouched();
+      console.log('print');
     } else {
       console.log(consignerData);
       this.router.navigate(['/dashboard/additional-service-c-b-s']);

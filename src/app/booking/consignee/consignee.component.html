@@ -36,7 +36,7 @@
                             class="form-horizontal"
                             role="form"
                             [formGroup]="newConsigneeData"
-                            (ngSubmit)="(onCreateNewConsigneeData)"
+                            (ngSubmit)="onCreateNewConsigneeData()"
                           >
                             <div class="row">
                               <div class="col-md-12">
@@ -408,9 +408,6 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
-                                          [routerLink]="[
-                                            '/dashboard/consignment-booking'
-                                          ]"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
@@ -442,7 +439,10 @@
                           class="panel-body panel-table"
                           style="overflow-x: auto"
                         >
-                          <h4>Recent Consignee</h4>
+                          <h4 *ngIf="recentTableShow">Recent Consignee</h4>
+                          <h4 *ngIf="!recentTableShow">
+                            Name Search: {{ nameSearch }}
+                          </h4>
                           <div class="clearfix"></div>
                           <hr />
                           <table
@@ -457,11 +457,35 @@
                                 <th class="col-tools">Select</th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody *ngIf="recentTableShow">
+                              <tr
+                                data-status="completed"
+                                *ngFor="let single of recent_consignee"
+                              >
+                                <td>{{ single.consignee_name }}</td>
+                                <td>{{ single.mobile }}</td>
+
+                                <td>
+                                  <a
+                                    class="btn btn-danger"
+                                    [routerLink]="[
+                                      '/dashboard/consignment-booking'
+                                    ]"
+                                    ><span
+                                      class="glyphicon glyphicon-check mr-10"
+                                      aria-hidden="true"
+                                    ></span
+                                    >Submit Now</a
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                            <tbody *ngIf="!recentTableShow">
                               <tr
                                 data-status="completed"
                                 *ngFor="
-                                  let single of consignee | filter2 : nameSearch
+                                  let single of all_consignee
+                                    | filter2 : nameSearch
                                 "
                               >
                                 <td>{{ single.consignee_name }}</td>

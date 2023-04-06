@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./additional-service-c-b-s.component.css'],
 })
 export class AdditionalServiceCBSComponent {
+  totalCharge: number = 0;
   allTypesCharges: FormGroup;
   additionalDetails: FormGroup;
 
@@ -34,6 +35,32 @@ export class AdditionalServiceCBSComponent {
     });
   }
 
+  onTotalCharge() {
+    const {
+      r_c,
+      hamali,
+      service_charge,
+      statistical_charge,
+      cover_charge,
+      insurance_charge,
+      dd_charge,
+      other_charge,
+      fee_charge,
+      door_delivery_charge,
+    } = this.allTypesCharges.value;
+    this.totalCharge =
+      +r_c +
+      +hamali +
+      +service_charge +
+      +statistical_charge +
+      +cover_charge +
+      +insurance_charge +
+      +dd_charge +
+      +other_charge +
+      +fee_charge +
+      +door_delivery_charge;
+  }
+
   onAdditionalDetails() {
     const allBills = this.allTypesCharges.value;
     const additional = this.additionalDetails.value;
@@ -42,7 +69,7 @@ export class AdditionalServiceCBSComponent {
     } else {
       console.log(allBills);
       console.log(additional);
-      this.router.navigate(['/dashboard/consignment-booking-register']);
+      this.router.navigate(['/dashboard/consignment-booking-register-report']);
     }
   }
 }
