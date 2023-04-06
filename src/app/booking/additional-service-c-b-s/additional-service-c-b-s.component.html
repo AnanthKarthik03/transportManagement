@@ -5,140 +5,522 @@
         <div class="row">
           <div class="col-md-12">
             <div class="panel panel-default" id="table">
-
-              <div class="panel-heading"><span class="pull-right">
-
-                  <a role="button" class="btn  btn-success" [routerLink]="['/dashboard/consignment-booking']">
-                    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+              <div class="panel-heading">
+                <span class="pull-right">
+                  <a
+                    role="button"
+                    class="btn btn-success"
+                    [routerLink]="['/dashboard/consignment-booking']"
+                  >
+                    <span class="glyphicon glyphicon-arrow-left"></span> Back</a
+                  >
                 </span>
                 <ul class="list-inline list-unstyled">
                   <li>
                     <h4>Additional Service Charges & Billing Summary</h4>
-
                   </li>
-
-
-
                 </ul>
-
-
               </div>
               <div class="panel-body">
-                <div class="alert alert-success" role="alert">...</div>
+                <div class="alert alert-success" role="alert">
+                  <i
+                    class="glyphicon glyphicon-info-sign mr-10"
+                    aria-hidden="true"
+                  ></i
+                  ><strong class="mr-10">Record</strong>Record inserted.
+                </div>
                 <div class="row mb-20">
-                  <div class="col-md-12 ">
-                    <div class="panel panel-primary ">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
                       <div class="panel-heading">
-                        <h3>Consignment Details</h3>
+                        <div class="panel-title">Consignment Details</div>
                       </div>
                       <div class="panel-body" style="overflow-x: auto">
-
-
+                        <table class="table border-bottom border-gray-200 mt-3">
+                          <thead>
+                            <tr>
+                              <th
+                                scope="col"
+                                class="fs-sm text-dark text-uppercase-bold-sm px-0 col-xs-6"
+                              >
+                                Consignor Details
+                              </th>
+                              <th
+                                scope="col"
+                                class="fs-sm text-dark text-uppercase-bold-sm text-end px-0 col-xs-6"
+                              >
+                                Consignee Details
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="px-0">loknath industry</td>
+                              <td class="text-end px-0">loknath industry</td>
+                            </tr>
+                            <tr>
+                              <td class="px-0">
+                                Address:<span class="bs-example"
+                                  >bishlghar tripura west,</span
+                                >
+                                city:<span class="bs-example">agartala,</span
+                                >pin:<span class="bs-example">7999001,</span
+                                >mobile:<span class="bs-example"
+                                  >9862519355,</span
+                                >gst no:<span class="bs-example"
+                                  >16aadfl1574b1zq</span
+                                >
+                              </td>
+                              <td class="px-0">
+                                Address:<span class="bs-example"
+                                  >bishlghar tripura west,</span
+                                >
+                                city:<span class="bs-example">agartala,</span
+                                >pin:<span class="bs-example">7999001,</span
+                                >mobile:<span class="bs-example"
+                                  >9862519355,</span
+                                >gst no:<span class="bs-example"
+                                  >16aadfl1574b1zq</span
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12 ">
-                    <form>
+                  <div class="col-md-6 mb-1">
+                    <form [formGroup]="allTypesCharges">
                       <div class="panel panel-primary">
                         <div class="panel-heading">
-                          <div class="panel-title">
-                            Item 1 Details
-                          </div>
+                          <div class="panel-title">Item 1 Details</div>
                         </div>
                         <div class="panel-body">
-
                           <div class="row clearfix">
-                            <div class="col-md-12 column" style="overflow-x: auto">
-                              <table class="table table-bordered table-hover" id="tab_logic">
-
-                                <tbody>
-                                  <tr id='addr0'>
+                            <div
+                              class="col-md-12 column"
+                              style="overflow-x: auto"
+                            >
+                              <table
+                                class="table table-bordered table-hover"
+                                id="tab_logic"
+                              >
+                                <tbody id="addr0">
+                                  <tr>
+                                    <td>1</td>
+                                    <td>R.C</td>
                                     <td>
-                                      <label>Quantity:</label><br>
-                                      <input type="text" class="form-control" name="quantity">
-                                    </td>
-                                    <td>
-                                      <label>Package Type:</label><br>
-                                      <select class="form-control" id="country" required="true" name="packagetype">
-                                        <option value="AF">Afghanistan</option>
-                                        <option value="AX">Åland Islands</option>
-                                        <option value="AL">Albania</option>
-                                        <option value="DZ">Algeria</option>
-
-
-                                      </select>
-                                    </td>
-                                    <td>
-                                      <label>Product Details:</label><br>
-                                      <input type="text" class="form-control" name="productdetails">
-                                    </td>
-                                    <td>
-                                      <label>HSN:</label><br>
-                                      <input type="text" class="form-control" name="hsn">
-                                    </td>
-                                    <td>
-                                      <label>Actual Weight:</label><br>
-                                      <input type="text" class="form-control" name="actualweight">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="r_c"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('r_c')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('r_c')?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
                                     </td>
                                   </tr>
-                                  <tr id='addr0'>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Hamali</td>
                                     <td>
-                                      <label>Gross Weight:</label><br>
-                                      <input type="text" class="form-control" name="grossweight">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="hamali"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('hamali')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('hamali')?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Service Charge</td>
+                                    <td>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="service_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('service_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('service_charge')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Statistical Charge</td>
+                                    <td>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="statistical_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('statistical_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get(
+                                            'statistical_charge'
+                                          )?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>5</td>
+                                    <td>Cover Charge</td>
+                                    <td>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="cover_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('cover_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('cover_charge')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>6</td>
+                                    <td>
+                                      Insurance Charge on invoice Value in
+                                      Percentage
                                     </td>
                                     <td>
-                                      <label>Weight Type:</label><br>
-                                      <select class="form-control" id="country" required="true" name="weighttype">
-                                        <option value="AF">Afghanistan</option>
-                                        <option value="AX">Åland Islands</option>
-                                        <option value="AL">Albania</option>
-                                        <option value="DZ">Algeria</option>
-
-
-                                      </select>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="insurance_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('insurance_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get(
+                                            'insurance_charge'
+                                          )?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
                                     </td>
+                                  </tr>
+                                  <tr>
+                                    <td>7</td>
+                                    <td>D.D.Charge</td>
                                     <td>
-                                      <label>GST%:</label><br>
-                                      <select class="form-control" id="country" required="true" name="gst">
-                                        <option value="AF">Afghanistan</option>
-                                        <option value="AX">Åland Islands</option>
-                                        <option value="AL">Albania</option>
-                                        <option value="DZ">Algeria</option>
-
-
-                                      </select>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="dd_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('dd_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('dd_charge')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
                                     </td>
+                                  </tr>
+                                  <tr>
+                                    <td>8</td>
+                                    <td>Other Charge</td>
                                     <td>
-                                      <label>Rate as Per:</label><br>
-                                      <select class="form-control " id="country" required="true" name="rateasper">
-                                        <option value="AF">Afghanistan</option>
-                                        <option value="AX">Åland Islands</option>
-                                        <option value="AL">Albania</option>
-                                        <option value="DZ">Algeria</option>
-
-
-                                      </select>
-                                    </td>
-                                    <td>
-                                      <label>Rate:</label><br>
-                                      <input type="text" class="form-control " name="rate">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="other_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('other_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('other_charge')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
                                     </td>
                                   </tr>
 
+                                  <tr>
+                                    <td>9</td>
+                                    <td>Fee Charge</td>
+                                    <td>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="fee_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('fee_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get('fee_charge')
+                                            ?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>10</td>
+                                    <td>
+                                      Door Delivery Charges Including Loading &
+                                      Unloding
+                                    </td>
+                                    <td>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="door_delivery_charge"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          allTypesCharges
+                                            .get('door_delivery_charge')
+                                            ?.hasError('required') &&
+                                          allTypesCharges.get(
+                                            'door_delivery_charge'
+                                          )?.touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr class="alert-warning">
+                                    <td colspan="2">Total Charge</td>
+
+                                    <td>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                      />
+                                    </td>
+                                  </tr>
                                 </tbody>
                               </table>
-
-
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-6">
+                    <form
+                      [formGroup]="additionalDetails"
+                      (ngSubmit)="onAdditionalDetails()"
+                    >
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <div class="panel-title">Item 1 Details</div>
+                        </div>
+                        <div class="panel">
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <label class="col-sm-6 control-label" for="name"
+                                >Payment Laibility
+                                <span class="requerido"> *</span></label
+                              >
+                              <div class="col-sm-6">
+                                <select
+                                  class="form-control"
+                                  id="country"
+                                  required="true"
+                                  name="payment_liability"
+                                  formControlName="payment_liability"
+                                >
+                                  <option value="Kilo">Kilo</option>
+                                  <option value="Quintal">Quintal</option>
+                                  <option value="Litre">Litre</option>
+                                  <option value="Ton">Ton</option>
+                                </select>
+                                <small
+                                  *ngIf="
+                                    additionalDetails
+                                      .get('payment_liability')
+                                      ?.hasError('required') &&
+                                    additionalDetails.get('payment_liability')
+                                      ?.touched
+                                  "
+                                  class="text-danger"
+                                  >required field</small
+                                >
+                              </div>
                             </div>
 
-
+                            <div class="form-group">
+                              <label class="col-sm-6 control-label" for="rut"
+                                >Total Billing Amount<span class="requerido">
+                                  *</span
+                                ></label
+                              >
+                              <div class="col-sm-6">
+                                <input
+                                  type="text"
+                                  class="form-control rut"
+                                  id="rut"
+                                  name="rut"
+                                  formControlName="total_billing_amount"
+                                />
+                                <small
+                                  *ngIf="
+                                    additionalDetails
+                                      .get('total_billing_amount')
+                                      ?.hasError('required') &&
+                                    additionalDetails.get(
+                                      'total_billing_amount'
+                                    )?.touched
+                                  "
+                                  class="text-danger"
+                                  >required field</small
+                                >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-6 control-label" for="rut"
+                                >Amount Received<span class="requerido">
+                                  *</span
+                                ></label
+                              >
+                              <div class="col-sm-6">
+                                <input
+                                  type="text"
+                                  class="form-control rut"
+                                  id="rut"
+                                  name="rut"
+                                  formControlName="amount_received"
+                                />
+                                <small
+                                  *ngIf="
+                                    additionalDetails
+                                      .get('amount_received')
+                                      ?.hasError('required') &&
+                                    additionalDetails.get('amount_received')
+                                      ?.touched
+                                  "
+                                  class="text-danger"
+                                  >required field</small
+                                >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-6 control-label" for="rut"
+                                >Amount Adjustment<span class="requerido">
+                                  *</span
+                                ></label
+                              >
+                              <div class="col-sm-6">
+                                <input
+                                  type="text"
+                                  class="form-control rut"
+                                  id="rut"
+                                  name="rut"
+                                  formControlName="amount_adjustment"
+                                />
+                                <small
+                                  *ngIf="
+                                    additionalDetails
+                                      .get('amount_adjustment')
+                                      ?.hasError('required') &&
+                                    additionalDetails.get('amount_adjustment')
+                                      ?.touched
+                                  "
+                                  class="text-danger"
+                                  >required field</small
+                                >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-6 control-label" for="rut"
+                                >Cue Balance Amount<span class="requerido">
+                                  *</span
+                                ></label
+                              >
+                              <div class="col-sm-6">
+                                <input
+                                  type="text"
+                                  class="form-control rut"
+                                  id="rut"
+                                  name="rut"
+                                  formControlName="cue_balance_amount"
+                                />
+                                <small
+                                  *ngIf="
+                                    additionalDetails
+                                      .get('cue_balance_amount')
+                                      ?.hasError('required') &&
+                                    additionalDetails.get('cue_balance_amount')
+                                      ?.touched
+                                  "
+                                  class="text-danger"
+                                  >required field</small
+                                >
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div class="panel-footer">
-                          <div class="row ">
+                          <div class="row">
                             <div class="col col-xs-offset-3 col-xs-6">
                               <!-- <nav aria-label="Page navigation" class="text-center">
                                                             <ul class="pagination">
@@ -162,9 +544,19 @@
                             </div>
                             <div class="col col-xs-3">
                               <div class="pull-right">
-                                <button type="button" class="btn btn-success">
-                                  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                  Add to Bilty
+                                <button
+                                  type="button"
+                                  class="btn btn-success"
+                                  [disabled]="
+                                    additionalDetails.invalid ||
+                                    allTypesCharges.invalid
+                                  "
+                                >
+                                  <span
+                                    class="glyphicon glyphicon-ok-sign"
+                                    aria-hidden="true"
+                                  ></span>
+                                  submit
                                 </button>
                               </div>
                             </div>
@@ -172,28 +564,15 @@
                         </div>
                       </div>
                     </form>
-
                   </div>
-
+                  <!-- </nav> -->
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
-
-
-
-
         </div>
       </div>
       <div class="clearfix"></div>
-
-
-
     </div>
   </div>
-
 </div>
