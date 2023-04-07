@@ -21,6 +21,11 @@ import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lo
 import { BookingModule } from './booking/booking.module';
 import { dashboardModule } from './dashboard/dashboard.module';
 import { FixedFrameModule } from './fixed-frame/fixedframe.module';
+import { TableModule } from 'primeng/table';
+import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
+import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
+import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
+import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,10 @@ import { FixedFrameModule } from './fixed-frame/fixedframe.module';
     ProfileComponent,
     NotFoundComponent,
     LorryArrivalDetailsComponent,
+    MenifestlistComponent,
+    NewmenifestComponent,
+    NewvehicleComponent,
+    VehicleregisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +49,7 @@ import { FixedFrameModule } from './fixed-frame/fixedframe.module';
     ProgressSpinnerModule,
     dashboardModule,
     FixedFrameModule,
+    TableModule,
   ],
 
   providers: [Validation],
