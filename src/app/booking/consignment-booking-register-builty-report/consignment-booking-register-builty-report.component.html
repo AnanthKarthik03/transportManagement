@@ -32,187 +32,780 @@
               <div class="panel-body">
                 <div class="row mb-20">
                   <div class="col-md-12">
-                    <!-- invoice -->
+                    <div class="panel panel-primary panel-table">
+                      <div class="panel-heading">
+                        <div class="row">
+                          <div class="col col-xs-12">
+                            <div class="">
+                              <div class="btn-group" data-toggle="buttons">
+                                <label
+                                  class="btn btn-success btn-filter"
+                                  data-target="completed"
+                                >
+                                  <input
+                                    type="radio"
+                                    name="options"
+                                    id="option1"
+                                    autocomplete="off"
+                                    checked
+                                  />
+                                  <b class="mr-10">Total Item in Cart </b
+                                  ><i class="glyphicon glyphicon-shopping-cart"
+                                    >:</i
+                                  >
+                                </label>
 
-                    <div class="wrapper mb-1" id="wrapper">
-                      <div class="well">
-                        <div class="container-fluid">
-                          <table style="width: 100%">
-                            <tr>
-                              <th colspan="2" rowspan="3">
-                                dweuhd <br />xfd <br />nckjw
-                              </th>
-                              <th
-                                colspan="3"
-                                rowspan="3"
-                                style="border-left: hidden"
+                                <label
+                                  class="btn btn-default btn-filter"
+                                  data-target="all"
+                                >
+                                  <input
+                                    type="radio"
+                                    name="options"
+                                    id="option3"
+                                    autocomplete="off"
+                                  /><strong>{{
+                                    afterCreateBuiltyDataLength
+                                  }}</strong>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-body" style="overflow-x: auto">
+                        <div class="container-fluid mb-40">
+                          <div class="container" id="main">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="panel panel-default" id="table">
+                                      <div class="panel-heading">
+                                        <span class="pull-right">
+                                          <a
+                                            role="button"
+                                            class="btn btn-success"
+                                            [routerLink]="[
+                                              '/dashboard/consignment-booking-register'
+                                            ]"
+                                          >
+                                            <span
+                                              class="glyphicon glyphicon-arrow-left"
+                                            ></span>
+                                            Back</a
+                                          >
+                                        </span>
+                                        <ul class="list-inline list-unstyled">
+                                          <li>
+                                            <h4>New Bilty CN</h4>
+                                          </li>
+
+                                          <li>
+                                            <div class="btn-group">
+                                              <a
+                                                class="btn btn-danger btn-xs"
+                                                href="javascript:void(0)"
+                                                >EXCLUSIVE TAX SALE</a
+                                              >
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div class="panel-body">
+                                        <div class="row mb-20">
+                                          <div class="col-md-12">
+                                            <!-- invoice -->
+
+                                            <div
+                                              class="wrapper mb-1"
+                                              id="wrapper"
+                                            >
+                                              <div class="well">
+                                                <div class="container-fluid">
+                                                  <table style="width: 100%">
+                                                    <tr>
+                                                      <th
+                                                        colspan="2"
+                                                        rowspan="3"
+                                                      >
+                                                        dweuhd <br />xfd
+                                                        <br />nckjw
+                                                      </th>
+                                                      <th
+                                                        colspan="3"
+                                                        rowspan="3"
+                                                        style="
+                                                          border-left: hidden;
+                                                        "
+                                                      >
+                                                        <h3>
+                                                          <strong>
+                                                            TRANSPORT MANAGEMENT
+                                                            SYSTEM</strong
+                                                          >
+                                                        </h3>
+                                                        <h6>
+                                                          Unit No. # 09, 2nd
+                                                          Floor, Emaar MGF - The
+                                                          Palm Square,
+                                                        </h6>
+                                                        <h6>
+                                                          Golf Course Ext Rd,
+                                                          Sector 66, Gurugram,
+                                                          Haryana 122002
+                                                        </h6>
+                                                      </th>
+                                                      <th
+                                                        colspan="2"
+                                                        rowspan="3"
+                                                        style="
+                                                          border-left: hidden;
+                                                        "
+                                                      >
+                                                        vcgfgf
+                                                      </th>
+                                                    </tr>
+                                                    <tr></tr>
+                                                    <tr></tr>
+                                                    <tr>
+                                                      <th
+                                                        colspan="7"
+                                                        class="text-center"
+                                                      >
+                                                        Consigment Note
+                                                      </th>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-center">
+                                                        <b> CN NUMBER </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> DATE </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> VIA </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> FROM </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> TO </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> PAYMENT </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> COPY FOR </b>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-center">
+                                                        <b> PKG06195 </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b>06-04-2023 </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> ROAD </b>
+                                                      </td>
+                                                      <td class="text-center">
+                                                        MUMBAI
+                                                      </td>
+                                                      <td class="text-center">
+                                                        GURGAON
+                                                      </td>
+                                                      <td class="text-center">
+                                                        TO PAY
+                                                      </td>
+                                                      <td class="text-center">
+                                                        <b> CONSIGNEE </b>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th
+                                                        colspan="2"
+                                                        rowspan="3"
+                                                      >
+                                                        <b
+                                                          >CONSIGNOR: LOKNATH
+                                                          INDUSTRY</b
+                                                        >
+                                                        <br />
+                                                        <h6>
+                                                          GURUGRAM, HARYANA
+                                                          SECTOR 66 <br />
+                                                        </h6>
+                                                        <h6>
+                                                          GST:11ADFL1574B1ZQ
+                                                        </h6>
+                                                      </th>
+                                                      <th
+                                                        colspan="3"
+                                                        rowspan="3"
+                                                      >
+                                                        CONSIGNEE: KULDEEP KUMAR
+                                                        <h6>
+                                                          GURUGRAM, HARYANA
+                                                          SECTOR 66
+                                                        </h6>
+                                                        <h6>
+                                                          GST:11ADFL1574B1ZQ
+                                                        </h6>
+                                                      </th>
+                                                      <th
+                                                        colspan="2"
+                                                        rowspan="3"
+                                                      >
+                                                        <b>
+                                                          SHIPPING ADDRESS:
+                                                          KULDEEP KUMAR
+                                                        </b>
+                                                        <h6>
+                                                          GURUGRAM, HARYANA
+                                                          SECTOR 66
+                                                        </h6>
+                                                        <h6>
+                                                          GST:11ADFL1574B1ZQ
+                                                        </h6>
+                                                      </th>
+                                                    </tr>
+                                                    <tr></tr>
+                                                    <tr></tr>
+
+                                                    <tr>
+                                                      <!-- <th colspan="5">Name</th> -->
+                                                      <td><b>ITEM</b></td>
+                                                      <td><b>QTY</b></td>
+                                                      <td><b>RATE</b></td>
+                                                      <td><b>TYPE</b></td>
+                                                      <td><b>AMOUNT</b></td>
+
+                                                      <th
+                                                        rowspan="3"
+                                                        class="text-right"
+                                                      >
+                                                        Transport CGARGES
+                                                      </th>
+                                                      <th
+                                                        rowspan="3"
+                                                        class="text-right"
+                                                      >
+                                                        2,000
+                                                      </th>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>MOTOR</td>
+                                                      <td>20</td>
+                                                      <td>2000</td>
+                                                      <td>WEIGHT</td>
+                                                      <td>2,00,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th
+                                                        colspan="5"
+                                                        rowspan="6"
+                                                      ></th>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        RC
+                                                      </td>
+                                                      <td class="text-right">
+                                                        40.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        HAMALI
+                                                      </td>
+                                                      <td class="text-right">
+                                                        400.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        SERVICE CHARGES
+                                                      </td>
+                                                      <td class="text-right">
+                                                        40.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        STATISTICAL CHARGES
+                                                      </td>
+                                                      <td class="text-right">
+                                                        40.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        OTHER CHARGES
+                                                      </td>
+                                                      <td class="text-right">
+                                                        30.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th
+                                                        colspan="4"
+                                                        rowspan="2"
+                                                      >
+                                                        <b>INVOICE NO: 201 </b>
+
+                                                        <h5>
+                                                          E-WAY BillNO: 36572568
+                                                        </h5>
+                                                      </th>
+
+                                                      <th
+                                                        rowspan="2"
+                                                        class="text-center"
+                                                      >
+                                                        BOOKING POINT
+                                                        <h5>MUMBAI</h5>
+                                                      </th>
+                                                      <td class="text-right">
+                                                        <b>SUB TOTAL</b>
+                                                      </td>
+                                                      <td class="text-right">
+                                                        <b>2,000.00</b>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        IGST 5.00%
+                                                      </td>
+                                                      <td class="text-right">
+                                                        128.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th
+                                                        colspan="3"
+                                                        rowspan="2"
+                                                      >
+                                                        PRIVATE MARK:
+                                                      </th>
+                                                      <th
+                                                        colspan="2"
+                                                        rowspan="2"
+                                                        class="text-center"
+                                                      >
+                                                        TEXT PAID BY CONSIGNEE
+                                                      </th>
+                                                      <td class="text-right">
+                                                        CGST
+                                                      </td>
+                                                      <td class="text-right">
+                                                        0.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="text-right">
+                                                        SGST
+                                                      </td>
+                                                      <td class="text-right">
+                                                        0.00
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th colspan="3">
+                                                        CLAIM AMOUNT
+                                                      </th>
+                                                      <th colspan="2">
+                                                        AMOUNT IN WORD: TWO
+                                                        THOUSAND
+                                                      </th>
+                                                      <td class="text-right">
+                                                        <b>GRAND TOTAL</b>
+                                                      </td>
+                                                      <td class="text-right">
+                                                        <b>2,000.00</b>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th
+                                                        colspan="5"
+                                                        rowspan="2"
+                                                      >
+                                                        CONSIGNMENT CAUTION:
+                                                        <h6>feiuirfj</h6>
+                                                      </th>
+                                                      <th
+                                                        colspan="2"
+                                                        rowspan="2"
+                                                        class="text-center"
+                                                      >
+                                                        TRANSPORT MANAGEMENT
+                                                        SYSTEM
+                                                      </th>
+                                                    </tr>
+                                                    <tr></tr>
+                                                    <tr>
+                                                      <th colspan="7">
+                                                        BANK ACCOUNT NAME:
+                                                        TRANSPORT MANAGEMENT
+                                                        SYSTEM, ACCOUNT NO.
+                                                        234567891076, IFSC:
+                                                        SBIN234000, BRANCH:
+                                                        GURGAON
+                                                      </th>
+                                                    </tr>
+                                                  </table>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="clearfix"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="row">
+                          <div class="col col-xs-offset-3 col-xs-6">
+                            <!-- <nav aria-label="Page navigation" class="text-center">
+                                <ul class="pagination">
+                                  <li>
+                                    <a href="#" aria-label="Previous">
+                                      <span aria-hidden="true">«</span>
+                                    </a>
+                                  </li>
+                                  <li class="active"><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li>
+                                    <a href="#" aria-label="Next">
+                                      <span aria-hidden="true">»</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav> -->
+                          </div>
+                          <div class="col col-xs-3">
+                            <div class="pull-right">
+                              <button
+                                type="button"
+                                class="btn btn-info"
+                                [routerLink]="['/dashboard/consignor']"
                               >
-                                <h3>
-                                  <strong> TRANSPORT MANAGEMENT SYSTEM</strong>
-                                </h3>
-                                <h6>
-                                  Unit No. # 09, 2nd Floor, Emaar MGF - The Palm
-                                  Square,
-                                </h6>
-                                <h6>
-                                  Golf Course Ext Rd, Sector 66, Gurugram,
-                                  Haryana 122002
-                                </h6>
-                              </th>
-                              <th
-                                colspan="2"
-                                rowspan="3"
-                                style="border-left: hidden"
-                              >
-                                vcgfgf
-                              </th>
-                            </tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr>
-                              <th colspan="7" class="text-center">
-                                Consigment Note
-                              </th>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><b> CN NUMBER </b></td>
-                              <td class="text-center"><b> DATE </b></td>
-                              <td class="text-center"><b> VIA </b></td>
-                              <td class="text-center"><b> FROM </b></td>
-                              <td class="text-center"><b> TO </b></td>
-                              <td class="text-center"><b> PAYMENT </b></td>
-                              <td class="text-center"><b> COPY FOR </b></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><b> PKG06195 </b></td>
-                              <td class="text-center"><b>06-04-2023 </b></td>
-                              <td class="text-center"><b> ROAD </b></td>
-                              <td class="text-center">MUMBAI</td>
-                              <td class="text-center">GURGAON</td>
-                              <td class="text-center">TO PAY</td>
-                              <td class="text-center"><b> CONSIGNEE </b></td>
-                            </tr>
-                            <tr>
-                              <th colspan="2" rowspan="3">
-                                <b>CONSIGNOR: LOKNATH INDUSTRY</b>
-                                <br />
-                                <h6>GURUGRAM, HARYANA SECTOR 66 <br /></h6>
-                                <h6>GST:11ADFL1574B1ZQ</h6>
-                              </th>
-                              <th colspan="3" rowspan="3">
-                                CONSIGNEE: KULDEEP KUMAR
-                                <h6>GURUGRAM, HARYANA SECTOR 66</h6>
-                                <h6>GST:11ADFL1574B1ZQ</h6>
-                              </th>
-                              <th colspan="2" rowspan="3">
-                                <b> SHIPPING ADDRESS: KULDEEP KUMAR </b>
-                                <h6>GURUGRAM, HARYANA SECTOR 66</h6>
-                                <h6>GST:11ADFL1574B1ZQ</h6>
-                              </th>
-                            </tr>
-                            <tr></tr>
-                            <tr></tr>
-
-                            <tr>
-                              <!-- <th colspan="5">Name</th> -->
-                              <td><b>ITEM</b></td>
-                              <td><b>QTY</b></td>
-                              <td><b>RATE</b></td>
-                              <td><b>TYPE</b></td>
-                              <td><b>AMOUNT</b></td>
-
-                              <th rowspan="3" class="text-right">
-                                Transport CGARGES
-                              </th>
-                              <th rowspan="3" class="text-right">2,000</th>
-                            </tr>
-                            <tr>
-                              <td>MOTOR</td>
-                              <td>20</td>
-                              <td>2000</td>
-                              <td>WEIGHT</td>
-                              <td>2,00,000</td>
-                            </tr>
-                            <tr>
-                              <th colspan="5" rowspan="6"></th>
-                            </tr>
-                            <tr>
-                              <td class="text-right">RC</td>
-                              <td class="text-right">40.00</td>
-                            </tr>
-                            <tr>
-                              <td class="text-right">HAMALI</td>
-                              <td class="text-right">400.00</td>
-                            </tr>
-                            <tr>
-                              <td class="text-right">SERVICE CHARGES</td>
-                              <td class="text-right">40.00</td>
-                            </tr>
-                            <tr>
-                              <td class="text-right">STATISTICAL CHARGES</td>
-                              <td class="text-right">40.00</td>
-                            </tr>
-                            <tr>
-                              <td class="text-right">OTHER CHARGES</td>
-                              <td class="text-right">30.00</td>
-                            </tr>
-                            <tr>
-                              <th colspan="4" rowspan="2">
-                                <b>INVOICE NO: 201 </b>
-
-                                <h5>E-WAY BillNO: 36572568</h5>
-                              </th>
-
-                              <th rowspan="2" class="text-center">
-                                BOOKING POINT
-                                <h5>MUMBAI</h5>
-                              </th>
-                              <td class="text-right"><b>SUB TOTAL</b></td>
-                              <td class="text-right"><b>2,000.00</b></td>
-                            </tr>
-                            <tr>
-                              <td class="text-right">IGST 5.00%</td>
-                              <td class="text-right">128.00</td>
-                            </tr>
-                            <tr>
-                              <th colspan="3" rowspan="2">PRIVATE MARK:</th>
-                              <th colspan="2" rowspan="2" class="text-center">
-                                TEXT PAID BY CONSIGNEE
-                              </th>
-                              <td class="text-right">CGST</td>
-                              <td class="text-right">0.00</td>
-                            </tr>
-                            <tr>
-                              <td class="text-right">SGST</td>
-                              <td class="text-right">0.00</td>
-                            </tr>
-                            <tr>
-                              <th colspan="3">CLAIM AMOUNT</th>
-                              <th colspan="2">AMOUNT IN WORD: TWO THOUSAND</th>
-                              <td class="text-right"><b>GRAND TOTAL</b></td>
-                              <td class="text-right"><b>2,000.00</b></td>
-                            </tr>
-                            <tr>
-                              <th colspan="5" rowspan="2">
-                                CONSIGNMENT CAUTION:
-                                <h6>feiuirfj</h6>
-                              </th>
-                              <th colspan="2" rowspan="2" class="text-center">
-                                TRANSPORT MANAGEMENT SYSTEM
-                              </th>
-                            </tr>
-                            <tr></tr>
-                            <tr>
-                              <th colspan="7">
-                                BANK ACCOUNT NAME: TRANSPORT MANAGEMENT SYSTEM,
-                                ACCOUNT NO. 234567891076, IFSC: SBIN234000,
-                                BRANCH: GURGAON
-                              </th>
-                            </tr>
-                          </table>
+                                <span
+                                  class="glyphicon glyphicon-hand-right"
+                                  aria-hidden="true"
+                                ></span>
+                                Checkout
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <form
+                      [formGroup]="newBuiltyData"
+                      (ngSubmit)="onNewBuiltySubmit()"
+                    >
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <div class="panel-title">Item 1 Details</div>
+                        </div>
+                        <div class="panel-body">
+                          <div class="row clearfix">
+                            <div
+                              class="col-md-12 column"
+                              style="overflow-x: auto"
+                            >
+                              <table
+                                class="table table-bordered table-hover"
+                                id="tab_logic"
+                              >
+                                <tbody>
+                                  <tr id="addr0">
+                                    <td class="col-xs-2">
+                                      <label>Quantity:</label><br />
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="quantity"
+                                        formControlName="quantity"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('quantity')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('quantity').touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td class="col-xs-3">
+                                      <label>Package Type:</label><br />
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="packagetype"
+                                        formControlName="packageType"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('packageType')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('packageType')
+                                            .touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td class="col-xs-3">
+                                      <label>Product Details:</label><br />
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="productdetails"
+                                        formControlName="productDetails"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('productDetails')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('productDetails')
+                                            .touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td class="col-xs-2">
+                                      <label>HSN:</label><br />
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="hsn"
+                                        formControlName="hsn"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('hsn')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('hsn').touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td class="col-xs-2">
+                                      <label>Actual Weight:</label><br />
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="actualweight"
+                                        formControlName="actualWeight"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('actualWeight')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('actualWeight')
+                                            .touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                  <tr id="addr0">
+                                    <td class="col-2">
+                                      <label>Gross Weight:</label><br />
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="grossweight"
+                                        formControlName="grossWeight"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('grossWeight')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('grossWeight')
+                                            .touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td>
+                                      <label>Weight Type:</label><br />
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="weighttype"
+                                        formControlName="weightType"
+                                      >
+                                        <option value="Kilo">Kilo</option>
+                                        <option value="Quintal">Quintal</option>
+                                        <option value="Litre">Litre</option>
+                                        <option value="Ton">Ton</option>
+                                      </select>
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('weightType')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('weightType')
+                                            .touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td>
+                                      <label>GST%:</label><br />
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="gst"
+                                        formControlName="gst"
+                                      >
+                                        <option value="5">5%</option>
+                                        <option value="18">18%</option>
+                                        <option value="0">0%</option>
+                                      </select>
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('gst')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('gst').touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td>
+                                      <label>Rate as Per:</label><br />
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="rateasper"
+                                        formControlName="rateAsPer"
+                                      >
+                                        <option value="Weight">Weight</option>
+                                        <option value="VolumeSize">
+                                          VolumeSize
+                                        </option>
+                                        <option value="Quantity">
+                                          Quantity
+                                        </option>
+                                      </select>
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('rateAsPer')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('rateAsPer').touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                    <td>
+                                      <label>Rate:</label><br />
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="rate"
+                                        formControlName="rate"
+                                      />
+                                      <small
+                                        *ngIf="
+                                          newBuiltyData
+                                            .get('rate')
+                                            ?.hasError('required') &&
+                                          newBuiltyData.get('rate').touched
+                                        "
+                                        class="text-danger"
+                                        >required field</small
+                                      >
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-footer">
+                          <div class="row">
+                            <div class="col col-xs-offset-3 col-xs-6">
+                              <!-- <nav aria-label="Page navigation" class="text-center">
+                                            <ul class="pagination">
+                                              <li>
+                                                <a href="#" aria-label="Previous">
+                                                  <span aria-hidden="true">«</span>
+                                                </a>
+                                              </li>
+                                              <li class="active"><a href="#">1</a></li>
+                                              <li><a href="#">2</a></li>
+                                              <li><a href="#">3</a></li>
+                                              <li><a href="#">4</a></li>
+                                              <li><a href="#">5</a></li>
+                                              <li>
+                                                <a href="#" aria-label="Next">
+                                                  <span aria-hidden="true">»</span>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </nav> -->
+                            </div>
+                            <div class="col col-xs-3">
+                              <div class="pull-right">
+                                <button
+                                  type="submit"
+                                  class="btn btn-success"
+                                  [disabled]="newBuiltyData.invalid"
+                                >
+                                  <span
+                                    class="glyphicon glyphicon-shopping-cart"
+                                    aria-hidden="true"
+                                  ></span>
+                                  Add to Bilty
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
