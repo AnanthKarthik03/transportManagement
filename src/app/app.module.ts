@@ -31,7 +31,10 @@ import { ConsignorComponent } from './booking/consignor/consignor.component';
 import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
 import { ConsigneeComponent } from './booking/consignee/consignee.component';
-
+import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
+import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
+import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
+import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,10 @@ import { ConsigneeComponent } from './booking/consignee/consignee.component';
     ConsignmentBookingComponent,
     AdditionalServiceCBSComponent,
     ConsigneeComponent,
+    VehicleregisterComponent,
+    NewvehicleComponent,
+    MenifestlistComponent,
+    NewmenifestComponent
   ],
   imports: [
     BrowserModule,

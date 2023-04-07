@@ -15,6 +15,10 @@ import { ConsignorComponent } from './booking/consignor/consignor.component';
 import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
 import { ConsigneeComponent } from './booking/consignee/consignee.component';
+import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
+import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
+import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
+import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -41,6 +45,10 @@ const routes: Routes = [
     { path: 'consignee',component: ConsigneeComponent,
       },
       { path: 'table', component: LorryArrivalDetailsComponent },
+      { path: 'vehicleregister', component: VehicleregisterComponent },
+      { path: 'newvehicle', component: NewvehicleComponent },
+      { path: 'menifestlist', component: MenifestlistComponent },
+      { path: 'newmenifest', component: NewmenifestComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
