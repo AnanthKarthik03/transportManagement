@@ -16,6 +16,7 @@ import { ConsignmentBookingComponent } from './booking/consignment-booking/consi
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
 import { ConsigneeComponent } from './booking/consignee/consignee.component';
 import { ConsignmentBookingRegisterBuiltyReportComponent } from './booking/consignment-booking-register-builty-report/consignment-booking-register-builty-report.component';
+import { DateWiseBookingRegisterComponent } from './booking/date-wise-booking-register/date-wise-booking-register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'consignment-booking-register-report',
         component: ConsignmentBookingRegisterBuiltyReportComponent,
+      },
+      {
+        path: 'date-wise-booking-register',
+        component: DateWiseBookingRegisterComponent,
       },
       { path: 'consignee', component: ConsigneeComponent },
       { path: 'table', component: LorryArrivalDetailsComponent },
