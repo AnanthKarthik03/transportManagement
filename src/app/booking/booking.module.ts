@@ -13,6 +13,7 @@ import { TableModule } from 'primeng/table';
 import { AppRoutingModule } from '../app-routing.module';
 import { Filter1Pipe } from '../pipe/filter1.pipe';
 import { Filter2Pipe } from '../pipe/filter2.pipe';
+import { DateWiseBookingRegisterComponent } from './date-wise-booking-register/date-wise-booking-register.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { Filter2Pipe } from '../pipe/filter2.pipe';
     ConsigneeComponent,
     ConsignmentBookingRegisterBuiltyReportComponent,
     ConsignmentBookingRegisterComponent,
+    DateWiseBookingRegisterComponent,
     Filter1Pipe,
     Filter2Pipe,
   ],
