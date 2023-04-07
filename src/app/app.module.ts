@@ -16,16 +16,16 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
-
-//custom module
-import { BookingModule } from './booking/booking.module';
-import { dashboardModule } from './dashboard/dashboard.module';
-import { FixedFrameModule } from './fixed-frame/fixedframe.module';
-import { TableModule } from 'primeng/table';
+import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
 import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
 import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
 import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
-import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
+
+//custom module
+import { BookingModule } from './booking/booking.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { FixedFrameModule } from './fixed-frame/fixedframe.module';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregist
     FormsModule,
     ReactiveFormsModule,
     ProgressSpinnerModule,
-    dashboardModule,
+    DashboardModule,
     FixedFrameModule,
     TableModule,
   ],
