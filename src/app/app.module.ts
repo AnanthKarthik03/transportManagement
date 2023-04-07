@@ -35,6 +35,7 @@ import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregist
 import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
 import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
 import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
+import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest
     VehicleregisterComponent,
     NewvehicleComponent,
     MenifestlistComponent,
-    NewmenifestComponent
+    NewmenifestComponent,
+    MenifestCartComponent
   ],
   imports: [
     BrowserModule,
