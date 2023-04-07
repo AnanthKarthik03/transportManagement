@@ -7,7 +7,6 @@ import { PermissionService } from 'src/app/shared/permission.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-
   roleId: any;
 
   constructor(private router: Router, private service: PermissionService) {}
@@ -16,11 +15,23 @@ export class HeaderComponent {
     this.roleId = this.service.roleId;
   }
 
+  showHomeDashboard() {
+    if (this.roleId == 1) {
+      this.router.navigate(['dashboard/super-admin']);
+    }
+
+    if (this.roleId == 2) {
+      this.router.navigate(['dashboard/admin']);
+    }
+    if (this.roleId == 3) {
+      this.router.navigate(['dashboard/vendor']);
+    }
+  }
+
   onoLogout() {
     this.router.navigate(['login']);
   }
   onProfile() {
     this.router.navigate(['dashboard/profile']);
   }
-
 }

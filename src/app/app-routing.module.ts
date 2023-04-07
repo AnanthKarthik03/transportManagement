@@ -15,10 +15,13 @@ import { ConsignorComponent } from './booking/consignor/consignor.component';
 import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
 import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
 import { ConsigneeComponent } from './booking/consignee/consignee.component';
-import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
-import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
+import { ConsignmentBookingRegisterBuiltyReportComponent } from './booking/consignment-booking-register-builty-report/consignment-booking-register-builty-report.component';
+import { DateWiseBookingRegisterComponent } from './booking/date-wise-booking-register/date-wise-booking-register.component';
 import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
 import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
+import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
+import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -34,16 +37,22 @@ const routes: Routes = [
         path: 'consignment-booking-register',
         component: ConsignmentBookingRegisterComponent,
       },
-      { path: 'new-bilty-cn',component: NewBiltyCnComponent,
+      { path: 'new-bilty-cn', component: NewBiltyCnComponent },
+      { path: 'consignor', component: ConsignorComponent },
+      { path: 'consignment-booking', component: ConsignmentBookingComponent },
+      {
+        path: 'additional-service-c-b-s',
+        component: AdditionalServiceCBSComponent,
       },
-      { path: 'consignor',component: ConsignorComponent,
+      {
+        path: 'consignment-booking-register-report',
+        component: ConsignmentBookingRegisterBuiltyReportComponent,
       },
-      { path: 'consignment-booking',component: ConsignmentBookingComponent ,
-    },
-    { path: 'additional-service-c-b-s',component: AdditionalServiceCBSComponent ,
-    },
-    { path: 'consignee',component: ConsigneeComponent,
+      {
+        path: 'date-wise-booking-register',
+        component: DateWiseBookingRegisterComponent,
       },
+      { path: 'consignee', component: ConsigneeComponent },
       { path: 'table', component: LorryArrivalDetailsComponent },
       { path: 'vehicleregister', component: VehicleregisterComponent },
       { path: 'newvehicle', component: NewvehicleComponent },

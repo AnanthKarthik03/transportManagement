@@ -1,255 +1,523 @@
 <div class="container-fluid mb-40">
-    <div class="container" id="main">
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-md-12">
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default" id="table">
+          <div class="col-md-12">
+            <div class="panel panel-default" id="table">
+              <div class="panel-heading">
+                <span class="pull-right">
+                  <a
+                    role="button"
+                    class="btn btn-success"
+                    [routerLink]="['/dashboard/consignor']"
+                  >
+                    <span class="glyphicon glyphicon-arrow-left"></span> Back</a
+                  >
+                </span>
+                <ul class="list-inline list-unstyled">
+                  <li>
+                    <h4>Consignee</h4>
+                  </li>
 
-                            <div class="panel-heading"><span class="pull-right">
-
-                                    <a role="button" class="btn  btn-success"
-                                        [routerLink]="['/dashboard/consignor']">
-                                        <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
-                                </span>
-                                <ul class="list-inline list-unstyled">
-                                    <li>
-                                        <h4>Consignee</h4>
-
-                                    </li>
-
-                                    <!-- <li><div class="btn-group">
+                  <!-- <li><div class="btn-group">
                             <a class="btn btn-danger btn-xs" href="javascript:void(0)">EXCLUSIVE TAX SALE</a>
                           </div></li> -->
-
-                                </ul>
-
-
-                            </div>
-                            <div class="panel-body">
-                                <div class="row ">
-                                    <div class="col-md-12 ">
-                                        <div class="col-md-6 col-sm-6  mb-1">
-                                            <div class="panel panel-primary">
-
-                                                <div class="panel-body">
-                                                    <form id="candidatedata" class="form-horizontal" role="form">
-
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="panel">
-                                                                    <div class="panel-heading custom-header-panel">
-                                                                        <h3 class="panel-title roboto"> New Consignee
-                                                                        </h3>
-                                                                    </div>
-                                                                    <div class="panel-body">
-
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="name">Consignee Name <span
-                                                                                    class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text" class="form-control"
-                                                                                    name="name" id="name" value=""
-                                                                                    required="" maxlength="70">
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">Address 1<span
-                                                                                    class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">Address 2<span
-                                                                                    class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">State<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">City<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">PinCode<span
-                                                                                    class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">Mobile No<span
-                                                                                    class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-4">
-                                                                                
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">Email<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut">Consignor GST No<span
-                                                                                    class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        <!--Fin datos personales-->
-                                                                        <div class="form-group ">
-                                                                            <label class="col-sm-4 control-label"
-                                                                                for="rut"></label>
-
-                                                                            <div class="col-sm-8">
-                                                                                <button type="submit" id="submit_btn"
-                                                                                    class="btn btn-success "><span
-                                                                                        class="glyphicon glyphicon-ok-circle mr-10"
-                                                                                        aria-hidden="true"></span>Submit</button>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 mb-1">
-                                            <div class="panel panel-primary ">
-                                                <div class="panel-heading ">
-                                                    <div class="row">
-                                                        <div class="col col-xs-12">
-                                                            <h3 class="panel-title roboto"> New Consignee</h3>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="panel-body panel-table" style="overflow-x: auto">
-                                                    <h4>Recent Consignee</h4>
-                                                    <div class="clearfix"></div>
-                                                    <hr>
-                                                    <table id="mytable"
-                                                        class="table table-responsive table-striped table-bordered table-list">
-                                                        <thead>
-                                                            <tr>
-
-                                                                <th class="col-text">Consignee Details</th>
-                                                                <th class="col-text">Mobile No</th>
-
-
-                                                                <th class="col-tools">
-                                                                    Select</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr data-status="completed">
-                                                                <td>gurgaon</td>
-                                                                <td>0000-0000-00</td>
-
-                                                                <td>
-
-                                                                    <a class="btn btn-danger"
-                                                                        [routerLink]="['/dashboard/consignment-booking']"><span
-                                                                            class="glyphicon glyphicon-check mr-10"
-                                                                            aria-hidden="true"></span>Submit Now</a>
-                                                                </td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                            </div>
-                                        </div>
+                </ul>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-6 col-sm-6 mb-1">
+                      <div class="panel panel-primary">
+                        <div class="panel-body">
+                          <form
+                            id="candidatedata"
+                            class="form-horizontal"
+                            role="form"
+                            [formGroup]="newConsigneeData"
+                            (ngSubmit)="onCreateNewConsigneeData()"
+                          >
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="panel">
+                                  <div
+                                    class="panel-heading custom-header-panel"
+                                  >
+                                    <h3 class="panel-title roboto">
+                                      New Consignee
+                                    </h3>
+                                  </div>
+                                  <div class="panel-body">
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="name"
+                                        >Consignee Name
+                                        <span class="requerido"> *</span></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="name"
+                                          id="name"
+                                          formControlName="consignee_name"
+                                          [(ngModel)]="nameSearch"
+                                          (input)="onSearch($event)"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('consignee_name')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get(
+                                              'consignee_name'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('consignee_name')
+                                              ?.hasError('invalidName') &&
+                                            newConsigneeData.get(
+                                              'consignee_name'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >name should not be start from
+                                          number</small
+                                        >
+                                      </div>
                                     </div>
+
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >Address 1<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="address1"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('address1')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('address1')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >Address 2<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="address2"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('address2')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('address2')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >State<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="state"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('state')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('state')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >City<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="city"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('city')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('city')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >PinCode<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="pincode"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('pincode')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('pincode')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('pincode')
+                                              ?.hasError('invalidPin') &&
+                                            newConsigneeData.get('pincode')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >pin should be 6 numbers</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >Mobile No<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-4">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          placeholder="First Number"
+                                          formControlName="mobile1"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile1')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('mobile1')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile1')
+                                              ?.hasError('invalidMobile') &&
+                                            newConsigneeData.get('mobile1')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >invalid mobile no.</small
+                                        >
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          placeholder="Altemative Number"
+                                          formControlName="mobile2"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile2')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('mobile2')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('mobile2')
+                                              ?.hasError('invalidMobile') &&
+                                            newConsigneeData.get('mobile2')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >invalid mobile no.</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >Email<span class="requerido">
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="email"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('email')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get('email')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('email')
+                                              ?.hasError('email') &&
+                                            newConsigneeData.get('email')
+                                              ?.touched
+                                          "
+                                          class="text-danger"
+                                          >invalid field</small
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                        >Consignor GST No<span
+                                          class="requerido"
+                                        >
+                                          *</span
+                                        ></label
+                                      >
+                                      <div class="col-sm-8">
+                                        <input
+                                          type="text"
+                                          class="form-control rut"
+                                          id="rut"
+                                          name="rut"
+                                          formControlName="consignee_gst"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newConsigneeData
+                                              .get('consignee_gst')
+                                              ?.hasError('required') &&
+                                            newConsigneeData.get(
+                                              'consignee_gst'
+                                            )?.touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <!--Fin datos personales-->
+                                    <div class="form-group">
+                                      <label
+                                        class="col-sm-4 control-label"
+                                        for="rut"
+                                      ></label>
+
+                                      <div class="col-sm-8">
+                                        <button
+                                          type="submit"
+                                          id="submit_btn"
+                                          class="btn btn-success"
+                                        >
+                                          <span
+                                            class="glyphicon glyphicon-ok-circle mr-10"
+                                            aria-hidden="true"
+                                          ></span
+                                          >Submit
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-
-
+                              </div>
                             </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 mb-1">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col col-xs-12">
+                              <h3 class="panel-title roboto">New Consignee</h3>
+                            </div>
+                          </div>
                         </div>
 
+                        <div
+                          class="panel-body panel-table"
+                          style="overflow-x: auto"
+                        >
+                          <h4 *ngIf="recentTableShow">Recent Consignee</h4>
+                          <h4 *ngIf="!recentTableShow">
+                            Name Search: {{ nameSearch }}
+                          </h4>
+                          <div class="clearfix"></div>
+                          <hr />
+                          <table
+                            id="mytable"
+                            class="table table-responsive table-striped table-bordered table-list"
+                          >
+                            <thead>
+                              <tr>
+                                <th class="col-text">Consignee Details</th>
+                                <th class="col-text">Mobile No</th>
+
+                                <th class="col-tools">Select</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngIf="recentTableShow">
+                              <tr
+                                data-status="completed"
+                                *ngFor="let single of recent_consignee"
+                              >
+                                <td>{{ single.consignee_name }}</td>
+                                <td>{{ single.mobile }}</td>
+
+                                <td>
+                                  <a
+                                    class="btn btn-danger"
+                                    [routerLink]="[
+                                      '/dashboard/consignment-booking'
+                                    ]"
+                                    ><span
+                                      class="glyphicon glyphicon-check mr-10"
+                                      aria-hidden="true"
+                                    ></span
+                                    >Submit Now</a
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                            <tbody *ngIf="!recentTableShow">
+                              <tr
+                                data-status="completed"
+                                *ngFor="
+                                  let single of all_consignee
+                                    | filter2 : nameSearch
+                                "
+                              >
+                                <td>{{ single.consignee_name }}</td>
+                                <td>{{ single.mobile }}</td>
+
+                                <td>
+                                  <a
+                                    class="btn btn-danger"
+                                    [routerLink]="[
+                                      '/dashboard/consignment-booking'
+                                    ]"
+                                    ><span
+                                      class="glyphicon glyphicon-check mr-10"
+                                      aria-hidden="true"
+                                    ></span
+                                    >Submit Now</a
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
-
-
-
-
-
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="clearfix"></div>
-
-
-
+          </div>
         </div>
+      </div>
+      <div class="clearfix"></div>
     </div>
-
+  </div>
 </div>
