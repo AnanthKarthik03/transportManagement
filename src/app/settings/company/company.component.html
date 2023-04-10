@@ -1,0 +1,378 @@
+<div class="container-fluid mb-40">
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default" id="table">
+              <div class="panel-heading">
+                <span class="pull-right">
+                  <a
+                    role="button"
+                    class="btn btn-success"
+                    (click)="show_form = !show_form"
+                  >
+                    <span
+                      class="glyphicon glyphicon-arrow-left"
+                      *ngIf="show_form"
+                    ></span>
+                    <span
+                      class="glyphicon glyphicon-plus"
+                      *ngIf="!show_form"
+                    ></span>
+                    {{ show_form ? "back" : "ADD" }}</a
+                  >
+                </span>
+                <ul class="list-inline list-unstyled">
+                  <li>
+                    <h4>
+                      {{ show_form ? "Create Company" : "All Companies" }}
+                    </h4>
+                  </li>
+                </ul>
+              </div>
+
+              <!--Company cards after create by company form-->
+              <div class="panel panel-default" *ngIf="!show_form">
+                <div class="panel-heading">
+                  <div class="media">
+                    <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="media-body">
+                          <h1>Hello</h1>
+                          <button class="btn btn-primary" (click)="onEdit()">
+                            Modify
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="media-body">
+                          <h1>Hello</h1>
+                          <button class="btn btn-primary" (click)="onEdit()">
+                            Modify
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Company details form-->
+              <div class="panel-body" *ngIf="show_form">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-body">
+                        <form
+                          id="candidatedata"
+                          class="form-horizontal"
+                          role="form"
+                        >
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="panel">
+                                <div class="panel-heading custom-header-panel">
+                                  <h3 class="panel-title roboto">
+                                    Basic Company Details
+                                  </h3>
+                                </div>
+                                <div class="panel-body">
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="name"
+                                      >Consignment Booking Date
+                                      <span class="requerido"> *</span></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <input
+                                        type="date"
+                                        class="form-control"
+                                        name="name"
+                                        id="name"
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Bilty Type<span class="requerido">
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="bilty_type"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Booking Refferrence<span
+                                        class="requerido"
+                                      >
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="booking_reference"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Broker Details<span class="requerido">
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="broker_details"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Chaalan/Invoice/Doc/Bil Date<span
+                                        class="requerido"
+                                      >
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <input
+                                        type="date"
+                                        class="form-control rut"
+                                        id="rut"
+                                        name="rut"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Challan/Invoice/Doc/Bill No.<span
+                                        class="requerido"
+                                      >
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <input
+                                        type="text"
+                                        class="form-control rut"
+                                        id="rut"
+                                        name="rut"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Value of Good (Rs.)<span
+                                        class="requerido"
+                                      >
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <input
+                                        type="text"
+                                        class="form-control rut"
+                                        id="rut"
+                                        name="rut"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Tax Paid By<span class="requerido">
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <input
+                                        type="text"
+                                        class="form-control rut"
+                                        id="rut"
+                                        name="rut"
+                                        formControlName="tax_paid_by"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Transportation Mode<span
+                                        class="requerido"
+                                      >
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="transportation_mode"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >From<span class="requerido">
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="from"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >To<span class="requerido">
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="to"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                      >Payment Terms<span class="requerido">
+                                        *</span
+                                      ></label
+                                    >
+                                    <div class="col-sm-6">
+                                      <select
+                                        class="form-control"
+                                        id="country"
+                                        required="true"
+                                        name="payment_terms"
+                                      >
+                                        <option value="Box">Box</option>
+                                        <option value="Bag">Bag</option>
+                                        <option value="Basta">Basta</option>
+                                        <option value="Bundle">Bundle</option>
+                                        <option value="Carton">Carton</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <!--Fin datos personales-->
+                                  <div class="form-group">
+                                    <label
+                                      class="col-sm-6 control-label"
+                                      for="rut"
+                                    ></label>
+
+                                    <div class="col-sm-6">
+                                      <button
+                                        type="submit"
+                                        id="submit_btn"
+                                        class="btn btn-success"
+                                      >
+                                        <span
+                                          class="glyphicon glyphicon-ok-circle mr-10"
+                                          aria-hidden="true"
+                                        ></span>
+                                        {{
+                                          submit_to_update ? "Update" : "Submit"
+                                        }}
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

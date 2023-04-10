@@ -14,32 +14,26 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastrModule } from 'ngx-toastr';
 
 //custom components
-import { HeaderComponent } from './fixed-frame/header/header.component';
-import { FooterComponent } from './fixed-frame/footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { NotFoundComponent } from './error-page/not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { Validation } from './validation/validation';
-import { SuperAdminDashboardComponent } from './dashboard/super-admin-dashboard/super-admin-dashboard.component';
-import { VendorDashboardComponent } from './dashboard/vendor-dashboard/vendor-dashboard.component';
 import { LorryArrivalDetailsComponent } from './receive/lorry-arrival-details/lorry-arrival-details.component';
-import { BookingModule } from './booking/booking.module';
-import { FixedFrameModule } from './fixed-frame/fixedframe.module';
-import { dashboardModule } from './dashboard/dashboard.module';
-import { NewBiltyCnComponent } from './booking/new-bilty-cn/new-bilty-cn.component';
-import { ConsignorComponent } from './booking/consignor/consignor.component';
-import { ConsignmentBookingComponent } from './booking/consignment-booking/consignment-booking.component';
-import { AdditionalServiceCBSComponent } from './booking/additional-service-c-b-s/additional-service-c-b-s.component';
-import { ConsigneeComponent } from './booking/consignee/consignee.component';
 import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
-import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
 import { MenifestlistComponent } from './Loading/Menifest/menifestlist/menifestlist.component';
 import { NewmenifestComponent } from './Loading/Menifest/newmenifest/newmenifest.component';
+import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehicle.component';
+
+//custom module
+import { BookingModule } from './booking/booking.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { FixedFrameModule } from './fixed-frame/fixedframe.module';
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
-MenifestCartComponent
+import { CompanyComponent } from './settings/company/company.component';
+import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
+import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,12 +46,18 @@ MenifestCartComponent
     MenifestlistComponent,
     NewmenifestComponent,
     MenifestCartComponent,
-    MenifestDetailsComponent
+    MenifestDetailsComponent,
+    CompanyComponent,
+    ConsigmentArrivelListComponent,
+    GatePassRegisterComponent,
   ],
   imports: [
     BrowserModule,
     BookingModule,
-    dashboardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ProgressSpinnerModule,
+    DashboardModule,
     FixedFrameModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
