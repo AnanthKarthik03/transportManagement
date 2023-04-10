@@ -23,7 +23,8 @@ import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehi
 import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
-
+import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
+import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -53,6 +54,14 @@ const routes: Routes = [
       {
         path: 'date-wise-booking-register',
         component: DateWiseBookingRegisterComponent,
+      },
+      {
+        path: 'consigment-arrivel-list',
+        component: ConsigmentArrivelListComponent,
+      },
+      {
+        path: 'gate-pass-register',
+        component: GatePassRegisterComponent,
       },
       { path: 'consignee', component: ConsigneeComponent },
       { path: 'table', component: LorryArrivalDetailsComponent },

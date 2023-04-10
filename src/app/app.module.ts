@@ -30,6 +30,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { FixedFrameModule } from './fixed-frame/fixedframe.module';
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
+import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
+import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/me
     NewmenifestComponent,
     MenifestCartComponent,
     MenifestDetailsComponent,
+    ConsigmentArrivelListComponent,
+    GatePassRegisterComponent,
   ],
   imports: [
     BrowserModule,

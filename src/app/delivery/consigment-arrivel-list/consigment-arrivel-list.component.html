@@ -1,0 +1,384 @@
+<div class="container-fluid mb-40">
+    <div class="container" id="main">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12 mb-1">
+              <div class="panel panel-default" id="table">
+                <div class="panel-heading">
+                  <span class="pull-right">
+                    <a
+                     
+                      role="button"
+                      class="btn btn-success"
+                    >
+                      <span class="glyphicon glyphicon-arrow-left"></span> Back</a
+                    >
+                  </span>
+                  <h4>CN Arrival List</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="table-responsive mb-10 div1">
+                    <p-table
+                      #dt1
+                      [scrollable]="true"
+                      responsiveLayout="scroll"
+                      scrollWidth="100%"
+                      [style]="{ width: '100%' }"
+                      [value]="bcrs"
+                      [paginator]="true"
+                      [rows]="5"
+                      dataKey="id"
+                      [rowsPerPageOptions]="[1, 3, 5, 7, 10]"
+                      [totalRecords]="5"
+                      [showCurrentPageReport]="true"
+                      [autoLayout]="true"
+                      styleClass="p-datatable-customers p-datatable-gridlines p-datatable-responsive-demo"
+                      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                      [pageLinks]="3"
+                      [globalFilterFields]="[
+                        'cn_no',
+                        'details',
+                        'consigner',
+                        'consignee',
+                        'from',
+                        'via',
+                        'to',
+                        'pay',
+                        'amount',
+                        'rec',
+                        'dis',
+                        'due',
+                        'branch'
+                      ]"
+                    >
+                      <ng-template pTemplate="caption">
+                        <span class="p-input-icon-right ml-auto">
+                          <i class="pi pi-search"></i>
+                          <input
+                            pInputText
+                            type="text"
+                            (input)="
+                              dt1.filterGlobal(
+                                $any($event.target).value,
+                                'contains'
+                              )
+                            "
+                            placeholder="Search keyword"
+                          />
+                        </span>
+                      </ng-template>
+                      <ng-template pTemplate="header">
+                        <tr>
+                          <th>SL No.</th>
+                          <th pSortableColumn="cn_no">
+                            CN No.<p-sortIcon field="cn_no"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="cn_no"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                          <th pSortableColumn="details">
+                            CN Date<p-sortIcon field="details"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="details"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                          <th pSortableColumn="consigner">
+                            Product Details<p-sortIcon field="consigner"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="consigner"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                          <th pSortableColumn="consignee">
+                            Consignor Name<p-sortIcon field="consignee"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="consignee"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                          <th pSortableColumn="from">
+                            Consignee Name<p-sortIcon field="from"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="from"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                          <th pSortableColumn="via">
+                            From<p-sortIcon field="via"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="via"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                          <th pSortableColumn="to">
+                            To<p-sortIcon field="to"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="to"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                         
+                          <th pSortableColumn="amount">
+                            Gate Pass<p-sortIcon field="amount"></p-sortIcon>
+                            <p-columnFilter
+                              type="text"
+                              field="amount"
+                              display="menu"
+                            ></p-columnFilter>
+                          </th>
+                         
+                         
+                          <th>Print</th>
+                        </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-bcr let-i="rowIndex">
+                        <tr>
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ bcr.cn_no }}</td>
+                          <td>{{ bcr.details }}</td>
+                          <td>{{ bcr.consigner }}</td>
+                          <td>{{ bcr.consignee }}</td>
+                          <td>{{ bcr.from }}</td>
+                          <td>{{ bcr.via }}</td>
+                          <td>{{ bcr.due }}</td>
+                          <td> <a  [routerLink]="['/dashboard/gate-pass-register']"  
+                            ><i class=" gp">Issue GP</i
+                          ></a></td>
+                          <td>
+                            <a 
+                              ><i class="pi pi-print print"></i
+                            ></a>
+                          </td>
+                        </tr>
+                      </ng-template>
+                    </p-table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div
+    id="loginModal"
+    class="modal fade"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen-md-down">
+      <div class="modal-content">
+        <div class="modal-header custom-header-panel">
+          <div class="row">
+            <div class="col-md-8">
+              <h4>Invoice</h4>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn1">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                Edit
+              </button>
+              <button type="button" class="btn2 mt-5">
+                <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+                Print
+              </button>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="new_table">
+            <table style="width: 100%">
+              <tr>
+                <th colspan="2" rowspan="3">
+                  <img
+                    src="assets/images/tms_123.png"
+                    style="height: 115px; width: 180px"
+                  />
+                </th>
+                <th colspan="3" rowspan="3" style="border-left: hidden">
+                  <h3><strong> TRANSPORT MANAGEMENT SYSTEM</strong></h3>
+                  <h6>
+                    Unit No. # 09, 2nd Floor, Emaar MGF - The Palm Square, Golf
+                  </h6>
+                  <h6>Course Ext Rd, Sector 66, Gurugram, Haryana 122002</h6>
+                </th>
+                <th colspan="2" rowspan="3" style="border-left: hidden">
+                  <img
+                    src="assets/images/barcode.png"
+                    style="height: 100px; width: 170px; margin-left: 100px"
+                  />
+                </th>
+              </tr>
+              <tr></tr>
+              <tr></tr>
+              <tr>
+                <th colspan="7" class="text-center"><h3>Consigment Note</h3></th>
+              </tr>
+              <tr>
+                <td class="text-center"><b> CN NUMBER </b></td>
+                <td class="text-center"><b> DATE </b></td>
+                <td class="text-center"><b> VIA </b></td>
+                <td class="text-center"><b> FROM </b></td>
+                <td class="text-center"><b> TO </b></td>
+                <td class="text-center"><b> PAYMENT </b></td>
+                <td class="text-center"><b> COPY FOR </b></td>
+              </tr>
+              <tr>
+                <td class="text-center">PKG06195</td>
+                <td class="text-center">06-04-2023</td>
+                <td class="text-center">ROAD</td>
+                <td class="text-center">MUMBAI</td>
+                <td class="text-center">GURGAON</td>
+                <td class="text-center">TO PAY</td>
+                <td class="text-center">CONSIGNEE</td>
+              </tr>
+              <tr>
+                <th colspan="2" rowspan="3">
+                  <b>CONSIGNOR: LOKNATH INDUSTRY</b>
+                  <br />
+                  <h6>GURUGRAM, HARYANA SECTOR 66 <br /></h6>
+                  <h6>GST:11ADFL1574B1ZQ</h6>
+                </th>
+                <th colspan="3" rowspan="3">
+                  CONSIGNEE: KULDEEP KUMAR
+                  <h6>GURUGRAM, HARYANA SECTOR 66</h6>
+                  <h6>GST:11ADFL1574B1ZQ</h6>
+                </th>
+                <th colspan="2" rowspan="3">
+                  <b> SHIPPING ADDRESS: KULDEEP KUMAR </b>
+                  <h6>GURUGRAM, HARYANA SECTOR 66</h6>
+                  <h6>GST:11ADFL1574B1ZQ</h6>
+                </th>
+              </tr>
+              <tr></tr>
+              <tr></tr>
+  
+              <tr>
+                <!-- <th colspan="5">Name</th> -->
+                <td><b>ITEM</b></td>
+                <td><b>QTY</b></td>
+                <td><b>RATE</b></td>
+                <td><b>TYPE</b></td>
+                <td><b>AMOUNT</b></td>
+  
+                <th rowspan="3" class="text-right">Transport CHARGES</th>
+                <th rowspan="3" class="text-right">2,000</th>
+              </tr>
+              <tr>
+                <td>MOTOR</td>
+                <td>20</td>
+                <td>2000</td>
+                <td>WEIGHT</td>
+                <td>2,00,000</td>
+              </tr>
+              <tr>
+                <th colspan="5" rowspan="6"></th>
+              </tr>
+              <tr>
+                <td class="text-right">RC</td>
+                <td class="text-right">40.00</td>
+              </tr>
+              <tr>
+                <td class="text-right">HAMALI</td>
+                <td class="text-right">400.00</td>
+              </tr>
+              <tr>
+                <td class="text-right">SERVICE CHARGES</td>
+                <td class="text-right">40.00</td>
+              </tr>
+              <tr>
+                <td class="text-right">STATISTICAL CHARGES</td>
+                <td class="text-right">40.00</td>
+              </tr>
+              <tr>
+                <td class="text-right">OTHER CHARGES</td>
+                <td class="text-right">30.00</td>
+              </tr>
+              <tr>
+                <th colspan="4" rowspan="2">
+                  <b>INVOICE NO: 201 </b>
+  
+                  <h5>E-WAY BillNO: 36572568</h5>
+                </th>
+  
+                <th rowspan="2" class="text-center">
+                  BOOKING POINT
+                  <h5>MUMBAI</h5>
+                </th>
+                <td class="text-right"><b>SUB TOTAL</b></td>
+                <td class="text-right"><b>2,000.00</b></td>
+              </tr>
+              <tr>
+                <td class="text-right">IGST 5.00%</td>
+                <td class="text-right">128.00</td>
+              </tr>
+              <tr>
+                <th colspan="3" rowspan="2">PRIVATE MARK:</th>
+                <th colspan="2" rowspan="2">TEXT PAID BY CONSIGNEE</th>
+                <td class="text-right">CGST</td>
+                <td class="text-right">0.00</td>
+              </tr>
+              <tr>
+                <td class="text-right">SGST</td>
+                <td class="text-right">0.00</td>
+              </tr>
+              <tr>
+                <th colspan="3">CLAIM AMOUNT</th>
+                <th colspan="2">AMOUNT IN WORD: TWO THOUSAND</th>
+                <td class="text-right"><b>GRAND TOTAL</b></td>
+                <td class="text-right"><b>2,000.00</b></td>
+              </tr>
+              <tr>
+                <th colspan="5" rowspan="2">
+                  CONSIGNMENT CAUTION:
+                  <h6>
+                    This assignment convert by set of lorry receipt from shall be
+                    stored at the destination under the control of the transport
+                  </h6>
+                </th>
+                <th colspan="2" rowspan="2" class="text-center">
+                  TRANSPORT MANAGEMENT SYSTEM
+                </th>
+              </tr>
+              <tr></tr>
+              <tr>
+                <th colspan="7">
+                  BANK ACCOUNT NAME: TRANSPORT MANAGEMENT SYSTEM, ACCOUNT NO.
+                  234567891076, IFSC: SBIN234000, BRANCH: GURGAON
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-md-12">
+            <!-- <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Update your data</button>
+            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
