@@ -8,8 +8,8 @@
     
                 <div class="panel-heading"><span class="pull-right">
     
-                    <a  [routerLink]="['/dashboard/newvehicle']" role="button"  class="btn  btn-success">
-                      <span class="glyphicon glyphicon-plus"></span> Add New</a>
+                    <a  [routerLink]="['/dashboard/newmenifest']" role="button"  class="btn  btn-success">
+                      <span class="glyphicon glyphicon-plus"></span> Create New Menifest</a>
                   </span>
                   <h4>List of Menifest</h4>
                 </div>
@@ -22,16 +22,12 @@
                       styleClass="p-datatable-customers p-datatable-gridlines p-datatable-responsive-demo"
                       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [pageLinks]="3"
                       [globalFilterFields]="[
-                      'Registrationno',
-                      'VehicleType',
-                      'Model',
-                      'MakerName',
-                      'OwnerName',
-                      'DriverName',
-                      'Chessisno',
-                      'Engineno',
-                      'Color',
-                      'VehicleHire',
+                      'MFNo',
+                      'Date',
+                      'From',
+                      'To',
+                      'VehicleNo',
+                      'Status',
                       'Action'
                   ]">
     
@@ -46,75 +42,59 @@
                       <ng-template pTemplate="header">
                         <tr>
                           <th>SL no.</th>
-                          <th pSortableColumn="Registrationno">
-                            Registration no.<p-sortIcon field="Registrationno"></p-sortIcon>
-                            <p-columnFilter type="text" field="Registrationno" display="menu"></p-columnFilter>
+                          <th pSortableColumn="MFNo">
+                            MF/No.<p-sortIcon field="MFNo"></p-sortIcon>
+                            <p-columnFilter type="text" field="MFNo" display="menu"></p-columnFilter>
                           </th>
-                          <th pSortableColumn="VehicleType">
-                            Vehicle Type<p-sortIcon field="VehicleType"></p-sortIcon>
-                            <p-columnFilter type="text" field="VehicleType" display="menu"></p-columnFilter>
+                          <th pSortableColumn="Date">
+                            Date<p-sortIcon field="Date"></p-sortIcon>
+                            <p-columnFilter type="text" field="Date" display="menu"></p-columnFilter>
                           </th>
-                          <th pSortableColumn="Model">
-                            Model<p-sortIcon field="Model"></p-sortIcon>
-                            <p-columnFilter type="text" field="Model" display="menu"></p-columnFilter>
+                          <th pSortableColumn="From">
+                            From<p-sortIcon field="From"></p-sortIcon>
+                            <p-columnFilter type="text" field="From" display="menu"></p-columnFilter>
                           </th>
-                          <th pSortableColumn="MakerName">
-                            Maker Name<p-sortIcon field="MakerName"></p-sortIcon>
-                            <p-columnFilter type="text" field="MakerName" display="menu"></p-columnFilter>
+                          <th pSortableColumn="To">
+                            To<p-sortIcon field="To"></p-sortIcon>
+                            <p-columnFilter type="text" field="To" display="menu"></p-columnFilter>
                           </th>
-                          <th pSortableColumn="OwnerName">
-                            Owner Name<p-sortIcon field="OwnerName"></p-sortIcon>
-                            <p-columnFilter type="text" field="OwnerName" display="menu"></p-columnFilter>
+                          <th pSortableColumn="VehicleNo">
+                            Vehicle No.<p-sortIcon field="VehicleNo"></p-sortIcon>
+                            <p-columnFilter type="text" field="VehicleNo" display="menu"></p-columnFilter>
                           </th>
-                          <th pSortableColumn="DriverName">
-                            Driver Name<p-sortIcon field="DriverName"></p-sortIcon>
-                            <p-columnFilter type="text" field="DriverName" display="menu"></p-columnFilter>
-                          </th>
-                          <th pSortableColumn="Chessisno">
-                            Chessis no.<p-sortIcon field="Chessisno"></p-sortIcon>
-                            <p-columnFilter type="text" field="Chessisno" display="menu"></p-columnFilter>
-                          </th>
-                          <th pSortableColumn="Engineno">
-                            Engine no.<p-sortIcon field="Engineno"></p-sortIcon>
-                            <p-columnFilter type="text" field="Engineno" display="menu"></p-columnFilter>
-                          </th>
-                          <th pSortableColumn="Color">
-                            Color<p-sortIcon field="Color"></p-sortIcon>
-                            <p-columnFilter type="text" field="Color" display="menu"></p-columnFilter>
-                          </th>
-                          <th pSortableColumn="VehicleHire">
-                            Vehicle Hire<p-sortIcon field="VehicleHire"></p-sortIcon>
-                            <p-columnFilter type="text" field="VehicleHire" display="menu"></p-columnFilter>
+                          <th pSortableColumn="Status">
+                            Status<p-sortIcon field="Status"></p-sortIcon>
+                            <p-columnFilter type="text" field="Status" display="menu"></p-columnFilter>
                           </th>
                           <th pSortableColumn="Action">
-                            Action
+                            Action<p-sortIcon field="Action"></p-sortIcon>
+                            <p-columnFilter type="text" field="Action" display="menu"></p-columnFilter>
+                          </th>
                             <!-- <p-sortIcon field="Action"></p-sortIcon> -->
                             <!-- <p-columnFilter type="text" field="Action" display="menu"></p-columnFilter> -->
-                          </th>
                           <!-- <th>Print</th> -->
                         </tr>
                       </ng-template>
                       <ng-template pTemplate="body" let-mlist let-i="rowIndex">
                         <tr>
                           <td>{{ i + 1 }}</td>
-                          <td>{{ mlist.Registrationno }}</td>
-                          <td>{{ mlist.VehicleType }}</td>
-                          <td>{{ mlist.Model }}</td>
-                          <td>{{ mlist.MakerName }}</td>
-                          <td>{{ mlist.OwnerName }}</td>
-                          <td>{{ mlist.DriverName }}</td>
-                          <td>{{ mlist.Chessisno }}</td>
-                          <td>{{ mlist.Engineno }}</td>
-                          <td>{{ mlist.Color }}</td>
+                          <td>{{ mlist.MFNo }}</td>
+                          <td>{{ mlist.Date }}</td>
+                          <td>{{ mlist.From }}</td>
+                          <td>{{ mlist.To }}</td>
+                          <td>{{ mlist.VehicleNo }}</td>
                           <td><a role="button" class="btn  btn-success">
-                             Hire Now</a></td>
+                             At Destination</a></td>
                           <td>
-                            <div class="col-11">
-                                <div class="col-sm-6">
+                            <div class="col-10">
+                                <div class="col-sm-3">
                                     <a href="#loginModal" data-toggle="modal"><i class="glyphicon glyphicon-edit"></i></a>
                                 </div>
-                                <div class="col-sm-6">
-                                    <a href="#loginModal" data-toggle="modal"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                <div class="col-sm-3">
+                                    <a href="#loginModal" data-toggle="modal"><i class="glyphicon glyphicon-print"></i></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#loginModal" data-toggle="modal"><i class="glyphicon glyphicon-share"></i></a>
                                 </div>
                             </div>
                           </td>

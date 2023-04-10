@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AppRoutingModule } from '../app-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { FixedFrameModule } from '../fixed-frame/fixedframe.module';
+
 @NgModule({
   declarations: [
     SuperAdminDashboardComponent,
@@ -15,4 +16,4 @@ import { FixedFrameModule } from '../fixed-frame/fixedframe.module';
   ],
   imports: [CommonModule, FixedFrameModule, AppRoutingModule],
 })
-export class dashboardModule {}
+export class DashboardModule {}

@@ -9,4 +9,18 @@ export class MenifestlistComponent {
   mlist: any[];
   i: number = 0;
 
+  ngOnInit(): void {
+    this.mlist = [
+      {
+        MFNo:'WB25G-0734',
+        Date:'Lorry',
+        From:'TRUCK12W',
+        To:'',
+        VehicleNo:'Ashok Kr. Yadav',
+        Status:'Parmesh Kr. Yadav',
+        Action:''
+      }];
+    }
+  
+
 }
