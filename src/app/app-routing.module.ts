@@ -23,6 +23,7 @@ import { NewvehicleComponent } from './Loading/Vehicledetails/newvehicle/newvehi
 import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregister/vehicleregister.component';
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
+import { CompanyComponent } from './settings/company/company.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -62,6 +63,7 @@ const routes: Routes = [
       { path: 'newmenifest', component: NewmenifestComponent },
       { path: 'menifest-cart', component: MenifestCartComponent },
       { path: 'menifest-details', component: MenifestDetailsComponent },
+      { path: 'company', component: CompanyComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],

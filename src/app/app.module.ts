@@ -30,6 +30,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { FixedFrameModule } from './fixed-frame/fixedframe.module';
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
+import { CompanyComponent } from './settings/company/company.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/me
     NewmenifestComponent,
     MenifestCartComponent,
     MenifestDetailsComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,
