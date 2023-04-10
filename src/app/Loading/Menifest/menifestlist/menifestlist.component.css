@@ -1,0 +1,8 @@
+@media screen and (max-width: 450px) {
+    .newmenifest{
+        display: none;
+    }
+    .mr1{
+        margin-right: 0 !important;
+    }
+  }

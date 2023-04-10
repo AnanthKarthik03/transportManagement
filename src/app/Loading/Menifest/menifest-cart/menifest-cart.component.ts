@@ -28,6 +28,19 @@ export class MenifestCartComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.afterCreateBuiltyData = [
+      {
+        cnno:'WB25G-0734',
+        packagesbooked:'Lorry',
+        packagesdispatched:'TRUCK12W',
+        itemconsignee:'',
+        actualWeight:'Ashok Kr. Yadav',
+        grossWeight:'Parmesh Kr. Yadav',
+        destination:''
+      }];
+    }
+
   onRemoveItem() {
     console.log('remove');
   }

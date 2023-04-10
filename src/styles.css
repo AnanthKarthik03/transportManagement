@@ -670,7 +670,12 @@ html::-webkit-scrollbar-thumb {
   background-size: auto 100%;
 }
 
+
+
 /* login-page */
+.mr1{
+  margin-right: 10px;
+}
 .mt-10 {
   margin-top: 10px;
 }
