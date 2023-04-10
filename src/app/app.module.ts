@@ -31,6 +31,8 @@ import { FixedFrameModule } from './fixed-frame/fixedframe.module';
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
 import { CompanyComponent } from './settings/company/company.component';
+import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
+import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { CompanyComponent } from './settings/company/company.component';
     MenifestCartComponent,
     MenifestDetailsComponent,
     CompanyComponent,
+    ConsigmentArrivelListComponent,
+    GatePassRegisterComponent,
   ],
   imports: [
     BrowserModule,

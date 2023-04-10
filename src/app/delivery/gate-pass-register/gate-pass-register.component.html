@@ -1,0 +1,372 @@
+<div class="container-fluid mb-40">
+    <div class="container" id="main">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default" id="table">
+                <div class="panel-heading">
+                  <span class="pull-right">
+                    <a
+                      role="button"
+                      class="btn btn-success"
+                      [routerLink]="['/dashboard/consigment-arrivel-list']"
+                    >
+                      <span class="glyphicon glyphicon-arrow-left"></span> Back</a
+                    >
+                  </span>
+                  
+                  <ul class="list-inline list-unstyled">
+                    <li>
+                      <h4>Bulk Issue Gate Pass</h4>
+                    </li>
+  
+                    
+                  </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="row mb-20">
+                        <div class="col-md-12">
+                          <div class="panel panel-success">
+                            <div class="panel-heading">
+                              <div class="panel-title"> <span class="glyphicon glyphicon-info-sign mr-10"></span>Consignee Information</div>
+                            </div>
+                            <div class="panel-body" >
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="px-0">
+                                            <strong class="mr-10">Name:</strong> <span class="bs-example mr-10"
+                                               >Joy Ram Phal Bhander,</span
+                                             >
+                                             <strong class="mr-10">Address:</strong><span class="bs-example mr-10">Agartala,Tripura West,</span
+                                             >
+                                             <strong class="mr-10">City:</strong><span class="bs-example mr-10">Agartala,</span>
+                                             <strong class="mr-10">Phone:</strong><span class="bs-example mr-10"
+                                               >54545454545,</span>
+                                             
+                                             </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <div class="row mb-20">
+                    <div class="col-md-12">
+                      <div class="panel panel-primary panel-table">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col col-xs-12">
+                              <div class="">
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label
+                                    class="btn btn-success btn-filter"
+                                    data-target="completed"
+                                  >
+                                    <input
+                                      type="radio"
+                                      name="options"
+                                      id="option1"
+                                      autocomplete="off"
+                                      checked
+                                    />
+                                    <b class="mr-10">Total Item in Cart </b
+                                    ><i class="glyphicon glyphicon-shopping-cart"
+                                      >:</i
+                                    >
+                                  </label>
+  
+                                  <label
+                                    class="btn btn-default btn-filter"
+                                    data-target="all"
+                                  >
+                                    <input
+                                      type="radio"
+                                      name="options"
+                                      id="option3"
+                                      autocomplete="off"
+                                    /><strong>{{
+                                      afterCreateBuiltyDataLength
+                                    }}</strong>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-body" style="overflow-x: auto">
+                          <table
+                            id="mytable"
+                            class="table table-responsive table-striped table-bordered table-list"
+                          >
+                            <thead>
+                              <tr>
+                                <th class="col-text">C/N No</th>
+                                <th class="col-text">Particular</th>
+                                <th class="col-text">Product Details</th>
+                                <th class="col-text">Consignee</th>
+                                <th class="col-text">Delivery Through</th>
+                                <th class="col-text">Date</th>
+                                <th class="col-text">Time</th>
+                               
+  
+                                <th class="col-tools">
+                                  <span
+                                    class="glyphicon glyphicon-wrench"
+                                    aria-hidden="true"
+                                  ></span>
+                                  Action
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr
+                                data-status="completed"
+                                *ngFor="let item of afterCreateBuiltyData"
+                              >
+                                <td>{{ item.quantity }}</td>
+                                <td>{{ item.packageType }}</td>
+                                <td>{{ item.productDetails }}</td>
+                                <td>{{ item.hsn }}</td>
+                                <td>{{ item.actualWeight }}</td>
+                                <td>{{ item.grossWeight }}</td>
+                                <td>{{ item.weightType }}</td>
+                                
+                                <td>
+                                  <a
+                                    class="btn btn-danger"
+                                    (click)="onRemoveItem()"
+                                    ><span
+                                      class="glyphicon glyphicon-trash"
+                                      aria-hidden="true"
+                                    ></span
+                                    >Remove</a
+                                  >
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="panel-footer">
+                          <div class="row">
+                            <div class="col col-xs-offset-3 col-xs-6">
+                              <!-- <nav aria-label="Page navigation" class="text-center">
+                                  <ul class="pagination">
+                                    <li>
+                                      <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                      </a>
+                                    </li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </nav> -->
+                            </div>
+                            <div class="col col-xs-3">
+                              <div class="pull-right">
+                                <button
+                                  type="button"
+                                  class="btn btn-info"
+                                  [routerLink]="['/dashboard/consignor']"
+                                >
+                                  <span
+                                    class="glyphicon glyphicon-hand-right"
+                                    aria-hidden="true"
+                                  ></span>
+                                  Checkout
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-20 " id="addr0">
+                        <div  id="addr0">
+                            <form role="form" id="form-buscar">
+                                <div class="form-group" >
+                                <div class="input-group">
+                                <input id="1" class="form-control" type="text" name="search" placeholder="Search..." required/>
+                                <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">
+                                <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+                                </button>
+                                </span>
+                                </div>
+                                </div>
+                                </form>
+                        </div>
+
+                       
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <form
+                        [formGroup]="newBuiltyData"
+                        (ngSubmit)="onNewBuiltySubmit()"
+                      >
+                        <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <div class="panel-title">Add Gate Pass</div>
+                          </div>
+                          <div class="panel-body">
+                            <div class="row clearfix">
+                              <div
+                                class="col-md-12 column"
+                                style="overflow-x: auto"
+                              >
+                                <table
+                                  class="table table-bordered table-hover table-responsive"
+                                  id="tab_logic"
+                                >
+                                  <tbody>
+                                    <tr id="addr0">
+                                      <td class="col-xs-2">
+                                        <label>Select All C/N No</label><br />
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="quantity"
+                                          formControlName="quantity"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newBuiltyData
+                                              .get('quantity')
+                                              ?.hasError('required') &&
+                                            newBuiltyData.get('quantity').touched
+                                          "
+                                          class="text-danger"
+                                          >Particular</small
+                                        >
+                                      </td>
+                                      <td class="col-xs-3">
+                                        <label>Consignee</label><br />
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="actualweight"
+                                          formControlName="actualWeight"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newBuiltyData
+                                              .get('actualWeight')
+                                              ?.hasError('required') &&
+                                            newBuiltyData.get('actualWeight')
+                                              .touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </td>
+                                      <td class="col-xs-3">
+                                        <label>Delivery Through</label><br />
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="productdetails"
+                                          formControlName="productDetails"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newBuiltyData
+                                              .get('productDetails')
+                                              ?.hasError('required') &&
+                                            newBuiltyData.get('productDetails')
+                                              .touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </td>
+                                      <td class="col-xs-2">
+                                        <label>Date</label><br />
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="hsn"
+                                          formControlName="hsn"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newBuiltyData
+                                              .get('hsn')
+                                              ?.hasError('required') &&
+                                            newBuiltyData.get('hsn').touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </td>
+                                      <td class="col-xs-2">
+                                        <label>Time</label><br />
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          name="actualweight"
+                                          formControlName="actualWeight"
+                                        />
+                                        <small
+                                          *ngIf="
+                                            newBuiltyData
+                                              .get('actualWeight')
+                                              ?.hasError('required') &&
+                                            newBuiltyData.get('actualWeight')
+                                              .touched
+                                          "
+                                          class="text-danger"
+                                          >required field</small
+                                        >
+                                      </td>
+                                      <td class="col-xs-2">
+                                        <label>Action</label><br />
+                                        <button
+                                        type="submit"
+                                        class="btn btn-success"
+                                        [disabled]="newBuiltyData.invalid"
+                                      >
+                                        <span
+                                          class="glyphicon glyphicon-shopping-cart"
+                                          aria-hidden="true"
+                                        ></span>
+                                        Add To Gate Pass
+                                      </button>
+                                      </td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  
