@@ -40,10 +40,7 @@
                       <div class="col-md-6">
                         <div class="media-body">
                           <h1>Hello</h1>
-                          <button
-                            class="btn btn-primary"
-                            (click)="show_form = !show_form"
-                          >
+                          <button class="btn btn-primary" (click)="onEdit()">
                             Modify
                           </button>
                         </div>
@@ -51,10 +48,7 @@
                       <div class="col-md-6">
                         <div class="media-body">
                           <h1>Hello</h1>
-                          <button
-                            class="btn btn-primary"
-                            (click)="show_form = !show_form"
-                          >
+                          <button class="btn btn-primary" (click)="onEdit()">
                             Modify
                           </button>
                         </div>
@@ -358,8 +352,10 @@
                                         <span
                                           class="glyphicon glyphicon-ok-circle mr-10"
                                           aria-hidden="true"
-                                        ></span
-                                        >Submit
+                                        ></span>
+                                        {{
+                                          submit_to_update ? "Update" : "Submit"
+                                        }}
                                       </button>
                                     </div>
                                   </div>
