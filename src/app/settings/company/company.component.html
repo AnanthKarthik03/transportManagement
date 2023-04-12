@@ -1,5 +1,4 @@
-<!-- card section which will show after fill form -->
-<div class="container-fluid mb-40">
+<div class="container-fluid">
   <div class="container" id="main">
     <div class="row">
       <div class="col-md-12 mb-1">
@@ -9,33 +8,31 @@
               <a
                 role="button"
                 class="btn btn-success"
-                (click)="show_form = !show_form"
+                (click)="formShowToggle()"
               >
                 <span
                   class="glyphicon glyphicon-arrow-left"
-                  *ngIf="show_form"
+                  *ngIf="form_show"
                 ></span>
                 <span
                   class="glyphicon glyphicon-plus"
-                  *ngIf="!show_form"
+                  *ngIf="!form_show"
                 ></span>
-                {{ show_form ? "back" : "ADD" }}</a
+                {{ form_show ? "back" : "Add" }}</a
               >
             </span>
             <ul class="list-inline list-unstyled list-ul">
               <li>
-                <h4>
-                  {{ show_form ? "Create Company" : "All Companies" }}
-                </h4>
+                <h4>{{ form_show ? headerTitle : "All Companies" }}</h4>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="!form_show">
       <div class="col-md-12">
-        <div class="col-md-4">
+        <div class="col-md-4 mb-1">
           <div class="panel-bg">
             <div class="panel-heading custom-header-panel-company">
               <img
@@ -50,7 +47,12 @@
                 </h3>
                 <div class="panel-footer-btn">
                   <div class="btn-group-d">
-                    <button class="btn btn-primary1">Modify</button>
+                    <button
+                      class="btn btn-primary1"
+                      (click)="onModifiedButton()"
+                    >
+                      Modify
+                    </button>
                     <button class="btn btn-success1">Create</button>
                   </div>
                 </div>
@@ -58,7 +60,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-1">
           <div class="panel-bg">
             <div class="panel-heading custom-header-panel-company">
               <img
@@ -73,7 +75,12 @@
                 </h3>
                 <div class="panel-footer-btn">
                   <div class="btn-group-d">
-                    <button class="btn btn-primary1">Modify</button>
+                    <button
+                      class="btn btn-primary1"
+                      (click)="onModifiedButton()"
+                    >
+                      Modify
+                    </button>
                     <button class="btn btn-success1">Create</button>
                   </div>
                 </div>
@@ -81,7 +88,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+
+        <div class="col-md-4 mb-1">
           <div class="panel-bg">
             <div class="panel-heading custom-header-panel-company">
               <img
@@ -90,13 +98,18 @@
               />
             </div>
             <div class="panel-body-text">
-              <div class="form-group-text">
-                <h3 class="panel-title roboto text" style="color: black">
+              <div class="form-group">
+                <h3 class="panel-title roboto text">
                   Rostan Technologies Pvt. Ltd.
                 </h3>
                 <div class="panel-footer-btn">
                   <div class="btn-group-d">
-                    <button class="btn btn-primary1">Modify</button>
+                    <button
+                      class="btn btn-primary1"
+                      (click)="onModifiedButton()"
+                    >
+                      Modify
+                    </button>
                     <button class="btn btn-success1">Create</button>
                   </div>
                 </div>
@@ -107,8 +120,7 @@
       </div>
     </div>
 
-    <!-- card footer -->
-    <div class="row">
+    <div class="row" *ngIf="!form_show">
       <hr />
       <div class="col-md-12 text-center">
         <p>
@@ -124,4 +136,990 @@
   </div>
 </div>
 
-<!-- -------------------------form will be here-------------------------- -->
+<!-- -------------------------form-------------------------- -->
+
+<div class="container-fluid mb-40" *ngIf="form_show">
+  <div class="container">
+    <form
+      id="candidatedata"
+      class="form-horizontal"
+      role="form"
+      [formGroup]="createCompany"
+      (ngSubmit)="onCreateCompany()"
+    >
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel">
+            <div class="panel-heading custom-header-panel">
+              <h3 class="panel-title roboto">Basic Company Details</h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="name"
+                    >Company Name <span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="company_name"
+                      id="company_name"
+                      formControlName="company_name"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_name')
+                          .hasError('required') &&
+                        createCompany.get('company_name').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Company Logo<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="file"
+                      class="form-control"
+                      name="company_logo"
+                      id="company_logo"
+                      (change)="onPickImage($event)"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_logo')
+                          .hasError('required') &&
+                        createCompany.get('company_logo').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Company Contact Details<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="company_conatct_detail"
+                      id="company_contact_detail"
+                      formControlName="company_contact_detail"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_contact_detail')
+                          .hasError('required') &&
+                        createCompany.get('company_contact_detail').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Company Email Id<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="company_email"
+                      id="company_email"
+                      formControlName="company_email"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_email')
+                          .hasError('required') &&
+                        createCompany.get('company_email').touched
+                      "
+                      >required field</small
+                    >
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_email')
+                          .hasError('userNotValid') &&
+                        createCompany.get('company_email').touched
+                      "
+                      >invalid email</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Company Legal Name<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control rut"
+                      id="company_legal_name"
+                      name="company_legal_name"
+                      formControlName="company_legal_name"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_legal_name')
+                          .hasError('required') &&
+                        createCompany.get('company_legal_name').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Company Website<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control rut"
+                      id="company_website"
+                      name="company_website"
+                      formControlName="company_website"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_website')
+                          .hasError('required') &&
+                        createCompany.get('company_website').touched
+                      "
+                      >required field</small
+                    >
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_website')
+                          .hasError('invalidUrl') &&
+                        createCompany.get('company_website').touched
+                      "
+                      >invalid url</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Types of Bussiness<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <select
+                      class="form-control"
+                      id="types_of_business"
+                      name="types_of_bussiness"
+                      formControlName="types_of_business"
+                    >
+                      <option value="Box">Box</option>
+                      <option value="Bag">Bag</option>
+                      <option value="Basta">Basta</option>
+                      <option value="Bundle">Bundle</option>
+                      <option value="Carton">Carton</option>
+                    </select>
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('types_of_business')
+                          .hasError('required') &&
+                        createCompany.get('types_of_business').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Date of Incorporation<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="date_of_incorporation"
+                      name="date_of_incorporation"
+                      formControlName="date_of_incorporation"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('date_of_incorporation')
+                          .hasError('required') &&
+                        createCompany.get('date_of_incorporation').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Company Identification Number<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="number"
+                      class="form-control rut"
+                      id="company_identification_number"
+                      name="company_identification_number"
+                      formControlName="company_identification_number"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('company_identification_number')
+                          .hasError('required') &&
+                        createCompany.get('company_identification_number')
+                          .touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Office Address Line 1<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="office_address1"
+                      name="office_address1"
+                      formControlName="office_address1"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('office_address1')
+                          .hasError('required') &&
+                        createCompany.get('office_address1').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Office Address Line 2<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="office_address2"
+                      name="office_address2"
+                      formControlName="office_address2"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('office_address2')
+                          .hasError('required') &&
+                        createCompany.get('office_address2').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >City<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="city"
+                      name="city"
+                      formControlName="city"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('city').hasError('required') &&
+                        createCompany.get('city').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >State<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="state"
+                      name="state"
+                      formControlName="state"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('state').hasError('required') &&
+                        createCompany.get('state').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Pincode<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pincode"
+                      name="pincode"
+                      formControlName="pincode"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('pincode').hasError('required') &&
+                        createCompany.get('pincode').touched
+                      "
+                      >required field</small
+                    >
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('pincode').hasError('invalidPin') &&
+                        createCompany.get('pincode').touched
+                      "
+                      >invalid pin-code</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PAN<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pan"
+                      name="pan"
+                      formControlName="pan"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('pan').hasError('required') &&
+                        createCompany.get('pan').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >TAN<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="tan"
+                      name="tan"
+                      formControlName="tan"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('tan').hasError('required') &&
+                        createCompany.get('tan').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >TAN Circle Number<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="tan_circle_number"
+                      name="tan_circle_number"
+                      formControlName="tan_circle_number"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('tan_circle_number')
+                          .hasError('required') &&
+                        createCompany.get('tan_circle_number').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Form 16 Signatory<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="form16_signatory"
+                      name="form16_signatory"
+                      formControlName="form16_signatory"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('form16_signatory')
+                          .hasError('required') &&
+                        createCompany.get('form16_signatory').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >GST Number<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="gst_number"
+                      name="gst_number"
+                      formControlName="gst_number"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('gst_number').hasError('required') &&
+                        createCompany.get('gst_number').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PF Number<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="pf_number"
+                      name="pf_number"
+                      formControlName="pf_number"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('pf_number').hasError('required') &&
+                        createCompany.get('pf_number').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PF Registration Date<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="pf_registration_date"
+                      name="pf_registration_date"
+                      formControlName="pf_registration_date"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('pf_registration_date')
+                          .hasError('required') &&
+                        createCompany.get('pf_registration_date').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PF Signatory<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pf_signatory"
+                      name="pf_signatory"
+                      formControlName="pf_signatory"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('pf_signatory')
+                          .hasError('required') &&
+                        createCompany.get('pf_signatory').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PF Signatory Designation<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pf_signatory_designation"
+                      name="pf_signatory_designation"
+                      formControlName="pf_signatory_designation"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('pf_signatory_designation')
+                          .hasError('required') &&
+                        createCompany.get('pf_signatory_designation').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PF Signatory Father<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pf_signatory_father"
+                      name="pf_signatory_father"
+                      formControlName="pf_signatory_father"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('pf_signatory_father')
+                          .hasError('required') &&
+                        createCompany.get('pf_signatory_father').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >ESI Number<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="esi_number"
+                      name="esi_number"
+                      formControlName="esi_number"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('esi_number').hasError('required') &&
+                        createCompany.get('esi_number').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >ESI Registration Date<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="Date"
+                      class="form-control"
+                      id="esi_registration_date"
+                      name="esi_registration_date"
+                      formControlName="esi_registration_date"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('esi_registration_date')
+                          .hasError('required') &&
+                        createCompany.get('esi_registration_date').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >ESI Signatory Designation<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="esi_signatory_designation"
+                      name="esi_signatory_designation"
+                      formControlName="esi_signatory_designation"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('esi_signatory_designation')
+                          .hasError('required') &&
+                        createCompany.get('esi_signatory_designation').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >ESI Signatory<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="esi_signatory"
+                      name="esi_signatory"
+                      formControlName="esi_signatory"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('esi_signatory')
+                          .hasError('required') &&
+                        createCompany.get('esi_signatory').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >ESI Signatory Father<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="esi_signatory_father"
+                      name="esi_signatory_father"
+                      formControlName="esi_signatory_father"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('esi_signatory_father')
+                          .hasError('required') &&
+                        createCompany.get('esi_signatory_father').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PT Registration Date<span class="requerido">
+                      *</span
+                    ></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="pt_registration_date"
+                      name="pt_registration_date"
+                      formControlName="pt_registration_date"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('pt_registration_date')
+                          .hasError('required') &&
+                        createCompany.get('pt_registration_date').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PT Number<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pt_number"
+                      name="pt_number"
+                      formControlName="pt_number"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('pt_number').hasError('required') &&
+                        createCompany.get('pt_number').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >PT Signatory<span class="requerido"> *</span></label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pt_signatory"
+                      name="pt_signatory"
+                      formControlName="pt_signatory"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany
+                          .get('pt_signatory')
+                          .hasError('required') &&
+                        createCompany.get('pt_signatory').touched
+                      "
+                      >required field</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="col-sm-6 control-label" for="rut"
+                    >Employee ID<span class="requerido"> *</span>
+                    <div class="radio-inline">
+                      <input
+                        type="radio"
+                        name="employee_id"
+                        id="automatic"
+                        value="Authomatic"
+                      />
+                      <label for="automatic">Authomatic</label>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <input
+                        type="radio"
+                        name="employee_id"
+                        id="manual"
+                        value="Manual"
+                      />
+                      <label for="manual">Manual</label>
+                      <small
+                        class="text-danger"
+                        *ngIf="
+                          createCompany
+                            .get('employee_id')
+                            .hasError('required') &&
+                          createCompany.get('employee_id').touched
+                        "
+                        >required checkbox</small
+                      >
+                    </div>
+                  </label>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="col-sm-6 control-label" for="rut"></label>
+
+                      <div class="col-sm-6">
+                        <div class="pull-right">
+                          <button
+                            type="button"
+                            id="submit_btn"
+                            class="btn btn-danger mr-10"
+                            (click)="formShowToggle()"
+                          >
+                            <span class="glyphicon" aria-hidden="true"></span>
+                            Cancel
+                          </button>
+                          <button
+                            type="submit"
+                            id="submit_btn"
+                            class="btn btn-warning"
+                          >
+                            <span class="glyphicon" aria-hidden="true"></span>
+                            {{ submitButtonTitle }}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
