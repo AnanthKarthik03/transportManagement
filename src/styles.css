@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
   margin: 0;
@@ -10,8 +11,11 @@
 body {
   background-color: #e0e0e0 !important;
   -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto, arial, sans-serif;
+  font-family: 'inter', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
 }
+
 
 html,
 body,
