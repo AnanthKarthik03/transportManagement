@@ -38,13 +38,13 @@
                                                         <div class="col col-xs-12">
                                                             <div><span class="pull-right">
 
-                                                                <a role="button" class="btn  btn-success"
-                                                                    data-toggle="modal" data-target="#myModal">
-                                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                                </a>
-                                                            </span>
-                                                            <h3 class="panel-title roboto"> Create Menifest</h3>
-                                                        </div>
+                                                                    <a role="button" class="btn  btn-success"
+                                                                        data-toggle="modal" data-target="#myModal">
+                                                                        <span class="glyphicon glyphicon-edit"></span>
+                                                                    </a>
+                                                                </span>
+                                                                <h3 class="panel-title roboto"> Create Menifest</h3>
+                                                            </div>
 
                                                         </div>
 
@@ -52,7 +52,9 @@
                                                 </div>
 
                                                 <div class="panel-body panel-table" style="overflow-x: auto">
-                                                    <form id="candidatedata" class="form-horizontal" role="form">
+                                                    <form id="candidatedata" class="form-horizontal"
+                                                        [formGroup]="createnewmenifest" (ngSubmit)="oncreatemenifest()"
+                                                        role="form">
 
                                                         <div class="row">
                                                             <div class="col-md-12">
@@ -66,113 +68,206 @@
                                                                                 <span class="requerido">
                                                                                     *</span></label>
                                                                             <div class="col-sm-7">
-                                                                                <input type="text" class="form-control"
-                                                                                    name="name" id="name" value=""
-                                                                                    required="" maxlength="70">
+                                                                                <input type="date" class="form-control"
+                                                                                    name="name"
+                                                                                    formControlName="menifest_date"
+                                                                                    id="name" value="" maxlength="70">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('menifest_date')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'menifest_date'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
                                                                             </div>
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <label class="col-sm-5 control-label"
-                                                                                for="rut">From<span
+                                                                                for="rut">From<span class="requerido">
+                                                                                    *</span></label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="text"
+                                                                                    class="form-control rut" id="rut"
+                                                                                    name="rut" formControlName="from"
+                                                                                    value="" maxlength="12"
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('from')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'from'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-5 control-label"
+                                                                                for="rut">To<span class="requerido">
+                                                                                    *</span></label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="text"
+                                                                                    class="form-control rut"
+                                                                                    formControlName="to" id="rut"
+                                                                                    name="rut" value="" maxlength="12"
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('to')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'to'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-5 control-label"
+                                                                                for="rut">Vehicle/Lorry No.<span
                                                                                     class="requerido">
                                                                                     *</span></label>
                                                                             <div class="col-sm-7">
                                                                                 <input type="text"
                                                                                     class="form-control rut" id="rut"
+                                                                                    formControlName="vehicle_no"
                                                                                     name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('vehicle_no')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'vehicle_no'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-sm-5 control-label"
-                                                                                for="rut">To<span
+                                                                                for="rut">Charge Amount<span
+                                                                                    class="requerido">
+                                                                                    *</span></label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="number"
+                                                                                    class="form-control rut" id="rut"
+                                                                                    formControlName="charge_amount"
+                                                                                    name="rut" value="" maxlength="12"
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('charge_amount')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'charge_amount'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-5 control-label"
+                                                                                for="rut">Advance Payment<span
+                                                                                    class="requerido">
+                                                                                    *</span></label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="number"
+                                                                                    formControlName="advance_pay"
+                                                                                    class="form-control rut" id="rut"
+                                                                                    name="rut" value="" maxlength="12"
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('advance_pay')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'advance_pay'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-5 control-label"
+                                                                                for="rut">Amount Adjustment<span
+                                                                                    class="requerido">
+                                                                                    *</span></label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="number"
+                                                                                    class="form-control rut" id="rut"
+                                                                                    formControlName="amount_adjustment"
+                                                                                    name="rut" value="" maxlength="12"
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('amount_adjustment')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'amount_adjustment'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-5 control-label"
+                                                                                for="rut">Due Balance Amount<span
+                                                                                    class="requerido">
+                                                                                    *</span></label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="number"
+                                                                                    formControlName="due_amount"
+                                                                                    class="form-control rut" id="rut"
+                                                                                    name="rut" value="" maxlength="12"
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('due_amount')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'due_amount'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-sm-5 control-label"
+                                                                                for="rut">Remarks<span
                                                                                     class="requerido">
                                                                                     *</span></label>
                                                                             <div class="col-sm-7">
                                                                                 <input type="text"
+                                                                                    formControlName="Remarks"
                                                                                     class="form-control rut" id="rut"
                                                                                     name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-5 control-label"
-                                                                                for="rut">Vehicle/Lorry No.<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-7">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-5 control-label"
-                                                                                for="rut">Charge Amount<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-7">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-5 control-label"
-                                                                                for="rut">Advance Payment<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-7">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-5 control-label"
-                                                                                for="rut">Amount Adjustment<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-7">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-5 control-label"
-                                                                                for="rut">Due Balance Amount<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-7">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="col-sm-5 control-label"
-                                                                                for="rut">Remarks<span class="requerido">
-                                                                                    *</span></label>
-                                                                            <div class="col-sm-7">
-                                                                                <input type="text"
-                                                                                    class="form-control rut" id="rut"
-                                                                                    name="rut" value="" maxlength="12"
-                                                                                    placeholder="" required="required">
+                                                                                    placeholder="">
+                                                                                <small *ngIf="
+                                                                                createnewmenifest
+                                                                                  .get('Remarks')
+                                                                                  ?.hasError('required') &&
+                                                                                createnewmenifest.get(
+                                                                                  'Remarks'
+                                                                                )?.touched
+                                                                              " class="text-danger">required
+                                                                                    field</small>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <div class="col-sm-5"></div>
                                                                             <div class="col-sm-7">
-                                                                                <a role="button"
-                                                                                    class="btn  btn-success"
-                                                                                    [routerLink]="['/dashboard/vehicleregister']">
+                                                                                <button type="submit"
+                                                                                    class="btn  btn-success">
                                                                                     <span
                                                                                         class="glyphicon glyphicon-ok-circle"></span>
-                                                                                    Submit</a>
+                                                                                    Submit</button>
                                                                             </div>
                                                                         </div>
 
@@ -190,7 +285,7 @@
                                             <div class="clearfix mb-1"></div>
                                         </div>
                                         <div class="col-sm-3"></div>
-                                        
+
                                     </div>
 
 
@@ -214,7 +309,8 @@
                                             <!-- <h3 class="panel-title roboto"> Create Menifest</h3> -->
                                             <div><span class="pull-right">
 
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
                                                 </span>
                                                 <h3 class="panel-title roboto"> Create Menifest</h3>
                                             </div>
@@ -233,39 +329,34 @@
                                                     <div class="panel-body">
 
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="name">Menifest Date
+                                                            <label class="col-sm-5 control-label" for="name">Menifest
+                                                                Date
                                                                 <span class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control"
-                                                                    name="name" id="name" value=""
-                                                                    required="" maxlength="70">
+                                                                <input type="text" class="form-control" name="name"
+                                                                    id="name" value="" required="" maxlength="70">
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">From<span
+                                                            <label class="col-sm-5 control-label" for="rut">From<span
                                                                     class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">To<span
+                                                            <label class="col-sm-5 control-label" for="rut">To<span
                                                                     class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
 
@@ -275,75 +366,67 @@
                                                                 for="rut">Vehicle/Lorry No.<span class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">Charge Amount<span class="requerido">
+                                                            <label class="col-sm-5 control-label" for="rut">Charge
+                                                                Amount<span class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">Advance Payment<span class="requerido">
+                                                            <label class="col-sm-5 control-label" for="rut">Advance
+                                                                Payment<span class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">Amount Adjustment<span class="requerido">
+                                                            <label class="col-sm-5 control-label" for="rut">Amount
+                                                                Adjustment<span class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">Due Balance Amount<span class="requerido">
+                                                            <label class="col-sm-5 control-label" for="rut">Due Balance
+                                                                Amount<span class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="col-sm-5 control-label"
-                                                                for="rut">Remarks<span class="requerido">
+                                                            <label class="col-sm-5 control-label" for="rut">Remarks<span
+                                                                    class="requerido">
                                                                     *</span></label>
                                                             <div class="col-sm-7">
-                                                                <input type="text"
-                                                                    class="form-control rut" id="rut"
-                                                                    name="rut" value="" maxlength="12"
-                                                                    placeholder="" required="required">
+                                                                <input type="text" class="form-control rut" id="rut"
+                                                                    name="rut" value="" maxlength="12" placeholder=""
+                                                                    required="required">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-sm-5"></div>
                                                             <div class="col-sm-7">
-                                                                <a role="button"
-                                                                    class="btn  btn-success"
+                                                                <a role="button" class="btn  btn-success"
                                                                     [routerLink]="['/dashboard/vehicleregister']">
-                                                                    <span
-                                                                        class="glyphicon glyphicon-ok-circle"></span>
+                                                                    <span class="glyphicon glyphicon-ok-circle"></span>
                                                                     Submit</a>
                                                             </div>
                                                         </div>
