@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 export class Validation {
   isUserValid(control: FormControl) {
     const value = control?.value;
-    const pattern = /^(?:\d{10}|\w+@\w+\.\w{3})$/;
+    const pattern = /^(?:\d{10}|\w+@\w+\.\w{2,3})$/;
     if (value != '') {
       const bool = pattern.test(value);
       return bool == false ? { userNotValid: true } : null;
@@ -47,6 +47,17 @@ export class Validation {
     if (singleData != '') {
       const bool = pattern.test(singleData);
       return bool == false ? { invalidMobile: true } : null;
+    }
+    return null;
+  }
+
+  checkUrl(control: FormControl) {
+    const pattern =
+      /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+    const singleData = control?.value;
+    if (singleData != '') {
+      const bool = pattern.test(singleData);
+      return bool == false ? { invalidUrl: true } : null;
     }
     return null;
   }
