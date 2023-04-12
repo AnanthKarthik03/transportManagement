@@ -1,839 +1,792 @@
 <div class="container-fluid mb-40">
   <div class="container" id="main">
     <div class="row">
+      <div class="col-md-12 mb-1">
+        <div class="panel panel-default" id="table">
+          <div class="panel-heading">
+            <span class="pull-right">
+              <a
+                role="button"
+                class="btn btn-success"
+                (click)="show_form = !show_form"
+              >
+                <span
+                  class="glyphicon glyphicon-arrow-left"
+                  *ngIf="show_form"
+                ></span>
+                <span
+                  class="glyphicon glyphicon-plus"
+                  *ngIf="!show_form"
+                ></span>
+                {{ show_form ? "back" : "ADD" }}</a
+              >
+            </span>
+            <ul class="list-inline list-unstyled list-ul">
+              <li>
+                <h4>
+                  {{ show_form ? "Create Company" : "All Companies" }}
+                </h4>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-default" id="table">
-              <div class="panel-heading">
-                <span class="pull-right">
-                  <a
-                    role="button"
-                    class="btn btn-success"
-                    (click)="show_form = !show_form"
-                  >
-                    <span
-                      class="glyphicon glyphicon-arrow-left"
-                      *ngIf="show_form"
-                    ></span>
-                    <span
-                      class="glyphicon glyphicon-plus"
-                      *ngIf="!show_form"
-                    ></span>
-                    {{ show_form ? "back" : "ADD" }}</a
-                  >
-                </span>
-                <ul class="list-inline list-unstyled">
-                  <li>
-                    <h4>
-                      {{ show_form ? "Create Company" : "All Companies" }}
-                    </h4>
-                  </li>
-                </ul>
-              </div>
-
-              <!--Company cards after create by company form-->
-              <div class="panel panel-default" *ngIf="!show_form">
-                <div class="panel-heading">
-                  <div class="media">
-                    <div class="col-md-12">
-                      <div class="col-md-6">
-                        <div class="media-body">
-                          <h1>Hello</h1>
-                          <button class="btn btn-primary" (click)="onEdit()">
-                            Modify
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="media-body">
-                          <h1>Hello</h1>
-                          <button class="btn btn-primary" (click)="onEdit()">
-                            Modify
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+        <div class="col-md-4">
+          <div class="panel-bg">
+            <div class="panel-heading custom-header-panel-company">
+              <img
+                src="assets/images/download - Copy.png"
+                style="width: 60%; padding: 15px"
+              />
+            </div>
+            <div class="panel-body-text">
+              <div class="form-group-text">
+                <h3 class="panel-title roboto text" style="color: black">
+                  Rostan Technologies Pvt. Ltd.
+                </h3>
+                <div class="panel-footer-btn">
+                  <div class="btn-group-d">
+                    <button class="btn btn-primary1">Modify</button>
+                    <button class="btn btn-success1">Create</button>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel-bg">
+            <div class="panel-heading custom-header-panel-company">
+              <img
+                src="assets/images/download - Copy.png"
+                style="width: 60%; padding: 15px"
+              />
+            </div>
+            <div class="panel-body-text">
+              <div class="form-group-text">
+                <h3 class="panel-title roboto text" style="color: black">
+                  Rostan Technologies Pvt. Ltd.
+                </h3>
+                <div class="panel-footer-btn">
+                  <div class="btn-group-d">
+                    <button class="btn btn-primary1">Modify</button>
+                    <button class="btn btn-success1">Create</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <!--Company details form-->
-              <div class="panel-body" *ngIf="show_form">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="panel panel-primary">
-                      <div class="panel-body">
-                        <form
-                          id="candidatedata"
-                          class="form-horizontal"
-                          role="form"
-                        >
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="panel">
-                                <div class="panel-heading custom-header-panel">
-                                  <h3 class="panel-title roboto">
-                                    Basic Company Details
-                                  </h3>
+        <!--Company details form-->
+        <div class="panel-body" *ngIf="show_form">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form id="candidatedata" class="form-horizontal" role="form">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="panel">
+                          <div class="panel-heading custom-header-panel">
+                            <h3 class="panel-title roboto">
+                              Basic Company Details
+                            </h3>
+                          </div>
+                          <div class="panel-body">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="name"
+                                  >Company Name
+                                  <span class="requerido"> *</span></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    name="company_name"
+                                    id="company_name"
+                                  />
                                 </div>
-                                <div class="panel-body">
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="name"
-                                        >Company Name
-                                        <span class="requerido"> *</span></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          name="company_name"
-                                          id="company_name"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Company Logo<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="file"
-                                          class="form-control"
-                                          name="company_logo"
-                                          id="company_logo"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Company Logo<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="file"
+                                    class="form-control"
+                                    name="company_logo"
+                                    id="company_logo"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Company Contact Details<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          name="company_conatct_detail"
-                                          id="company_contact_detail"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Company Contact Details<span
+                                    class="requerido"
+                                  >
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    name="company_conatct_detail"
+                                    id="company_contact_detail"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Company Email Id<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="email"
-                                          class="form-control"
-                                          name="company_email"
-                                          id="company_email"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Company Email Id<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    name="company_email"
+                                    id="company_email"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Company Legal Name<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="company_legal_name"
-                                          name="company_legal_name"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Company Legal Name<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control rut"
+                                    id="company_legal_name"
+                                    name="company_legal_name"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Company Website<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="url"
-                                          class="form-control rut"
-                                          id="company_website"
-                                          name="company_website"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Company Website<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="url"
+                                    class="form-control rut"
+                                    id="company_website"
+                                    name="company_website"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Types of Bussiness<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <select
-                                          class="form-control"
-                                          id="types_of_business"
-                                          name="types_of_bussiness"
-                                        >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Types of Bussiness<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <select
+                                    class="form-control"
+                                    id="types_of_business"
+                                    name="types_of_bussiness"
+                                  >
+                                    <option value="Box">Box</option>
+                                    <option value="Bag">Bag</option>
+                                    <option value="Basta">Basta</option>
+                                    <option value="Bundle">Bundle</option>
+                                    <option value="Carton">Carton</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Date of Incorporation<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="date"
-                                          class="form-control"
-                                          id="date_of_incorporation"
-                                          name="date_of_incorporation"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Date of Incorporation<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    id="date_of_incorporation"
+                                    name="date_of_incorporation"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Company Identification Number<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="number"
-                                          class="form-control rut"
-                                          id="company_identification_number"
-                                          name="company_identification_number"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Company Identification Number<span
+                                    class="requerido"
+                                  >
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="number"
+                                    class="form-control rut"
+                                    id="company_identification_number"
+                                    name="company_identification_number"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Office Address Line 1<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="office_address1"
-                                          name="office_address1"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Office Address Line 1<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="office_address1"
+                                    name="office_address1"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Office Address Line 2<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="office_address2"
-                                          name="office_address2"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Office Address Line 2<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="office_address2"
+                                    name="office_address2"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >City<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="city"
-                                          name="city"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >City<span class="requerido"> *</span></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="city"
+                                    name="city"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >State<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="state"
-                                          name="state"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >State<span class="requerido"> *</span></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="state"
+                                    name="state"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Pincode<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="number"
-                                          class="form-control"
-                                          id="pincode"
-                                          name="pincode"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Pincode<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="pincode"
+                                    name="pincode"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PAN<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="pan"
-                                          name="pan"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PAN<span class="requerido"> *</span></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pan"
+                                    name="pan"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >TAN<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="tan"
-                                          name="tan"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >TAN<span class="requerido"> *</span></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="tan"
+                                    name="tan"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >TAN Circle Number<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="number"
-                                          class="form-control"
-                                          id="tan_circle_number"
-                                          name="tan_circle_number"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >TAN Circle Number<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="tan_circle_number"
+                                    name="tan_circle_number"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Form 16 Signatory<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="form16_signatory"
-                                          name="form16_signatory"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Form 16 Signatory<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="form16_signatory"
+                                    name="form16_signatory"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >GST Number<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="gst_number"
-                                          name="gst_number"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >GST Number<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="gst_number"
+                                    name="gst_number"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PF Number<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="number"
-                                          class="form-control"
-                                          id="pf_number"
-                                          name="pf_number"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PF Number<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="pf_number"
+                                    name="pf_number"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PF Registration Date<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="date"
-                                          class="form-control"
-                                          id="pf_registration_date"
-                                          name="pf_registration_date"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PF Registration Date<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    id="pf_registration_date"
+                                    name="pf_registration_date"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PF Signatory<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="pf_signatory"
-                                          name="pf_signatory"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PF Signatory<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pf_signatory"
+                                    name="pf_signatory"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PF Signatory Designation<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="pf_signatory_designation"
-                                          name="pf_signatory_designation"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PF Signatory Designation<span
+                                    class="requerido"
+                                  >
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pf_signatory_designation"
+                                    name="pf_signatory_designation"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PF Signatory Father<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="pf_signatory_father"
-                                          name="pf_signatory_father"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PF Signatory Father<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pf_signatory_father"
+                                    name="pf_signatory_father"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >ESI Number<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="number"
-                                          class="form-control"
-                                          id="esi_number"
-                                          name="esi_number"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >ESI Number<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="esi_number"
+                                    name="esi_number"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >ESI Registration Date<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="Date"
-                                          class="form-control"
-                                          id="esi_registration_date"
-                                          name="esi_registration_date"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >ESI Registration Date<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="Date"
+                                    class="form-control"
+                                    id="esi_registration_date"
+                                    name="esi_registration_date"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >ESI Signatory Designation<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="esi_signatory_designation"
-                                          name="esi_signatory_designation"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >ESI Signatory Designation<span
+                                    class="requerido"
+                                  >
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="esi_signatory_designation"
+                                    name="esi_signatory_designation"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >ESI Signatory<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="esi_signatory"
-                                          name="esi_signatory"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >ESI Signatory<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="esi_signatory"
+                                    name="esi_signatory"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >ESI Signatory Father<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="esi_signatory_father"
-                                          name="esi_signatory_father"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >ESI Signatory Father<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="esi_signatory_father"
+                                    name="esi_signatory_father"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PT Registration Date<span
-                                          class="requerido"
-                                        >
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="date"
-                                          class="form-control"
-                                          id="pt_registration_date"
-                                          name="pt_registration_date"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PT Registration Date<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    id="pt_registration_date"
+                                    name="pt_registration_date"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PT Number<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="pt_number"
-                                          name="pt_number"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PT Number<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pt_number"
+                                    name="pt_number"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >PT Signatory<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="pt_signatory"
-                                          name="pt_signatory"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >PT Signatory<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pt_signatory"
+                                    name="pt_signatory"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
-                                  <div class="col-md-12">
-                                    <div class="form-group">
-                                      <label
-                                        class="col-sm-6 control-label"
-                                        for="rut"
-                                        >Employee ID<span class="requerido">
-                                          *</span
-                                        ></label
-                                      >
-                                      <div class="col-sm-6">
-                                        <div class="radio-inline">
-                                          <input
-                                            type="radio"
-                                            name="employee_id"
-                                            id="automatic"
-                                            value="Authomatic"
-                                          />
-                                          <label for="automatic"
-                                            >Authomatic</label
-                                          >
-                                          &nbsp;&nbsp;&nbsp;&nbsp;
-                                          <input
-                                            type="radio"
-                                            name="employee_id"
-                                            id="manual"
-                                            value="Manual"
-                                          />
-                                          <label for="manual">Manual</label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <!--Fin datos personales-->
-                                  <div class="form-group">
-                                    <label
-                                      class="col-sm-6 control-label"
-                                      for="rut"
-                                    ></label>
-
-                                    <div class="col-sm-6">
-                                      <div class="pull-right">
-                                        <button
-                                          type="button"
-                                          id="submit_btn"
-                                          class="btn btn-success mr-10"
-                                        >
-                                          <span
-                                            class="glyphicon glyphicon-ok-circle mr-10"
-                                            aria-hidden="true"
-                                          ></span>
-                                          Cancel
-                                        </button>
-                                        <button
-                                          type="submit"
-                                          id="submit_btn"
-                                          class="btn btn-primary"
-                                        >
-                                          <span
-                                            class="glyphicon glyphicon-ok-circle mr-10"
-                                            aria-hidden="true"
-                                          ></span>
-                                          Submit
-                                        </button>
-                                      </div>
-                                    </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="col-sm-6 control-label" for="rut"
+                                  >Employee ID<span class="requerido">
+                                    *</span
+                                  ></label
+                                >
+                                <div class="col-sm-6">
+                                  <div class="radio-inline">
+                                    <input
+                                      type="radio"
+                                      name="employee_id"
+                                      id="automatic"
+                                      value="Authomatic"
+                                    />
+                                    <label for="automatic">Authomatic</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input
+                                      type="radio"
+                                      name="employee_id"
+                                      id="manual"
+                                      value="Manual"
+                                    />
+                                    <label for="manual">Manual</label>
                                   </div>
                                 </div>
                               </div>
                             </div>
+
+                            <!--Fin datos personales-->
+                            <div class="form-group">
+                              <label
+                                class="col-sm-6 control-label"
+                                for="rut"
+                              ></label>
+
+                              <div class="col-sm-6">
+                                <div class="pull-right">
+                                  <button
+                                    type="button"
+                                    id="submit_btn"
+                                    class="btn btn-success mr-10"
+                                  >
+                                    <span
+                                      class="glyphicon glyphicon-ok-circle mr-10"
+                                      aria-hidden="true"
+                                    ></span>
+                                    Cancel
+                                  </button>
+                                  <button
+                                    type="submit"
+                                    id="submit_btn"
+                                    class="btn btn-primary"
+                                  >
+                                    <span
+                                      class="glyphicon glyphicon-ok-circle mr-10"
+                                      aria-hidden="true"
+                                    ></span>
+                                    Submit
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel-bg">
+                  <div class="panel-heading custom-header-panel-company">
+                    <img
+                      src="assets/images/download - Copy.png"
+                      style="width: 60%; padding: 15px"
+                    />
+                  </div>
+                  <div class="panel-body-text">
+                    <div class="form-group">
+                      <h3 class="panel-title roboto text">
+                        Rostan Technologies Pvt. Ltd.
+                      </h3>
+                      <div class="panel-footer-btn">
+                        <div class="btn-group-d">
+                          <button class="btn btn-primary1">Modify</button>
+
+                          <button class="btn btn-success1">Create</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="row">
+            <hr />
+            <div class="col-md-12 text-center">
+              <p>
+                <a href="" target="_ext">Transport Managment System</a><br /><a
+                  href=""
+                  target="_ext"
+                  >TMS</a
+                >
+              </p>
+            </div>
+            <hr />
+            <div class="clearfix"></div>
           </div>
         </div>
       </div>

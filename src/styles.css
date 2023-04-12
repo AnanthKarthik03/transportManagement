@@ -347,6 +347,24 @@ button.close {
   background-color: #107c94 !important;
 }
 
+@media (max-width: 991px) {
+  .nav > li > a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 910px) {
+  .nav > li > a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 780px) {
+  .nav > li > a {
+    font-size: 9.5px;
+  }
+}
+
 /*----close Nav Bar designe------*/
 /*-----footer-------*/
 
@@ -368,25 +386,21 @@ footer h4 {
 
 /*--------footer close-------- */
 /*--------login---------*/
-#form-buscar >.form-group >.input-group > .form-control {
+#form-buscar > .form-group > .input-group > .form-control {
   height: 40px;
 }
-#form-buscar >.form-group >.input-group > .input-group-btn > .btn{
-      height: 40px; 
-      font-size: 16px;
-      font-weight: 300; 
-       
-     
-}
-#form-buscar >.form-group >.input-group > .input-group-btn > .btn .glyphicon{
-margin-right:12px;   
-}    
-
-
-#form-buscar >.form-group >.input-group > .form-control {
+#form-buscar > .form-group > .input-group > .input-group-btn > .btn {
+  height: 40px;
   font-size: 16px;
   font-weight: 300;
- 
+}
+#form-buscar > .form-group > .input-group > .input-group-btn > .btn .glyphicon {
+  margin-right: 12px;
+}
+
+#form-buscar > .form-group > .input-group > .form-control {
+  font-size: 16px;
+  font-weight: 300;
 }
 .control-label {
   text-align: right;
@@ -687,10 +701,8 @@ html::-webkit-scrollbar-thumb {
   background-size: auto 100%;
 }
 
-
-
 /* login-page */
-.mr1{
+.mr1 {
   margin-right: 10px;
 }
 
@@ -928,7 +940,7 @@ button {
 .text-uppercase-bold-dm1 {
   font-size: 12px;
   text-transform: uppercase !important;
-font-weight: 700 !important;
+  font-weight: 700 !important;
   color: #130a75;
 }
 .table td {
@@ -963,18 +975,16 @@ font-weight: 700 !important;
   color: #fff;
   border-radius: 3px;
   font-style: normal !important;
-  
 }
 .gp:hover,
 .gp:focus {
   background-color: rgb(117, 3, 119) !important;
   text-decoration: none !important;
-  
 }
 .btn-info:hover,
-.btn-info:focus{background-color: #0d6681 !important;
+.btn-info:focus {
+  background-color: #0d6681 !important;
   text-decoration: none !important;
-
 }
 .p-datatable .p-datatable-thead > tr > th {
   text-align: left;
