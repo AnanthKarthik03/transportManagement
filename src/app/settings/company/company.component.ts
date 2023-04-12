@@ -8,16 +8,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./company.component.css'],
 })
 export class CompanyComponent {
-  createCompany: FormGroup;
-
-  show_form: boolean = false;
-
-  submit_to_update: boolean = false;
+  headerTitle: string;
+  form_show: boolean = false;
 
   constructor() {}
 
-  onEdit() {
-    this.show_form = !this.show_form;
-    this.submit_to_update = !this.submit_to_update;
+  formShowToggle() {
+    this.headerTitle = 'Create Companies';
+    this.form_show = !this.form_show;
+  }
+
+  onModifiedButton() {
+    this.form_show = !this.form_show;
+    this.headerTitle = 'Update Companies';
   }
 }
