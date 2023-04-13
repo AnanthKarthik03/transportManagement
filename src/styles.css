@@ -349,7 +349,18 @@ button.close {
 .navbar-toggle {
   background-color: #107c94 !important;
 }
-
+@media (max-width: 1024px) {
+  .nav > li > a {
+   font-size: 9px;
+  }
+  .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+   font-size: 10px !important;
+    line-height: 20px;
+}
+}
 @media (max-width: 991px) {
   .nav > li > a {
     font-size: 12px;
@@ -367,11 +378,22 @@ button.close {
     font-size: 8.5px;
   }
 }
-
-@media (max-width: 1127px) {
+@media (max-width: 780px) {
   .nav > li > a {
-    font-size: 11px;
+    font-size: 8.5px;
   }
+}
+@media (max-width: 768px) {
+  .nav > li > a {
+   font-size: 7px;
+  }
+  .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+   font-size: 8.5px !important;
+    line-height: 20px;
+}
 }
 
 /*----close Nav Bar designe------*/
