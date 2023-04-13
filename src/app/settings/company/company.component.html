@@ -343,7 +343,7 @@
                   <label class="col-sm-8 control-label" for="rut"
                     >Types of Bussiness<span class="requerido"> *</span></label
                   >
-                  <div class="col-sm-8">
+                  <div class="col-sm-4">
                     <select
                       class="form-control"
                       id="types_of_business"
@@ -1055,62 +1055,58 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-12">
+              <div class="col-md-4">
                 <div class="form-group">
                   <label class="col-sm-4 control-label" for="rut"
                     >Employee ID<span class="requerido"> *</span>
-                    <div class="radio-inline">
-                      <input
-                        type="radio"
-                        name="employee_id"
-                        id="automatic"
-                        value="Authomatic"
-                      />
-                      <label for="automatic">Authomatic</label>
-                      &nbsp;&nbsp;&nbsp;&nbsp;
-                      <input
-                        type="radio"
-                        name="employee_id"
-                        id="manual"
-                        value="Manual"
-                      />
-                      <label for="manual">Manual</label>
-                      <small
-                        class="text-danger"
-                        *ngIf="
-                          createCompany
-                            .get('employee_id')
-                            .hasError('required') &&
-                          createCompany.get('employee_id').touched
-                        "
-                        >required checkbox</small
-                      >
-                    </div>
                   </label>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label class="col-sm-6 control-label" for="rut"></label>
+                  <div class="mt-5 pull-right">
+                    <input
+                      type="radio"
+                      name="employee_id"
+                      id="automatic"
+                      value="Authomatic"
+                    />
+                    <label for="automatic" class="mr-10">Automatic</label>
 
-                      <div class="col-sm-6">
-                        <div class="pull-right">
-                          <button
-                            type="button"
-                            id="submit_btn"
-                            class="btn btn-danger mr-10"
-                            (click)="formShowToggle()"
-                          >
-                            <span class="glyphicon" aria-hidden="true"></span>
-                            Cancel
-                          </button>
-                          <button
-                            type="submit"
-                            id="submit_btn"
-                            class="btn btn-warning"
-                          >
-                            <span class="glyphicon" aria-hidden="true"></span>
-                            {{ submitButtonTitle }}
-                          </button>
-                        </div>
+                    <input
+                      type="radio"
+                      name="employee_id"
+                      id="manual"
+                      value="Manual"
+                    />
+                    <label for="manual">Manual</label>
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        createCompany.get('employee_id').hasError('required') &&
+                        createCompany.get('employee_id').touched
+                      "
+                      >required checkbox</small
+                    >
+                  </div>
+                </div>
+                <div class="col-sm-12 mt-40 pull-right">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <div class="pull-right">
+                        <button
+                          type="button"
+                          id="submit_btn"
+                          class="btn btn-danger mr-10"
+                          (click)="formShowToggle()"
+                        >
+                          <span class="glyphicon" aria-hidden="true"></span>
+                          Cancel
+                        </button>
+                        <button
+                          type="submit"
+                          id="submit_btn"
+                          class="btn btn-warning"
+                        >
+                          <span class="glyphicon" aria-hidden="true"></span>
+                          {{ submitButtonTitle }}
+                        </button>
                       </div>
                     </div>
                   </div>
