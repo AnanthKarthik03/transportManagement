@@ -33,6 +33,7 @@ import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/me
 import { CompanyComponent } from './settings/company/company.component';
 import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
 import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
+import { Filter3Pipe } from './pipe/filter3.pipe';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pa
     CompanyComponent,
     ConsigmentArrivelListComponent,
     GatePassRegisterComponent,
+    Filter3Pipe,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
   margin: 0;
@@ -11,11 +11,10 @@
 body {
   background-color: #e0e0e0 !important;
   -webkit-font-smoothing: antialiased;
-  font-family: 'inter', sans-serif !important;
+  font-family: "inter", sans-serif !important;
   font-size: 14px !important;
   font-weight: normal !important;
 }
-
 
 html,
 body,
@@ -350,7 +349,18 @@ button.close {
 .navbar-toggle {
   background-color: #107c94 !important;
 }
-
+@media (max-width: 1024px) {
+  .nav > li > a {
+   font-size: 9px;
+  }
+  .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+   font-size: 10px !important;
+    line-height: 20px;
+}
+}
 @media (max-width: 991px) {
   .nav > li > a {
     font-size: 12px;
@@ -365,8 +375,25 @@ button.close {
 
 @media (max-width: 780px) {
   .nav > li > a {
-    font-size: 9.5px;
+    font-size: 8.5px;
   }
+}
+@media (max-width: 780px) {
+  .nav > li > a {
+    font-size: 8.5px;
+  }
+}
+@media (max-width: 768px) {
+  .nav > li > a {
+   font-size: 7px;
+  }
+  .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+   font-size: 8.5px !important;
+    line-height: 20px;
+}
 }
 
 /*----close Nav Bar designe------*/
