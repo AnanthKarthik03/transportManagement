@@ -1,4 +1,3 @@
-import { trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Validation } from 'src/app/validation/validation';

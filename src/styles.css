@@ -351,15 +351,15 @@ button.close {
 }
 @media (max-width: 1024px) {
   .nav > li > a {
-   font-size: 9px;
+    font-size: 9px;
   }
   .navbar-brand {
     float: left;
     height: 50px;
     padding: 15px 15px;
-   font-size: 10px !important;
+    font-size: 10px !important;
     line-height: 20px;
-}
+  }
 }
 @media (max-width: 991px) {
   .nav > li > a {
@@ -385,15 +385,15 @@ button.close {
 }
 @media (max-width: 768px) {
   .nav > li > a {
-   font-size: 7px;
+    font-size: 7px;
   }
   .navbar-brand {
     float: left;
     height: 50px;
     padding: 15px 15px;
-   font-size: 8.5px !important;
+    font-size: 8.5px !important;
     line-height: 20px;
-}
+  }
 }
 
 /*----close Nav Bar designe------*/
@@ -737,6 +737,10 @@ html::-webkit-scrollbar-thumb {
   margin-right: 10px;
 }
 
+.ml-10 {
+  margin-left: 10px;
+}
+
 .mt-5 {
   margin-top: 5px;
 }
@@ -752,6 +756,9 @@ html::-webkit-scrollbar-thumb {
 }
 .mt-30 {
   margin-top: 30px;
+}
+.mr-5 {
+  margin-right: 5px;
 }
 .mr-10 {
   margin-right: 10px;
