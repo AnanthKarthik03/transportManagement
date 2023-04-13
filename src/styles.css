@@ -134,7 +134,7 @@ hr {
 h1,
 h2,
 h3 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "inter", sans-serif !important;
   font-weight: normal;
 }
 
@@ -487,7 +487,7 @@ footer h4 {
 }
 
 .heading {
-  font-family: "Poppins";
+  font-family: "inter", sans-serif !important;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -497,7 +497,7 @@ footer h4 {
 }
 
 .topheading {
-  font-family: "Poppins";
+  font-family: "inter", sans-serif !important;
   font-style: normal;
   font-weight: 500;
   font-size: 23px;
@@ -918,7 +918,7 @@ button {
 
 /* Font ROBOTO */
 .roboto {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "inter", sans-serif !important;
   color: #fff !important;
 }
 
