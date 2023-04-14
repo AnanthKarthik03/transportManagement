@@ -47,7 +47,7 @@ export class ConsignorComponent {
       city: ['', [Validators.required]],
       pincode: ['', [Validators.required, validation.checkPinCodeValid]],
       mobile1: ['', [Validators.required, validation.checkMobileNo]],
-      mobile2: ['', [Validators.required, validation.checkMobileNo]],
+      mobile2: [''],
       email: ['', [Validators.required, Validators.email]],
       consigner_gst: ['', [Validators.required]],
     });
