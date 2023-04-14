@@ -8,12 +8,19 @@ import { PermissionService } from 'src/app/shared/permission.service';
 })
 export class HeaderComponent {
   roleId: any;
+  branch: string = '';
 
   constructor(private router: Router, private service: PermissionService) {}
 
   ngOnInit(): void {
     this.roleId = localStorage.getItem('id');
     // this.roleId = this.service.roleId;
+    this.roleId = this.service.roleId;
+    if (this.service.branch == '') {
+      this.branch = 'Login';
+    } else {
+      this.branch = this.service.branch;
+    }
   }
 
   showHomeDashboard() {

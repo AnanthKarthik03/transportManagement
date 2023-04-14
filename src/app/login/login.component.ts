@@ -22,6 +22,7 @@ export class LoginComponent {
     private service: PermissionService
   ) {
     this.loginData = this.fb.group({
+      branch: ['', [Validators.required]],
       username: ['', [Validators.required, val.isUserValid]],
       password: ['', [Validators.required, val.isPasswordValid]],
     });
@@ -35,6 +36,7 @@ export class LoginComponent {
 
   onLogin() {
     const loginValues = this.loginData.value;
+    const branch = loginValues.branch;
     const username = loginValues.username;
     const password = loginValues.password;
 
@@ -50,6 +52,7 @@ export class LoginComponent {
       const roleId = this.service.isAuthenticated(username, password);
       this.service.roleId = roleId;
       localStorage.setItem('id', roleId);
+      this.service.branch = branch;
 
       //for supr admin
       if (roleId == 1) {

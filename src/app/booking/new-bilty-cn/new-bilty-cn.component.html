@@ -113,16 +113,24 @@
                               <td>{{ item.weightType }}</td>
                               <td>{{ item.gst }}%</td>
                               <td>{{ item.amount }}</td>
-                              <td>
-                                <a
-                                  class="btn btn-danger"
+                              <td style="justify-content: center;">
+                                    <a
+                                  class="btn btn-danger mr-10 ml-10"
                                   (click)="onRemoveItem()"
                                   ><span
                                     class="glyphicon glyphicon-trash"
                                     aria-hidden="true"
                                   ></span
-                                  >Remove</a
+                                  ></a
                                 >
+                                <a
+                                    class="btn btn-info ml-10"
+                                    ><span
+                                      class="glyphicon glyphicon-edit"
+                                      aria-hidden="true"
+                                    ></span
+                                    ></a
+                                  >
                               </td>
                             </tr>
                             <tr
