@@ -47,7 +47,7 @@ export class ConsigneeComponent {
       city: ['', [Validators.required]],
       pincode: ['', [Validators.required, validation.checkPinCodeValid]],
       mobile1: ['', [Validators.required, validation.checkMobileNo]],
-      mobile2: ['', [Validators.required, validation.checkMobileNo]],
+      // mobile2: ['', [Validators.required, validation.checkMobileNo]],
       email: ['', [Validators.required, Validators.email]],
       consignee_gst: ['', [Validators.required]],
     });

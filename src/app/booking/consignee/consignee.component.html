@@ -260,7 +260,7 @@
                                       >
                                       <div class="col-sm-4">
                                         <input
-                                          type="text"
+                                          type="number"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
@@ -299,7 +299,7 @@
                                           placeholder="Altemative Number"
                                           formControlName="mobile2"
                                         />
-                                        <small
+                                        <!-- <small
                                           *ngIf="
                                             newConsigneeData
                                               .get('mobile2')
@@ -309,7 +309,7 @@
                                           "
                                           class="text-danger"
                                           >required field</small
-                                        >
+                                        > -->
                                         <small
                                           *ngIf="
                                             newConsigneeData
@@ -333,7 +333,7 @@
                                       >
                                       <div class="col-sm-8">
                                         <input
-                                          type="text"
+                                          type="email"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
@@ -375,7 +375,7 @@
                                       >
                                       <div class="col-sm-8">
                                         <input
-                                          type="text"
+                                          type="number"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
@@ -408,6 +408,9 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
+                                          [routerLink]="[
+                                            '/dashboard/consignment-booking'
+                                          ]"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
@@ -466,11 +469,7 @@
                                 <td>{{ single.mobile }}</td>
 
                                 <td>
-                                  <a
-                                    class="btn btn-danger"
-                                    [routerLink]="[
-                                      '/dashboard/consignment-booking'
-                                    ]"
+                                  <a class="btn btn-danger"
                                     ><span
                                       class="glyphicon glyphicon-check mr-10"
                                       aria-hidden="true"
@@ -492,11 +491,7 @@
                                 <td>{{ single.mobile }}</td>
 
                                 <td>
-                                  <a
-                                    class="btn btn-danger"
-                                    [routerLink]="[
-                                      '/dashboard/consignment-booking'
-                                    ]"
+                                  <a class="btn btn-danger"
                                     ><span
                                       class="glyphicon glyphicon-check mr-10"
                                       aria-hidden="true"
