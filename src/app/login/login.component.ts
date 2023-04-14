@@ -56,7 +56,6 @@ export class LoginComponent {
 
       //for supr admin
       if (roleId == 1) {
-        this.spinShow = true;
         this.service.tostrShow = true;
         this.router.navigate(['/dashboard/super-admin']);
       }
@@ -64,17 +63,14 @@ export class LoginComponent {
       //for admin
       if (roleId == 2) {
         this.spinShow = true;
+        this.service.tostrShow = true;
         setTimeout(() => {
           this.router.navigate(['/dashboard/admin']);
         }, 3000);
-
-        this.service.tostrShow = true;
-        this.router.navigate(['/dashboard/admin']);
       }
 
       //for vendor
       if (roleId == 3) {
-        this.spinShow = true;
         this.service.tostrShow = true;
         this.router.navigate(['/dashboard/vendor']);
       }
