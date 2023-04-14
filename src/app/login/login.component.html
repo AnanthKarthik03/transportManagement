@@ -33,7 +33,7 @@
                     name="country"
                     class="form-control"
                     required=""
-                    formControlName = "branch"
+                    formControlName="branch"
                   >
                     <option value="" disabled="" selected="">
                       Select your Branch
@@ -45,6 +45,14 @@
                     <option value="Delhi">Delhi</option>
                     <option value="Haryana">Haryana</option>
                   </select>
+                  <small
+                    class="text-danger"
+                    *ngIf="
+                      loginData.get('branch').hasError('required') &&
+                      loginData.get('branch').touched
+                    "
+                    >required field</small
+                  >
                 </div>
               </div>
               <div class="form-outline mb-4">

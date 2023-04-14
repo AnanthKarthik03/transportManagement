@@ -50,7 +50,7 @@ export class LoginComponent {
 
     if (this.loginData.valid) {
       const roleId = this.service.isAuthenticated(username, password);
-      this.service.roleId = roleId;
+      // this.service.roleId = roleId;
       localStorage.setItem('id', roleId);
       this.service.branch = branch;
 
@@ -64,9 +64,9 @@ export class LoginComponent {
       //for admin
       if (roleId == 2) {
         this.spinShow = true;
-        //   setTimeout(() => {
-        //     this.router.navigate(['/dashboard/admin']);
-        //   }, 3000);
+        setTimeout(() => {
+          this.router.navigate(['/dashboard/admin']);
+        }, 3000);
 
         this.service.tostrShow = true;
         this.router.navigate(['/dashboard/admin']);
@@ -81,6 +81,7 @@ export class LoginComponent {
     }
 
     if (this.loginData.invalid) {
+      this.loginData.markAllAsTouched();
       return;
     }
 

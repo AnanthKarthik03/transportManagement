@@ -386,7 +386,6 @@
                                           type="submit"
                                           id="submit_btn"
                                           class="btn btn-success"
-                                          [routerLink]="['/dashboard/consignee']"
                                         >
                                           <span
                                             class="glyphicon glyphicon-ok-circle mr-10"
@@ -409,7 +408,9 @@
                         <div class="panel-heading">
                           <div class="row">
                             <div class="col col-xs-12">
-                              <h3 class="panel-title roboto">Existing Consignor</h3>
+                              <h3 class="panel-title roboto">
+                                Existing Consignor
+                              </h3>
                             </div>
                           </div>
                         </div>
@@ -445,8 +446,7 @@
                                 <td>{{ consigner.mobile }}</td>
 
                                 <td>
-                                  <a
-                                    class="btn btn-danger"
+                                  <a class="btn btn-danger"
                                     ><span
                                       class="glyphicon glyphicon-check mr-10"
                                       aria-hidden="true"

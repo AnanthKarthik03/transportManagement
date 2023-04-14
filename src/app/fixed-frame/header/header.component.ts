@@ -7,15 +7,14 @@ import { PermissionService } from 'src/app/shared/permission.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  roleId: any;
+  roleId: number;
   branch: string = '';
 
   constructor(private router: Router, private service: PermissionService) {}
 
   ngOnInit(): void {
-    this.roleId = localStorage.getItem('id');
+    this.roleId = +localStorage.getItem('id');
     // this.roleId = this.service.roleId;
-    this.roleId = this.service.roleId;
     if (this.service.branch == '') {
       this.branch = 'Login';
     } else {

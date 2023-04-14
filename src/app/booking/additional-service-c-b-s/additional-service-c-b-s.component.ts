@@ -40,7 +40,7 @@ export class AdditionalServiceCBSComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.showPanel = false;
-    }, 2000);
+    }, 3000);
   }
 
   onTotalCharge() {
