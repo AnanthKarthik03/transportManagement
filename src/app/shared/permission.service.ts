@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PermissionService {
-
   token: any = 'zw34567ugfvxdr6yg';
   roleId: any;
+  tostrShow: boolean = false;
 
-  users: any[] =[
-    {username: 'super@gmail.com', password: 12345, roleId: 1},
-    {username: 'admin@gmail.com', password: 12345, roleId: 2},
-    {username: 'vendor@gmail.com', password: 12345, roleId: 3},
-  ]
+  users: any[] = [
+    { username: 'super@gmail.com', password: 12345, roleId: 1 },
+    { username: 'admin@gmail.com', password: 12345, roleId: 2 },
+    { username: 'vendor@gmail.com', password: 12345, roleId: 3 },
+  ];
 
-  constructor() { }
+  constructor() {}
 
   roleIdInitialize(roleId: any) {
     this.roleId = roleId;
@@ -25,8 +25,8 @@ export class PermissionService {
     const password = pwd;
 
     const one_user = this.users.find((users) => {
-      return (users.username == username && users.password == password);
-    })
+      return users.username == username && users.password == password;
+    });
 
     return one_user.roleId;
   }

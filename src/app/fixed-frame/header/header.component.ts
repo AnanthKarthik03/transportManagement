@@ -12,7 +12,8 @@ export class HeaderComponent {
   constructor(private router: Router, private service: PermissionService) {}
 
   ngOnInit(): void {
-    this.roleId = this.service.roleId;
+    this.roleId = localStorage.getItem('id');
+    // this.roleId = this.service.roleId;
   }
 
   showHomeDashboard() {
@@ -28,7 +29,8 @@ export class HeaderComponent {
     }
   }
 
-  onoLogout() {
+  onLogout() {
+    localStorage.removeItem('id');
     this.router.navigate(['login']);
   }
   onProfile() {

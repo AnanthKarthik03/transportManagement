@@ -12,6 +12,8 @@ export class AdditionalServiceCBSComponent {
   allTypesCharges: FormGroup;
   additionalDetails: FormGroup;
 
+  showPanel: boolean = true;
+
   constructor(private fb: FormBuilder, private router: Router) {
     this.allTypesCharges = this.fb.group({
       r_c: ['', [Validators.required]],
@@ -33,6 +35,12 @@ export class AdditionalServiceCBSComponent {
       amount_adjustment: ['', [Validators.required]],
       cue_balance_amount: ['', [Validators.required]],
     });
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.showPanel = false;
+    }, 2000);
   }
 
   onTotalCharge() {

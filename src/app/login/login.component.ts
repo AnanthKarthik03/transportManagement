@@ -12,8 +12,9 @@ import { Validation } from '../validation/validation';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  spinShow: boolean = true;
+  spinShow: boolean = false;
   loginData: FormGroup<any>;
+
   constructor(
     public router: Router,
     private fb: FormBuilder,
@@ -27,9 +28,9 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.spinShow = false;
-    }, 5000);
+    // setTimeout(() => {
+    //   this.spinShow = false;
+    // }, 5000);
   }
 
   onLogin() {
@@ -48,19 +49,30 @@ export class LoginComponent {
     if (this.loginData.valid) {
       const roleId = this.service.isAuthenticated(username, password);
       this.service.roleId = roleId;
+      localStorage.setItem('id', roleId);
 
       //for supr admin
       if (roleId == 1) {
+        this.spinShow = true;
+        this.service.tostrShow = true;
         this.router.navigate(['/dashboard/super-admin']);
       }
 
       //for admin
       if (roleId == 2) {
+        this.spinShow = true;
+        //   setTimeout(() => {
+        //     this.router.navigate(['/dashboard/admin']);
+        //   }, 3000);
+
+        this.service.tostrShow = true;
         this.router.navigate(['/dashboard/admin']);
       }
 
       //for vendor
       if (roleId == 3) {
+        this.spinShow = true;
+        this.service.tostrShow = true;
         this.router.navigate(['/dashboard/vendor']);
       }
     }

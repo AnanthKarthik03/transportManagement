@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { PermissionService } from '../shared/permission.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  constructor(private message: ToastrService) {}
+  constructor(
+    private message: ToastrService,
+    private service: PermissionService
+  ) {}
 
   ngOnInit() {
-    this.message.success('Successfull Login!!!');
+    if (this.service.tostrShow == true) {
+      this.message.success('Successfull Login!!!');
+    }
   }
 }

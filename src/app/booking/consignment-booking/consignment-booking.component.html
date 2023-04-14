@@ -91,11 +91,12 @@
                                           name="bilty_type"
                                           formControlName="bilty_type"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="GST Invoice">
+                                            GST Invoice
+                                          </option>
+                                          <option value="Booking Challan">
+                                            Booking Challan
+                                          </option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -129,11 +130,9 @@
                                           name="booking_reference"
                                           formControlName="booking_reference"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Kolkata">
+                                            Kolkata
+                                          </option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -165,11 +164,9 @@
                                           name="broker_details"
                                           formControlName="broker_details"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Box">
+                                            Direct Customer
+                                          </option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -229,7 +226,7 @@
                                       >
                                       <div class="col-sm-6">
                                         <input
-                                          type="text"
+                                          type="number"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
@@ -261,7 +258,7 @@
                                       >
                                       <div class="col-sm-6">
                                         <input
-                                          type="text"
+                                          type="number"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
@@ -290,13 +287,22 @@
                                         ></label
                                       >
                                       <div class="col-sm-6">
-                                        <input
-                                          type="text"
-                                          class="form-control rut"
-                                          id="rut"
-                                          name="rut"
+                                        <select
+                                          class="form-control"
+                                          id="tax_paid_by"
+                                          name="tax_paid_by"
                                           formControlName="tax_paid_by"
-                                        />
+                                        >
+                                          <option value="Consignor">
+                                            Consignor
+                                          </option>
+                                          <option value="Consignee">
+                                            Consignee
+                                          </option>
+                                          <option value="Transporter">
+                                            Transporter
+                                          </option>
+                                        </select>
                                         <small
                                           *ngIf="
                                             newConsignmentBookingData
@@ -329,11 +335,9 @@
                                           name="transportation_mode"
                                           formControlName="transportation_mode"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Road">Road</option>
+                                          <option value="Plane">Plane</option>
+                                          <option value="Cargo">Cargo</option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -365,11 +369,9 @@
                                           name="from"
                                           formControlName="from"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Kolkata">
+                                            Kolkata
+                                          </option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -401,11 +403,9 @@
                                           name="to"
                                           formControlName="to"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Agartala">
+                                            Agartala
+                                          </option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -436,11 +436,11 @@
                                           name="payment_terms"
                                           formControlName="payment_term"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Paid">Paid</option>
+                                          <option value="To Pay">To Pay</option>
+                                          <option value="To Be Billed">
+                                            To Be Billed
+                                          </option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -720,11 +720,13 @@
                                           name="shipping_risk"
                                           formControlName="shipping_risk"
                                         >
-                                          <option value="Box">Box</option>
-                                          <option value="Bag">Bag</option>
-                                          <option value="Basta">Basta</option>
-                                          <option value="Bundle">Bundle</option>
-                                          <option value="Carton">Carton</option>
+                                          <option value="Owner Risk">
+                                            Owner Risk
+                                          </option>
+                                          <option value="Carrier Risk">
+                                            Carrier Risk
+                                          </option>
+                                          <option value="N/A">N/A</option>
                                         </select>
                                         <small
                                           *ngIf="
@@ -750,7 +752,7 @@
                                       >
                                       <div class="col-sm-6">
                                         <input
-                                          type="text"
+                                          type="number"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"
@@ -804,7 +806,7 @@
                                       <label
                                         class="col-sm-6 control-label"
                                         for="rut"
-                                        >Distamce Level(km)<span
+                                        >Distance Level(km)<span
                                           class="requerido"
                                         >
                                           *</span
@@ -812,7 +814,7 @@
                                       >
                                       <div class="col-sm-6">
                                         <input
-                                          type="text"
+                                          type="number"
                                           class="form-control rut"
                                           id="rut"
                                           name="rut"

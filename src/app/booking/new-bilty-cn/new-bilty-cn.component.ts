@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-bilty-cn',
@@ -12,7 +13,7 @@ export class NewBiltyCnComponent {
   afterCreateBuiltyData: any[] = [];
   newBuiltyData: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.newBuiltyData = this.fb.group({
       quantity: ['', [Validators.required]],
       packageType: ['', [Validators.required]],
@@ -25,6 +26,12 @@ export class NewBiltyCnComponent {
       rateAsPer: ['', [Validators.required]],
       rate: ['', [Validators.required]],
     });
+  }
+
+  checkout() {
+    if (this.afterCreateBuiltyDataLength > 0) {
+      this.router.navigate(['/dashboard/consignor']);
+    }
   }
 
   onRemoveItem() {
@@ -63,6 +70,7 @@ export class NewBiltyCnComponent {
       };
 
       this.afterCreateBuiltyData.push(showData);
+      this.newBuiltyData.reset();
 
       this.afterCreateBuiltyDataLength = this.afterCreateBuiltyData.length;
     }

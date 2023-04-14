@@ -113,8 +113,16 @@
                   >Delivery<span class="caret"></span
                 ></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a [routerLink]="['/dashboard/consigment-arrivel-list']">Consigment Arrival List</a></li>
-                  <li><a [routerLink]="['/dashboard/gate-pass-register']">Gate Pass Register</a></li>
+                  <li>
+                    <a [routerLink]="['/dashboard/consigment-arrivel-list']"
+                      >Consigment Arrival List</a
+                    >
+                  </li>
+                  <li>
+                    <a [routerLink]="['/dashboard/gate-pass-register']"
+                      >Gate Pass Register</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="dropdown">
@@ -222,7 +230,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                    <a (click)="onoLogout()"
+                    <a (click)="onLogout()"
                       ><i class="glyphicon glyphicon-off"></i> Logout</a
                     >
                   </li>

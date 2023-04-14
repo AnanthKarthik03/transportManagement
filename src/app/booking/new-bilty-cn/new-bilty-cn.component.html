@@ -169,7 +169,7 @@
                               <button
                                 type="button"
                                 class="btn btn-info"
-                                [routerLink]="['/dashboard/consignor']"
+                                (click)="checkout()"
                               >
                                 <span
                                   class="glyphicon glyphicon-hand-right"
@@ -192,7 +192,13 @@
                     >
                       <div class="panel panel-primary">
                         <div class="panel-heading">
-                          <div class="panel-title">Item 1 Details</div>
+                          <div class="panel-title">
+                            {{
+                              afterCreateBuiltyDataLength == 0
+                                ? "Item Details"
+                                : "Add to next Item"
+                            }}
+                          </div>
                         </div>
                         <div class="panel-body">
                           <div class="row clearfix">
