@@ -36,6 +36,15 @@ import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pa
 import { Filter3Pipe } from './pipe/filter3.pipe';
 import { CountryComponent } from './settings/country/country.component';
 import { StateComponent } from './settings/state/state.component';
+import { DailyCashBookComponent } from './Accounting/daily-cash-book/daily-cash-book.component';
+import { MoneyReceiptComponent } from './Accounting/money-receipt/money-receipt.component';
+import { PaymentComponent } from './Accounting/payment/payment.component';
+import { DailyPaymentReportComponent } from './Accounting/daily-payment-report/daily-payment-report.component';
+import { DailyPaymentReportByAccountComponent } from './Accounting/daily-payment-report-by-account/daily-payment-report-by-account.component';
+import { MonthlyToBeBillComponent } from './Accounting/monthly-to-be-bill/monthly-to-be-bill.component';
+import { LedgerComponent } from './Accounting/ledger/ledger.component';
+import { LedgerByAccountComponent } from './Accounting/ledger-by-account/ledger-by-account.component';
+import { LedgerByCityComponent } from './Accounting/ledger-by-city/ledger-by-city.component';
 
 
 
@@ -58,6 +67,15 @@ import { StateComponent } from './settings/state/state.component';
     Filter3Pipe,
     CountryComponent ,
     StateComponent,
+    DailyCashBookComponent,
+    MoneyReceiptComponent,
+    PaymentComponent,
+    DailyPaymentReportComponent,
+    DailyPaymentReportByAccountComponent,
+    MonthlyToBeBillComponent,
+    LedgerComponent,
+    LedgerByAccountComponent,
+    LedgerByCityComponent,
     
    
   ],

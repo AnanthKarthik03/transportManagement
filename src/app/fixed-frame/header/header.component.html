@@ -130,16 +130,16 @@
                   >Accounting<span class="caret"></span
                 ></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Money Receipt</a></li>
-                  <li><a href="#">Date Wise Booking Register</a></li>
-                  <li><a href="#">Daily Cash Book</a></li>
-                  <li><a href="#">Payment</a></li>
-                  <li><a href="#">Daily Payment Report</a></li>
-                  <li><a href="#">Daily Payment Report By Account</a></li>
-                  <li><a href="#">Monthly To Be Bill(Invoice)</a></li>
-                  <li><a href="#">Ledger</a></li>
-                  <li><a href="#">Ledger By Account</a></li>
-                  <li><a href="#">Ledger BY City</a></li>
+                  <li><a [routerLink]="['/dashboard/money-receipt']">Money Receipt</a></li>
+                  
+                  <li><a [routerLink]="['/dashboard/daily-cash-book']">Daily Cash Book</a></li>
+                  <li><a [routerLink]="['/dashboard/payment']">Payment</a></li>
+                  <li><a [routerLink]="['/dashboard/daily-payment-report-by-account']">Daily Payment Report</a></li>
+                  <li><a [routerLink]="['/dashboard/daily-payment-report-by-account']">Daily Payment Report By Account</a></li>
+                  <li><a [routerLink]="['/dashboard/monthly-to-be-bill']">Monthly To Be Bill(Invoice)</a></li>
+                  <li><a [routerLink]="['/dashboard/ledger']">Ledger</a></li>
+                  <li><a [routerLink]="['/dashboard/ledger-by-account']">Ledger By Account</a></li>
+                  <li><a [routerLink]="['/dashboard/ledger-by-city']">Ledger BY City</a></li>
                 </ul>
               </li>
               <li class="dropdown">

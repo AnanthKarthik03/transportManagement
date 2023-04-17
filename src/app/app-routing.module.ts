@@ -26,7 +26,15 @@ import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/me
 import { CompanyComponent } from './settings/company/company.component';
 import { CountryComponent } from './settings/country/country.component';
 import { StateComponent } from './settings/state/state.component';
-
+import { DailyCashBookComponent } from './Accounting/daily-cash-book/daily-cash-book.component';
+import { MoneyReceiptComponent } from './Accounting/money-receipt/money-receipt.component';
+import { PaymentComponent } from './Accounting/payment/payment.component';
+import { DailyPaymentReportComponent } from './Accounting/daily-payment-report/daily-payment-report.component';
+import { DailyPaymentReportByAccountComponent } from './Accounting/daily-payment-report-by-account/daily-payment-report-by-account.component';
+import { MonthlyToBeBillComponent } from './Accounting/monthly-to-be-bill/monthly-to-be-bill.component';
+import { LedgerComponent } from './Accounting/ledger/ledger.component';
+import { LedgerByAccountComponent } from './Accounting/ledger-by-account/ledger-by-account.component';
+import { LedgerByCityComponent } from './Accounting/ledger-by-city/ledger-by-city.component';
 import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
 import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
 const routes: Routes = [
@@ -78,8 +86,15 @@ const routes: Routes = [
       { path: 'company', component: CompanyComponent },
       { path: 'country', component: CountryComponent },
       { path: 'state', component: StateComponent },
-      
-     
+      { path: 'daily-cash-book', component: DailyCashBookComponent },
+      { path: 'money-receipt', component: MoneyReceiptComponent },
+      { path: 'payment', component: PaymentComponent },
+      { path: 'daily-payment-report', component: DailyPaymentReportComponent },
+      { path: 'daily-payment-report-by-account', component: DailyPaymentReportByAccountComponent },
+      { path: 'monthly-to-be-bill', component: MonthlyToBeBillComponent },
+      { path: 'ledger', component: LedgerComponent },
+      { path: 'ledger-by-account', component: LedgerByAccountComponent },
+      { path: 'ledger-by-city', component: LedgerByCityComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],
