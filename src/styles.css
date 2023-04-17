@@ -504,24 +504,36 @@ footer h4 {
   color: #464646;
 }
 
-.ima {
- padding-top: 7.5%;
-height:fit-content;
+/* Mam's Code */
+/* .ima {
+  padding-top: 7.5%;
+  height: fit-content;
+  padding-bottom: 7.5%;
+} */
 
-padding-bottom: 7.5%;
-  
+/* Manisha Code */
+
+.ima {
+  margin-top: 100px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
-.login-right-bg .panel{
+
+.login-right-bg .panel {
   height: 100%;
 }
-.white-bg{
+.white-bg {
   background: #ffff;
-  top:0px;
-padding-top:0;
-margin:auto; position:relative;
-min-height: 100vh;
+  top: 0px;
+  padding-top: 0;
+  margin: auto;
+  position: relative;
+  min-height: 100vh;
 
-height:100%;
+  height: 100%;
 }
 .form-outline {
   margin-bottom: 20px;
@@ -699,7 +711,6 @@ html::-webkit-scrollbar-thumb {
 
 .h-100 {
   height: 100vh !important;
-  
 }
 
 @media (min-width: 768px) {
@@ -716,12 +727,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 .login-right-bg {
- 
   background: linear-gradient(180deg, #60d0e9 0%, #1b93ad 100%);
-  
+
   width: 100%;
   height: 100%;
-  
 }
 
 /* login-page */

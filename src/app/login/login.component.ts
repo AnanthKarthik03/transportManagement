@@ -116,7 +116,7 @@ export class LoginComponent {
       const roleId = this.service.isAuthenticated(username, password);
       // this.service.roleId = roleId;
       localStorage.setItem('id', roleId);
-      this.service.branch = branch;
+      localStorage.setItem('branch', branch);
 
       //for supr admin
       if (roleId == 1) {

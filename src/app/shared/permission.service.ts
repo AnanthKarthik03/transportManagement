@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PermissionService {
-  branch: string = '';
-
   token: any = 'zw34567ugfvxdr6yg';
   roleId: any;
   tostrShow: boolean = false;

@@ -5,10 +5,9 @@ import { Validation } from 'src/app/validation/validation';
 @Component({
   selector: 'app-country',
   templateUrl: './country.component.html',
-  styleUrls: ['./country.component.css']
+  styleUrls: ['./country.component.css'],
 })
 export class CountryComponent {
-
   createCountry: FormGroup;
   headerTitle: string;
   submitButtonTitle: string;
@@ -20,9 +19,22 @@ export class CountryComponent {
     this.createCountry = this.fb.group({
       country_code: ['', [Validators.required]],
       country_name: ['', [Validators.required]],
-      
-      
     });
+  }
+
+  ngOnInit(): void {
+    this.bcrs = [
+      {
+        id: 1,
+        country_code: 'Ind',
+        country_name: 'India',
+      },
+      {
+        id: 2,
+        country_code: 'Aus',
+        country_name: 'Australia',
+      },
+    ];
   }
 
   formShowToggle() {
@@ -31,145 +43,34 @@ export class CountryComponent {
     this.submitButtonTitle = 'Submit';
   }
 
-  onModifiedButton() {
+  onModifiedButton(id: number) {
     this.form_show = !this.form_show;
     this.headerTitle = 'Update Country';
     this.submitButtonTitle = 'Update';
-  }
-
-  onPickImage(event: Event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.createCountry.patchValue({ company_logo: file });
-    this.createCountry.get('country_code').updateValueAndValidity();
+    const value = this.bcrs.find((value) => {
+      return value.id == id;
+    });
+    this.createCountry.patchValue(value);
   }
 
   onCreateCountry() {
     const company_field = this.createCountry;
-    console.log(company_field);
 
     if (this.submitButtonTitle == 'Submit') {
       if (this.createCountry.invalid) {
         this.createCountry.markAllAsTouched();
         return;
       } else {
-        console.log(company_field);
+        this.bcrs.push(company_field.value);
+        this.createCountry.reset();
+        this.formShowToggle();
       }
     }
 
     if (this.submitButtonTitle == 'Update') {
       alert("when backend will be done then it'll work properly");
+      this.createCountry.reset();
       this.formShowToggle();
     }
   }
-  ngOnInit(): void {
-    this.bcrs = [
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-      {
-        cn_no: 'PKG1223',
-        details: '123 street',
-        consigner: 'abhi enterprise',
-        consignee: 'star enterprise',
-        from: 'Kolkata',
-        via: 'cargo',
-        to: 'Agartala',
-        pay: 'to pay',
-        amount: '54338.00',
-        rec: '0.00',
-        dis: '0.00',
-        due: '5432.00',
-        branch: 'Kolkata',
-      },
-    ];
-    
-  }
 }
-

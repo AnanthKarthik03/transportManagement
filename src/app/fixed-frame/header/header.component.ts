@@ -15,11 +15,7 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.roleId = +localStorage.getItem('id');
     // this.roleId = this.service.roleId;
-    if (this.service.branch == '') {
-      this.branch = 'Login';
-    } else {
-      this.branch = this.service.branch;
-    }
+    this.branch = localStorage.getItem('branch');
   }
 
   showHomeDashboard() {
