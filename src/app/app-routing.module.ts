@@ -24,8 +24,9 @@ import { VehicleregisterComponent } from './Loading/Vehicledetails/vehicleregist
 import { MenifestCartComponent } from './Loading/Menifest/menifest-cart/menifest-cart.component';
 import { MenifestDetailsComponent } from './Loading/Menifest/menifest-details/menifest-details.component';
 import { CompanyComponent } from './settings/company/company.component';
-import { CunteryComponent } from './setting/cuntery/cuntery.component';
-import { StateComponent } from './setting/state/state.component';
+import { CountryComponent } from './settings/country/country.component';
+import { StateComponent } from './settings/state/state.component';
+
 import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
 import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
 const routes: Routes = [
@@ -75,8 +76,10 @@ const routes: Routes = [
       { path: 'menifest-cart', component: MenifestCartComponent },
       { path: 'menifest-details', component: MenifestDetailsComponent },
       { path: 'company', component: CompanyComponent },
-      { path: 'cuntery', component: CunteryComponent },
+      { path: 'country', component: CountryComponent },
       { path: 'state', component: StateComponent },
+      
+     
       { path: 'not-found', component: NotFoundComponent },
       { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
     ],

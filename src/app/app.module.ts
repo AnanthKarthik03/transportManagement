@@ -34,8 +34,10 @@ import { CompanyComponent } from './settings/company/company.component';
 import { ConsigmentArrivelListComponent } from './delivery/consigment-arrivel-list/consigment-arrivel-list.component';
 import { GatePassRegisterComponent } from './delivery/gate-pass-register/gate-pass-register.component';
 import { Filter3Pipe } from './pipe/filter3.pipe';
-import { CunteryComponent } from './setting/cuntery/cuntery.component';
-import { StateComponent } from './setting/state/state.component';
+import { CountryComponent } from './settings/country/country.component';
+import { StateComponent } from './settings/state/state.component';
+
+
 
 @NgModule({
   declarations: [
@@ -54,8 +56,10 @@ import { StateComponent } from './setting/state/state.component';
     ConsigmentArrivelListComponent,
     GatePassRegisterComponent,
     Filter3Pipe,
-    CunteryComponent,
+    CountryComponent ,
     StateComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
