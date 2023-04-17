@@ -17,8 +17,16 @@ export class LoginComponent {
   forgotForm: boolean = false;
   signUpForm: boolean = false;
 
+  // select intial login form data
+  selectData: FormGroup<any>;
+
+  // spinner show conditionally
   spinShow: boolean = false;
+
+  // login data form group
   loginData: FormGroup<any>;
+  forgotData: FormGroup<any>;
+  signUpData: FormGroup<any>;
 
   constructor(
     public router: Router,
@@ -31,20 +39,63 @@ export class LoginComponent {
       username: ['', [Validators.required, val.isUserValid]],
       password: ['', [Validators.required, val.isPasswordValid]],
     });
+
+    this.forgotData = this.fb.group({
+      username: ['', [Validators.required, val.isUserValid]],
+      password: ['', [Validators.required, val.isPasswordValid]],
+    });
+
+    this.signUpData = this.fb.group({
+      username: ['', [Validators.required, val.isUserValid]],
+      password: ['', [Validators.required, val.isPasswordValid]],
+    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.selectData = this.loginData.value;
+  }
 
-  onForgot() {
-    this.loginForm = false;
-    this.forgotForm = true;
-    this.forgotForm = false;
+  onLoginFormShow() {
+    this.spinShow = true;
+    setTimeout(() => {
+      this.loginForm = true;
+      this.spinShow = false;
+      this.forgotForm = false;
+      this.signUpForm = false;
+      this.loginData.patchValue(this.selectData);
+    }, 2000);
+  }
+
+  onForgotFormShow() {
+    this.spinShow = true;
+    setTimeout(() => {
+      this.forgotForm = true;
+      this.spinShow = false;
+      this.loginForm = false;
+      this.signUpForm = false;
+      this.loginData.reset();
+    }, 2000);
+  }
+
+  onSignUpFormShow() {
+    this.spinShow = true;
+    setTimeout(() => {
+      this.signUpForm = true;
+      this.spinShow = false;
+      this.loginForm = false;
+      this.forgotForm = false;
+      this.loginData.reset();
+    }, 2000);
   }
 
   onSignUp() {
-    this.loginForm = false;
-    this.signUpForm = true;
-    this.forgotForm = false;
+    this.onLoginFormShow();
+    console.log(this.signUpData.value);
+  }
+
+  onForgot() {
+    this.onLoginFormShow();
+    console.log(this.forgotData.value);
   }
 
   onLogin() {

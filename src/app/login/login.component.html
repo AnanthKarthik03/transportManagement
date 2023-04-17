@@ -22,8 +22,20 @@
           </div>
           <div class="panel-title">
             <div class="col-lg-12">
-              <h4 class="topheading">Login</h4>
-              <h6 class="heading mb-20">Please login to your account</h6>
+              <h4 class="topheading" *ngIf="loginForm">Login</h4>
+              <h6 class="heading mb-20" *ngIf="loginForm">
+                Please login to your account
+              </h6>
+
+              <h4 class="topheading" *ngIf="forgotForm">Forgot Password</h4>
+              <h6 class="heading mb-20" *ngIf="forgotForm">
+                Please Enter Valid Details For Forgot Password
+              </h6>
+
+              <h4 class="topheading" *ngIf="signUpForm">Sign-Up</h4>
+              <h6 class="heading mb-20" *ngIf="signUpForm">
+                Enter Details For Sign-Up
+              </h6>
             </div>
           </div>
           <div class="panel-body p-md-5 mx-md-4">
@@ -98,6 +110,7 @@
                     type="password"
                     id="form2Example22"
                     class="form-control"
+                    placeholder="enter password"
                     formControlName="password"
                   />
                 </div>
@@ -133,12 +146,12 @@
 
               <div class="d-flex align-items-center text-center pb-4">
                 <p class="">
-                  <a class="text-muted" (click)="onForgot()"
+                  <a class="text-muted" (click)="onForgotFormShow()"
                     >Forgot password?</a
                   >
                 </p>
                 <p class="mb-0 me-2">
-                  <a class="text-muted" (click)="onSignUp()">
+                  <a class="text-muted" (click)="onSignUpFormShow()">
                     <strong>Don't have an account?</strong>
                   </a>
                 </p>
@@ -146,16 +159,37 @@
             </form>
 
             <!-- Sign-up Form -->
-            <form *ngIf="signUpForm">
+            <form
+              [formGroup]="signUpData"
+              (ngSubmit)="onSignUp()"
+              *ngIf="signUpForm"
+            >
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
                   <i class="glyphicon glyphicon-user"></i>
                   <input
                     type="text"
-                    id="form2Example11"
+                    id="form2Example09"
                     class="form-control"
                     placeholder="Phone number or email address"
+                    formControlName="username"
                   />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      signUpData.get('username')?.hasError('required') &&
+                      signUpData.get('username')?.touched
+                    "
+                    >required field</span
+                  >
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      signUpData.get('username')?.hasError('userNotValid') &&
+                      signUpData.get('username')?.touched
+                    "
+                    >invalid field</span
+                  >
                 </div>
               </div>
               <div class="form-outline mb-4">
@@ -163,10 +197,29 @@
                   <i class="glyphicon glyphicon-lock"></i>
                   <input
                     type="password"
-                    id="form2Example11"
+                    id="form2Example10"
                     class="form-control"
                     placeholder="Enter Password"
+                    formControlName="password"
                   />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      signUpData.get('password')?.hasError('required') &&
+                      signUpData.get('password')?.touched
+                    "
+                    >required field</span
+                  >
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      signUpData
+                        .get('password')
+                        ?.hasError('passwordNotValid') &&
+                      signUpData.get('password')?.touched
+                    "
+                    >password should be between 3 to 8 character</span
+                  >
                 </div>
               </div>
               <div class="text-center pt-1 mb-5 pb-1 mb-40">
@@ -175,23 +228,45 @@
                     strokeWidth="8"
                     [style]="{ height: '20px', width: '20px' }"
                     styleClass="spinnerColor"
+                    *ngIf="spinShow"
                   ></p-progressSpinner>
-                  <span>Back to Log in</span>
+                  <span *ngIf="!spinShow">Back to Log in</span>
                 </button>
               </div>
             </form>
 
             <!-- Forget Password Form -->
-            <form *ngIf="forgotForm">
+            <form
+              [formGroup]="forgotData"
+              (ngSubmit)="onForgot()"
+              *ngIf="forgotForm"
+            >
               <div class="form-outline mb-4">
                 <div class="inner-addon right-addon">
                   <i class="glyphicon glyphicon-user"></i>
                   <input
                     type="text"
-                    id="form2Example11"
+                    id="form2Example12"
                     class="form-control"
                     placeholder="Phone number or email address"
+                    formControlName="username"
                   />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      forgotData.get('username')?.hasError('required') &&
+                      forgotData.get('username')?.touched
+                    "
+                    >required field</span
+                  >
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      forgotData.get('username')?.hasError('userNotValid') &&
+                      forgotData.get('username')?.touched
+                    "
+                    >invalid field</span
+                  >
                 </div>
               </div>
               <div class="form-outline mb-4">
@@ -199,10 +274,29 @@
                   <i class="glyphicon glyphicon-lock"></i>
                   <input
                     type="password"
-                    id="form2Example11"
+                    id="form2Example13"
                     class="form-control"
                     placeholder="Enter New Password"
+                    formControlName="password"
                   />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      forgotData.get('password')?.hasError('required') &&
+                      forgotData.get('password')?.touched
+                    "
+                    >required field</span
+                  >
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      forgotData
+                        .get('password')
+                        ?.hasError('passwordNotValid') &&
+                      forgotData.get('password')?.touched
+                    "
+                    >password should be between 3 to 8 character</span
+                  >
                 </div>
               </div>
               <div class="text-center pt-1 mb-5 pb-1 mb-40">
@@ -211,8 +305,9 @@
                     strokeWidth="8"
                     [style]="{ height: '20px', width: '20px' }"
                     styleClass="spinnerColor"
+                    *ngIf="spinShow"
                   ></p-progressSpinner>
-                  <span>Now You can Log in</span>
+                  <span *ngIf="!spinShow">Now You can Log in</span>
                 </button>
               </div>
             </form>
