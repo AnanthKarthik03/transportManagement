@@ -12,6 +12,11 @@ import { Validation } from '../validation/validation';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  // Variables for all form show by condionally
+  loginForm: boolean = true;
+  forgotForm: boolean = false;
+  signUpForm: boolean = false;
+
   spinShow: boolean = false;
   loginData: FormGroup<any>;
 
@@ -28,10 +33,18 @@ export class LoginComponent {
     });
   }
 
-  ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.spinShow = false;
-    // }, 5000);
+  ngOnInit(): void {}
+
+  onForgot() {
+    this.loginForm = false;
+    this.forgotForm = true;
+    this.forgotForm = false;
+  }
+
+  onSignUp() {
+    this.loginForm = false;
+    this.signUpForm = true;
+    this.forgotForm = false;
   }
 
   onLogin() {
@@ -56,8 +69,11 @@ export class LoginComponent {
 
       //for supr admin
       if (roleId == 1) {
+        this.spinShow = true;
         this.service.tostrShow = true;
-        this.router.navigate(['/dashboard/super-admin']);
+        setTimeout(() => {
+          this.router.navigate(['/dashboard/super-admin']);
+        }, 2000);
       }
 
       //for admin
@@ -66,14 +82,16 @@ export class LoginComponent {
         this.service.tostrShow = true;
         setTimeout(() => {
           this.router.navigate(['/dashboard/admin']);
-        }, 3000);
+        }, 2000);
       }
 
-      
       //for vendor
       if (roleId == 3) {
+        this.spinShow = true;
         this.service.tostrShow = true;
-        this.router.navigate(['/dashboard/vendor']);
+        setTimeout(() => {
+          this.router.navigate(['/dashboard/vendor']);
+        }, 2000);
       }
     }
 
