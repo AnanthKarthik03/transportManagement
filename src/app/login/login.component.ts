@@ -69,6 +69,7 @@ export class LoginComponent {
         }, 3000);
       }
 
+      
       //for vendor
       if (roleId == 3) {
         this.service.tostrShow = true;
