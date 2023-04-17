@@ -72,6 +72,7 @@ export class LoginComponent {
         }, 2000);
       }
 
+      
       //for vendor
       if (roleId == 3) {
         this.spinShow = true;
