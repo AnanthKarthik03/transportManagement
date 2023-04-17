@@ -12,6 +12,11 @@ import { Validation } from '../validation/validation';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  // Variables for all form show by condionally
+  loginForm: boolean = true;
+  forgotForm: boolean = false;
+  signUpForm: boolean = false;
+
   spinShow: boolean = false;
   loginData: FormGroup<any>;
 
@@ -28,10 +33,18 @@ export class LoginComponent {
     });
   }
 
-  ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.spinShow = false;
-    // }, 5000);
+  ngOnInit(): void {}
+
+  onForgot() {
+    this.loginForm = false;
+    this.forgotForm = true;
+    this.forgotForm = false;
+  }
+
+  onSignUp() {
+    this.loginForm = false;
+    this.signUpForm = true;
+    this.forgotForm = false;
   }
 
   onLogin() {
@@ -72,7 +85,6 @@ export class LoginComponent {
         }, 2000);
       }
 
-      
       //for vendor
       if (roleId == 3) {
         this.spinShow = true;
